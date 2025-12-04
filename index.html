@@ -38,79 +38,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: 
-        radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(30, 64, 175, 0.03) 0%, transparent 60%),
-        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
       z-index: 0;
       pointer-events: none;
-      animation: pulse 20s ease-in-out infinite;
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.95; }
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
-      50% { transform: translate(15px, -15px) scale(1.03); opacity: 0.6; }
-    }
-
-
-    .floating-orb {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(70px);
-      pointer-events: none;
-      z-index: 0;
-      animation: float 25s ease-in-out infinite;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .orb-icon {
-      position: absolute;
-      opacity: 0.12;
-      width: 80px;
-      height: 80px;
-      filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.25));
-      animation: iconFloat 8s ease-in-out infinite;
-    }
-
-    @keyframes iconFloat {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(5deg); }
-    }
-
-    .orb-1 {
-      width: 400px;
-      height: 400px;
-      background: rgba(59, 130, 246, 0.12);
-      top: 10%;
-      left: 10%;
-      animation-delay: 0s;
-    }
-
-    .orb-2 {
-      width: 350px;
-      height: 350px;
-      background: rgba(37, 99, 235, 0.1);
-      bottom: 20%;
-      right: 15%;
-      animation-delay: 8s;
-    }
-
-    .orb-3 {
-      width: 300px;
-      height: 300px;
-      background: rgba(30, 64, 175, 0.08);
-      top: 50%;
-      left: 50%;
-      animation-delay: 16s;
-    }
 
     .portfolio-container {
       width: 100%;
@@ -125,9 +57,6 @@
     .page {
       display: none;
       flex: 1;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.5s ease forwards;
     }
 
     .page.active {
@@ -135,18 +64,11 @@
       flex-direction: column;
     }
 
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .parallax-layer {
-      transition: transform 0.2s ease-out;
-    }
 
     .fade-in-section {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      transform: translateY(20px);
+      transition: opacity 0.6s, transform 0.6s;
     }
 
     .fade-in-section.visible {
@@ -156,15 +78,23 @@
 
     .stagger-item {
       opacity: 0;
-      transform: translateY(30px) scale(0.95);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
     }
 
     .stagger-item.visible {
       opacity: 1;
-      transform: translateY(0) scale(1);
+      transform: translateY(0);
     }
 
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
 
 
     .skill-category-block {
@@ -173,7 +103,7 @@
       border-radius: 16px;
       border: 1px solid #e2e8f0;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .skill-category-block:hover {
@@ -270,7 +200,7 @@
       text-decoration: none;
       font-weight: 500;
       font-size: 0.9rem;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       cursor: pointer;
       letter-spacing: 0.01em;
       position: relative;
@@ -284,7 +214,7 @@
       width: 0;
       height: 2px;
       background: linear-gradient(90deg, #3b82f6, #2563eb);
-      transition: width 0.3s ease;
+      transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .nav-links a:hover {
@@ -304,12 +234,6 @@
       width: 100%;
     }
 
-    .header-graphic {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 2rem 2rem;
-    }
 
     .hero-section {
       padding: 2rem 2rem 4rem;
@@ -325,13 +249,8 @@
       color: #1e293b;
       margin-bottom: 1rem;
       letter-spacing: -0.02em;
-      animation: fadeIn 1s ease-out;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
 
     .hero-tagline {
       font-size: 1.25rem;
@@ -339,7 +258,6 @@
       color: #60a5fa;
       margin-bottom: 2rem;
       letter-spacing: 0.01em;
-      animation: fadeIn 1.2s ease-out 0.2s both;
     }
 
 
@@ -395,7 +313,7 @@
       border-radius: 16px;
       padding: 0;
       border: 1px solid #e2e8f0;
-      transition: all 0.4s ease;
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       position: relative;
@@ -427,10 +345,12 @@
     .project-icon {
       width: 100%;
       height: 180px;
+      background-size: cover;
+      background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.4s ease;
+      transition: all 0.5s ease;
       overflow: hidden;
     }
 
@@ -438,6 +358,21 @@
       transform: scale(1.05);
     }
 
+    .project-icon:nth-child(1) {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%);
+    }
+
+    .project-card:nth-child(2) .project-icon {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
+    }
+
+    .project-card:nth-child(3) .project-icon {
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+    }
+
+    .project-card:nth-child(4) .project-icon {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%);
+    }
 
     .project-content {
       padding: 2rem;
@@ -574,7 +509,7 @@
       font-weight: 500;
       text-decoration: none;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
       border: none;
       display: inline-block;
@@ -593,7 +528,7 @@
       font-weight: 500;
       text-decoration: none;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       border: 1px solid rgba(59, 130, 246, 0.25);
       display: inline-block;
     }
@@ -699,15 +634,6 @@
  </head>
  <body>
   <div class="scroll-progress" id="scrollProgress"></div>
-  <div class="floating-orb orb-1">
-    <svg class="orb-icon" viewBox="0 0 24 24" fill="currentColor" style="color: #3b82f6;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-  </div>
-  <div class="floating-orb orb-2">
-    <svg class="orb-icon" viewBox="0 0 24 24" fill="currentColor" style="color: #60a5fa;"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-  </div>
-  <div class="floating-orb orb-3">
-    <svg class="orb-icon" viewBox="0 0 24 24" fill="currentColor" style="color: #3b82f6;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-  </div>
   <div class="portfolio-container">
    <nav>
     <div class="nav-content">
@@ -721,27 +647,9 @@
     </div>
    </nav><!-- Home Page -->
    <div id="home" class="page active">
-    <div class="header-graphic parallax-layer">
-     <svg viewbox="0 0 800 200" xmlns="http://www.w3.org/2000/svg"><defs>
-       <lineargradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
-       </lineargradient>
-      </defs> <g class="parallax-layer">
-       <rect x="50" y="40" width="120" height="120" rx="10" fill="url(#grad1)" opacity="0.2" />
-       <rect x="200" y="70" width="80" height="90" rx="8" fill="url(#grad1)" opacity="0.3" />
-      </g> <g class="parallax-layer">
-       <circle cx="350" cy="100" r="50" fill="url(#grad1)" opacity="0.25" />
-       <rect x="450" y="50" width="100" height="100" rx="50" fill="url(#grad1)" opacity="0.2" />
-      </g> <g class="parallax-layer">
-       <polygon points="600,60 650,140 550,140" fill="url(#grad1)" opacity="0.3" />
-       <rect x="680" y="80" width="70" height="80" rx="10" fill="url(#grad1)" opacity="0.25" />
-      </g>
-     </svg>
-    </div>
     <section class="hero-section fade-in-section">
      <div class="flex-center" style="margin-bottom: 2rem;">
-      <div class="float-animation profile-img-wrapper">
+      <div class="profile-img-wrapper">
         <div class="profile-img-inner">
         <img src="pfp.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Profile Picture">
         </div>
@@ -1224,15 +1132,6 @@
       setTimeout(initScrollAnimations, 100);
     }
 
-    let parallaxElements = null;
-    function handleParallax() {
-      if (!parallaxElements) parallaxElements = document.querySelectorAll('.parallax-layer');
-      if (!parallaxElements.length) return;
-      const scrolled = window.pageYOffset || document.documentElement.scrollTop;
-      parallaxElements.forEach((el, i) => {
-        el.style.transform = `translateY(${scrolled * (i + 1) * 0.15}px)`;
-      });
-    }
 
     const scrollObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1244,8 +1143,7 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     
     function initScrollAnimations() {
-      const elements = document.querySelectorAll('.fade-in-section:not(.visible), .stagger-item:not(.visible)');
-      elements.forEach((el, i) => {
+      document.querySelectorAll('.fade-in-section:not(.visible), .stagger-item:not(.visible)').forEach((el, i) => {
         if (el.classList.contains('stagger-item')) el.style.transitionDelay = `${i * 0.15}s`;
         scrollObserver.observe(el);
       });
@@ -1263,13 +1161,11 @@
     function handleScroll() {
       if (!scrollRaf) {
         scrollRaf = requestAnimationFrame(() => {
-          handleParallax();
           updateScrollProgress();
           scrollRaf = null;
         });
       }
     }
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     
     function initApp() {
@@ -1327,11 +1223,14 @@
       els.body.style.backgroundColor = bgColor;
       if (els.portfolioContainer) els.portfolioContainer.style.backgroundColor = bgColor;
       if (els.nav) els.nav.style.backgroundColor = `${bgColor}f2`;
-      [...els.footers, ...els.projectCards, ...els.contactLinks].forEach(el => el.style.backgroundColor = surfaceColor);
+      els.footers.forEach(footer => footer.style.backgroundColor = surfaceColor);
+      els.projectCards.forEach(card => card.style.backgroundColor = surfaceColor);
+      els.contactLinks.forEach(link => link.style.backgroundColor = surfaceColor);
 
-      [els.heroName, ...els.sectionTitles, els.navName, ...els.projectTitles].forEach(el => {
+      [els.heroName, ...els.sectionTitles, els.navName].forEach(el => {
         if (el) el.style.color = textColor;
       });
+      els.projectTitles.forEach(el => el.style.color = textColor);
 
       // Remove old event listeners by cloning nodes (cleaner approach)
       els.navLinks.forEach(link => {
@@ -1342,21 +1241,18 @@
       [els.heroTagline, els.aboutContent, ...els.projectDescriptions, ...els.contactLinks, ...els.footers].forEach(el => {
         if (el) el.style.color = secondaryColor;
       });
-      els.techTags.forEach(el => el.style.color = primaryColor);
+      els.techTags.forEach(tag => tag.style.color = primaryColor);
 
-      const sizes = {
-        heroName: 2.19, heroTagline: 0.94, sectionTitle: 1.56, projectTitle: 0.94,
-        aboutContent: 0.7, projectDesc: 1, contactLink: 1, techTag: 0.55, footer: 0.88
-      };
-      if (els.heroName) els.heroName.style.fontSize = `${baseSize * sizes.heroName}px`;
-      if (els.heroTagline) els.heroTagline.style.fontSize = `${baseSize * sizes.heroTagline}px`;
-      els.sectionTitles.forEach(el => el.style.fontSize = `${baseSize * sizes.sectionTitle}px`);
-      els.projectTitles.forEach(el => el.style.fontSize = `${baseSize * sizes.projectTitle}px`);
-      if (els.aboutContent) els.aboutContent.style.fontSize = `${baseSize * sizes.aboutContent}px`;
-      els.projectDescriptions.forEach(el => el.style.fontSize = `${baseSize * sizes.projectDesc}px`);
-      els.contactLinks.forEach(el => el.style.fontSize = `${baseSize * sizes.contactLink}px`);
-      els.techTags.forEach(el => el.style.fontSize = `${baseSize * sizes.techTag}px`);
-      els.footers.forEach(el => el.style.fontSize = `${baseSize * sizes.footer}px`);
+      // Font sizes
+      if (els.heroName) els.heroName.style.fontSize = `${baseSize * 2.19}px`;
+      if (els.heroTagline) els.heroTagline.style.fontSize = `${baseSize * 0.94}px`;
+      els.sectionTitles.forEach(el => el.style.fontSize = `${baseSize * 1.56}px`);
+      els.projectTitles.forEach(el => el.style.fontSize = `${baseSize * 0.94}px`);
+      if (els.aboutContent) els.aboutContent.style.fontSize = `${baseSize * 0.7}px`;
+      els.projectDescriptions.forEach(el => el.style.fontSize = `${baseSize}px`);
+      els.contactLinks.forEach(el => el.style.fontSize = `${baseSize}px`);
+      els.techTags.forEach(el => el.style.fontSize = `${baseSize * 0.55}px`);
+      els.footers.forEach(el => el.style.fontSize = `${baseSize * 0.88}px`);
 
       // Text content updates
       const name = config.name || defaultConfig.name;
