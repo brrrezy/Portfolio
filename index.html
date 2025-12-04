@@ -6,13 +6,10 @@
   <title>Shivanshu Srivastava</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
   <script src="/_sdk/element_sdk.js"></script>
   <style>
-    body {
-      box-sizing: border-box;
-    }
-    
     * {
       margin: 0;
       padding: 0;
@@ -22,16 +19,14 @@
     html {
       scroll-behavior: smooth;
       height: 100%;
-      width: 100%;
     }
 
     body {
       height: 100%;
-      width: 100%;
-      font-family: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.7;
-      color: #cbd5e0;
-      background: #0a0e27;
+      color: #334155;
+      background: #ffffff;
       overflow-x: hidden;
       position: relative;
     }
@@ -44,37 +39,56 @@
       width: 100%;
       height: 100%;
       background: 
-        radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
-        linear-gradient(180deg, #0a0e27 0%, #111827 100%);
+        radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(30, 64, 175, 0.03) 0%, transparent 60%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
       z-index: 0;
       pointer-events: none;
+      animation: pulse 20s ease-in-out infinite;
     }
 
-    @keyframes gradientShift {
-      0%, 100% {
-        opacity: 0.3;
-        transform: translate(0, 0) scale(1);
-      }
-      50% {
-        opacity: 0.5;
-        transform: translate(20px, -20px) scale(1.05);
-      }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.95; }
     }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+      50% { transform: translate(15px, -15px) scale(1.03); opacity: 0.6; }
+    }
+
 
     .floating-orb {
       position: fixed;
       border-radius: 50%;
-      filter: blur(60px);
+      filter: blur(70px);
       pointer-events: none;
       z-index: 0;
-      animation: gradientShift 15s ease-in-out infinite;
+      animation: float 25s ease-in-out infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .orb-icon {
+      position: absolute;
+      opacity: 0.12;
+      width: 80px;
+      height: 80px;
+      filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.25));
+      animation: iconFloat 8s ease-in-out infinite;
+    }
+
+    @keyframes iconFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
     }
 
     .orb-1 {
       width: 400px;
       height: 400px;
-      background: rgba(99, 102, 241, 0.15);
+      background: rgba(59, 130, 246, 0.12);
       top: 10%;
       left: 10%;
       animation-delay: 0s;
@@ -83,19 +97,19 @@
     .orb-2 {
       width: 350px;
       height: 350px;
-      background: rgba(139, 92, 246, 0.12);
+      background: rgba(37, 99, 235, 0.1);
       bottom: 20%;
       right: 15%;
-      animation-delay: 5s;
+      animation-delay: 8s;
     }
 
     .orb-3 {
       width: 300px;
       height: 300px;
-      background: rgba(167, 139, 250, 0.1);
+      background: rgba(30, 64, 175, 0.08);
       top: 50%;
       left: 50%;
-      animation-delay: 10s;
+      animation-delay: 16s;
     }
 
     .portfolio-container {
@@ -113,7 +127,7 @@
       flex: 1;
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      animation: fadeInUp 0.5s ease forwards;
     }
 
     .page.active {
@@ -122,20 +136,17 @@
     }
 
     @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .parallax-layer {
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.2s ease-out;
     }
 
     .fade-in-section {
       opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     .fade-in-section.visible {
@@ -146,7 +157,7 @@
     .stagger-item {
       opacity: 0;
       transform: translateY(30px) scale(0.95);
-      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     .stagger-item.visible {
@@ -154,58 +165,65 @@
       transform: translateY(0) scale(1);
     }
 
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
+
+
+    .skill-category-block {
+      background: #f8fafc;
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
     }
 
-    @keyframes fadeInScale {
-      0% {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
+    .skill-category-block:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.1);
+      border-color: rgba(59, 130, 246, 0.3);
     }
 
-    @keyframes slideInLeft {
-      0% {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
+    .skill-category-title {
+      color: #3b82f6;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    @keyframes slideInRight {
-      0% {
-        opacity: 0;
-        transform: translateX(50px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
+    .skill-category-title svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .skill-tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .skill-tag {
+      background: #f1f5f9;
+      color: #475569;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s ease;
+    }
+
+    .skill-tag:hover {
+      background: #eff6ff;
+      color: #3b82f6;
+      border-color: #bfdbfe;
+      transform: translateY(-2px);
     }
 
     .float-animation {
       animation: float 6s ease-in-out infinite;
-    }
-
-    .slide-in-left {
-      animation: slideInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
-    .slide-in-right {
-      animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
 
     nav {
@@ -213,10 +231,12 @@
       top: 0;
       left: 0;
       right: 0;
-      background: rgba(10, 14, 39, 0.85);
-      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(24px);
       z-index: 1000;
-      border-bottom: 1px solid rgba(99, 102, 241, 0.15);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
     }
 
     .scroll-progress {
@@ -224,10 +244,10 @@
       top: 0;
       left: 0;
       height: 3px;
-      background: linear-gradient(90deg, #a78bfa 0%, #c4b5fd 100%);
+      background: linear-gradient(90deg, #3b82f6 0%, #2563eb 50%, #1e40af 100%);
       z-index: 1001;
-      transition: width 0.1s ease-out;
-      box-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+      transition: width 0.15s ease-out;
+      box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
     }
 
     .nav-content {
@@ -246,22 +266,42 @@
     }
 
     .nav-links a {
-      color: #9ca3af;
+      color: #64748b;
       text-decoration: none;
       font-weight: 500;
       font-size: 0.9rem;
-      transition: all 0.3s;
+      transition: all 0.3s ease;
       cursor: pointer;
       letter-spacing: 0.01em;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #2563eb);
+      transition: width 0.3s ease;
     }
 
     .nav-links a:hover {
-      color: #e5e7eb;
+      color: #3b82f6;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     .nav-links a.active {
-      color: #a78bfa;
+      color: #3b82f6;
       font-weight: 600;
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
     }
 
     .header-graphic {
@@ -281,19 +321,27 @@
     .hero-name {
       font-size: 3.5rem;
       font-weight: 700;
-      font-family: 'Space Grotesk', 'Inter', sans-serif;
-      color: #ffffff;
+      font-family: 'Poppins', 'Inter', sans-serif;
+      color: #1e293b;
       margin-bottom: 1rem;
       letter-spacing: -0.02em;
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero-tagline {
       font-size: 1.25rem;
       font-weight: 400;
-      color: #a78bfa;
+      color: #60a5fa;
       margin-bottom: 2rem;
       letter-spacing: 0.01em;
+      animation: fadeIn 1.2s ease-out 0.2s both;
     }
+
 
     .section {
       max-width: 1200px;
@@ -305,18 +353,34 @@
     .section-title {
       font-size: 2rem;
       font-weight: 700;
-      font-family: 'Space Grotesk', 'Inter', sans-serif;
-      color: #ffffff;
+      font-family: 'Poppins', 'Inter', sans-serif;
+      color: #1e293b;
       margin-bottom: 3rem;
       text-align: center;
       letter-spacing: -0.01em;
+      position: relative;
+      display: inline-block;
+      width: 100%;
     }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+      border-radius: 2px;
+    }
+
 
     .about-content {
       max-width: 800px;
       margin: 0 auto;
       font-size: 1.125rem;
-      color: #cbd5e0;
+      color: #475569;
       line-height: 1.8;
     }
 
@@ -327,13 +391,13 @@
     }
 
     .project-card {
-      background: rgba(17, 24, 39, 0.6);
+      background: #ffffff;
       border-radius: 16px;
       padding: 0;
-      border: 1px solid rgba(99, 102, 241, 0.2);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid #e2e8f0;
+      transition: all 0.4s ease;
       overflow: hidden;
-      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       position: relative;
     }
 
@@ -344,16 +408,16 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, transparent 100%);
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, transparent 100%);
       opacity: 0;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.5s ease;
       pointer-events: none;
     }
 
     .project-card:hover {
       transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(167, 139, 250, 0.2), 0 0 0 1px rgba(167, 139, 250, 0.1);
-      border-color: rgba(167, 139, 250, 0.5);
+      box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(59, 130, 246, 0.2);
+      border-color: #3b82f6;
     }
 
     .project-card:hover::before {
@@ -363,24 +427,17 @@
     .project-icon {
       width: 100%;
       height: 180px;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      transition: transform 0.4s ease;
+      overflow: hidden;
     }
 
-    .project-icon:nth-child(1) {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+    .project-card:hover .project-icon {
+      transform: scale(1.05);
     }
 
-    .project-card:nth-child(2) .project-icon {
-      background: linear-gradient(135deg, rgba(167, 139, 250, 0.15) 0%, rgba(196, 181, 253, 0.15) 100%);
-    }
-
-    .project-card:nth-child(3) .project-icon {
-      background: linear-gradient(135deg, rgba(129, 140, 248, 0.15) 0%, rgba(165, 180, 252, 0.15) 100%);
-    }
 
     .project-content {
       padding: 2rem;
@@ -389,15 +446,16 @@
     .project-title {
       font-size: 1.25rem;
       font-weight: 700;
-      color: #ffffff;
+      color: #1e293b;
       margin-bottom: 1rem;
-      font-family: 'Space Grotesk', 'Inter', sans-serif;
+      font-family: 'Poppins', 'Inter', sans-serif;
     }
 
     .project-description {
-      color: #9ca3af;
+      color: #64748b;
       margin-bottom: 1.5rem;
       line-height: 1.6;
+      font-size: 0.95rem;
     }
 
     .project-tech {
@@ -407,27 +465,34 @@
     }
 
     .tech-tag {
-      background: rgba(99, 102, 241, 0.15);
-      color: #c4b5fd;
+      background: #eff6ff;
+      color: #3b82f6;
       padding: 0.375rem 0.875rem;
       border-radius: 6px;
       font-size: 0.813rem;
       font-weight: 500;
-      border: 1px solid rgba(139, 92, 246, 0.2);
+      border: 1px solid #bfdbfe;
+      transition: all 0.3s ease;
+    }
+
+    .tech-tag:hover {
+      background: rgba(59, 130, 246, 0.18);
+      border-color: rgba(59, 130, 246, 0.35);
+      transform: translateY(-2px);
     }
 
     .highlight {
-      color: #a78bfa;
+      color: #3b82f6;
       font-weight: 600;
-      background: linear-gradient(135deg, rgba(167, 139, 250, 0.2) 0%, rgba(196, 181, 253, 0.1) 100%);
+      background: #eff6ff;
       padding: 0.125rem 0.5rem;
       border-radius: 4px;
-      border-left: 3px solid #a78bfa;
+      border-left: 3px solid #3b82f6;
     }
 
     .emphasis {
       font-weight: 600;
-      color: #e5e7eb;
+      color: #1e293b;
     }
 
     .contact-content {
@@ -449,19 +514,20 @@
       justify-content: center;
       gap: 1rem;
       padding: 1rem;
-      background: rgba(17, 24, 39, 0.6);
-      border: 1px solid rgba(99, 102, 241, 0.2);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
       border-radius: 12px;
-      color: #cbd5e0;
+      color: #475569;
       text-decoration: none;
       transition: all 0.3s;
-      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
 
     .contact-link:hover {
-      background: rgba(17, 24, 39, 0.8);
-      border-color: rgba(139, 92, 246, 0.4);
-      color: #e5e7eb;
+      background: #f8fafc;
+      border-color: #3b82f6;
+      color: #1e293b;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
     }
 
     .contact-icon {
@@ -471,8 +537,8 @@
 
     input:focus, textarea:focus {
       outline: none;
-      border-color: rgba(167, 139, 250, 0.6) !important;
-      box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.1);
+      border-color: #3b82f6 !important;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
     }
 
     .time-slot:has(input:checked) {
@@ -483,11 +549,10 @@
     footer {
       text-align: center;
       padding: 3rem 2rem;
-      color: #6b7280;
-      background: rgba(10, 14, 39, 0.6);
-      border-top: 1px solid rgba(99, 102, 241, 0.1);
+      color: #64748b;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
       margin-top: auto;
-      backdrop-filter: blur(10px);
     }
 
     .footer-graphic {
@@ -501,57 +566,152 @@
       }
     }
 
+    .cta-button-primary {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: #ffffff;
+      padding: 0.75rem 1.75rem;
+      border-radius: 10px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      border: none;
+      display: inline-block;
+    }
+
+    .cta-button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    }
+
+    .cta-button-secondary {
+      background: rgba(59, 130, 246, 0.1);
+      color: #3b82f6;
+      padding: 0.75rem 1.75rem;
+      border-radius: 10px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      display: inline-block;
+    }
+
+    .cta-button-secondary:hover {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(59, 130, 246, 0.35);
+      color: #2563eb;
+    }
+
+    .experience-card {
+      background: #f8fafc;
+      padding: 2rem;
+      border-radius: 16px;
+      border-left: 3px solid #3b82f6;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .experience-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .experience-company {
+      color: #3b82f6;
+      font-weight: 500;
+    }
+
+    .experience-meta {
+      text-align: right;
+    }
+
+    .experience-date {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .experience-list {
+      color: #475569;
+      line-height: 1.9;
+      margin-left: 1.5rem;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .experience-list-item {
+      margin-bottom: 0.75rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .experience-list-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .experience-list-item::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+    }
+
+    /* Utility Classes */
+    .text-center { text-align: center; }
+    .flex-center { display: flex; justify-content: center; align-items: center; }
+    .flex-wrap { display: flex; flex-wrap: wrap; }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.25) 50%, transparent 100%); }
+    .section-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .hero-badge { background: #eff6ff; color: #3b82f6; padding: 0.5rem 1.25rem; border-radius: 8px; font-size: 0.875rem; font-weight: 500; border: 1px solid #bfdbfe; }
+    .profile-img-wrapper { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); padding: 3px; }
+    .profile-img-inner { width: 100%; height: 100%; border-radius: 50%; background: #ffffff; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .nav-brand { font-weight: 600; color: #3b82f6; font-family: 'Poppins', sans-serif; }
+
     @media (max-width: 768px) {
-      .hero-name {
-        font-size: 2rem;
-      }
-
-      .hero-tagline {
-        font-size: 1rem;
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-      }
-
-      .nav-links a {
-        font-size: 0.85rem;
-      }
-
-      .nav-content {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .nav-links {
-        gap: 1rem;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .header-graphic {
-        padding: 2rem 1rem 1rem;
-      }
+      .hero-name { font-size: 2rem; }
+      .hero-tagline { font-size: 1rem; }
+      .section-title { font-size: 1.5rem; }
+      .nav-links a { font-size: 0.85rem; }
+      .nav-content { flex-direction: column; gap: 1rem; }
+      .nav-links { gap: 1rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .header-graphic { padding: 2rem 1rem 1rem; }
     }
   </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
  </head>
  <body>
   <div class="scroll-progress" id="scrollProgress"></div>
-  <div class="floating-orb orb-1"></div>
-  <div class="floating-orb orb-2"></div>
-  <div class="floating-orb orb-3"></div>
+  <div class="floating-orb orb-1">
+    <svg class="orb-icon" viewBox="0 0 24 24" fill="currentColor" style="color: #3b82f6;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+  </div>
+  <div class="floating-orb orb-2">
+    <svg class="orb-icon" viewBox="0 0 24 24" fill="currentColor" style="color: #60a5fa;"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+  </div>
+  <div class="floating-orb orb-3">
+    <svg class="orb-icon" viewBox="0 0 24 24" fill="currentColor" style="color: #3b82f6;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+  </div>
   <div class="portfolio-container">
    <nav>
     <div class="nav-content">
-     <div id="nav-name" style="font-weight: 600; color: #a78bfa; font-family: 'Space Grotesk', sans-serif;">
-       Shivanshu
-     </div>
+     <div id="nav-name" class="nav-brand">Shivanshu</div>
      <ul class="nav-links">
       <li><a onclick="navigateTo('home')" class="nav-link active" data-page="home">Home</a></li>
       <li><a onclick="navigateTo('about')" class="nav-link" data-page="about">About</a></li>
@@ -580,126 +740,186 @@
      </svg>
     </div>
     <section class="hero-section fade-in-section">
-     <div style="margin-bottom: 2rem; display: flex; justify-content: center;">
-      <div class="float-animation" style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(139, 92, 246, 0.3) 100%); padding: 3px;">
-        <div style="width: 100%; height: 100%; border-radius: 50%; background: #0a0e27; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+     <div class="flex-center" style="margin-bottom: 2rem;">
+      <div class="float-animation profile-img-wrapper">
+        <div class="profile-img-inner">
         <img src="pfp.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Profile Picture">
         </div>
       </div>
      </div>
-     <h1 class="hero-name" id="hero-name">Shivanshu Srivastav</h1>
-     <p class="hero-tagline" id="hero-tagline">Data Analyst | Machine Learning Enthusiast</p>
-     <p style="max-width: 750px; margin: 1.5rem auto; color: #cbd5e0; font-size: 1.05rem; line-height: 1.8; font-weight: 400;">A <span class="highlight">data analyst and ML practitioner</span> focused on building practical solutions with data. Currently pursuing <span class="emphasis">B.Tech in Computer Science &amp; Engineering</span> at Sandip University, Nashik, specializing in AI/ML technologies. <br><br>
-       I work with Python, machine learning libraries, and data visualization tools to build <span class="highlight">predictive models and extract insights from data</span>. My experience includes developing regression and clustering models, analyzing customer behavior, and creating data-driven recommendations during my internship at Brainovision Solutions.</p>
-     <div style="margin-top: 2rem; display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;"><span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.5rem 1.25rem; border-radius: 8px; font-size: 0.875rem; font-weight: 500; border: 1px solid rgba(139, 92, 246, 0.2);">Python</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.5rem 1.25rem; border-radius: 8px; font-size: 0.875rem; font-weight: 500; border: 1px solid rgba(139, 92, 246, 0.2);">Machine Learning</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.5rem 1.25rem; border-radius: 8px; font-size: 0.875rem; font-weight: 500; border: 1px solid rgba(139, 92, 246, 0.2);">Data Analysis</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.5rem 1.25rem; border-radius: 8px; font-size: 0.875rem; font-weight: 500; border: 1px solid rgba(139, 92, 246, 0.2);">SQL</span>
+     <h1 class="hero-name" id="hero-name">I'm Shivanshu Srivastava</h1>
+     <p class="hero-tagline" id="hero-tagline" style="font-size: 1.5rem; color: #3b82f6; margin-bottom: 1.5rem; font-weight: 500;">A Computer Science Student Specializing in Data Science &amp; Machine Learning</p>
+     <p style="max-width: 700px; margin: 0 auto; color: #64748b; font-size: 1.05rem; line-height: 1.8; font-weight: 400;">Currently pursuing B.Tech in Computer Science &amp; Engineering at Sandip University, Nashik. Building practical solutions with Python, ML libraries, and data visualization tools.</p>
+     <div class="flex-wrap" style="margin-top: 2rem; gap: 0.75rem; justify-content: center;"><span class="hero-badge">Python</span> <span class="hero-badge">Machine Learning</span> <span class="hero-badge">Data Analysis</span> <span class="hero-badge">SQL</span>
      </div>
-    </section><!-- Divider -->
-    <div style="max-width: 1200px; margin: 2rem auto; padding: 0 2rem;">
-     <div style="height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(167, 139, 250, 0.3) 50%, transparent 100%);"></div>
+    </section>    <!-- Divider -->
+    <div class="section-container" style="margin: 2rem auto;">
+     <div class="divider"></div>
     </div><!-- Experience & Education Section -->
     <section class="section fade-in-section">
-     <h2 style="font-size: 2rem; font-weight: 700; color: #ffffff; margin-bottom: 2.5rem; text-align: center; text-shadow: 0 0 30px rgba(138, 43, 226, 0.5);">Experience &amp; Education</h2>
+     <h2 class="section-title">Experience &amp; Education</h2>
      <div style="max-width: 900px; margin: 0 auto;"><!-- Experience -->
-      <div style="background: rgba(17, 24, 39, 0.6); padding: 2rem; border-radius: 16px; border-left: 3px solid #a78bfa; margin-bottom: 2rem; border: 1px solid rgba(99, 102, 241, 0.2); backdrop-filter: blur(10px);">
-       <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+      <div class="experience-card">
+       <div class="experience-header">
         <div>
-         <h3 style="font-size: 1.25rem; font-weight: 600; color: #f3f4f6; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif;">Machine Learning Intern</h3>
-         <p style="color: #a78bfa; font-weight: 500;">Brainovision Solutions Pvt. Ltd.</p>
+         <h3 class="experience-title">Machine Learning Intern</h3>
+         <p class="experience-company">Brainovision Solutions Pvt. Ltd.</p>
         </div>
-        <div style="text-align: right;">
-         <p style="color: #9ca3af; font-size: 0.9rem;">Jan 2024 - Mar 2024</p>
-         <p style="color: #9ca3af; font-size: 0.9rem;">Hyderabad, India</p>
+        <div class="experience-meta">
+         <p class="experience-date">Jan 2024 - Mar 2024</p>
+         <p class="experience-date">Hyderabad, India</p>
         </div>
        </div>
-       <ul style="color: #cbd5e0; line-height: 1.9; margin-left: 1.5rem; list-style: none; padding-left: 0;">
-        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #a78bfa;">▹</span> Built and deployed <span class="highlight">Linear Regression &amp; Random Forest models</span> from scratch, achieving <span class="emphasis">predictive accuracy of 85%+</span> on production datasets</li>
-        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #a78bfa;">▹</span> Performed comprehensive <span class="highlight">feature engineering</span> and data preprocessing on <span class="emphasis">1000+ customer records</span>, improving model performance by 23%</li>
-        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #a78bfa;">▹</span> Led <span class="highlight">customer segmentation</span> initiative using K-Means clustering, identifying <span class="emphasis">5 distinct customer profiles</span> that drove targeted marketing strategies</li>
-        <li style="padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #a78bfa;">▹</span> Collaborated with cross-functional teams to translate business requirements into <span class="emphasis">data-driven solutions</span></li>
+       <ul class="experience-list">
+        <li class="experience-list-item">Built and deployed <span class="highlight">Linear Regression &amp; Random Forest models</span> from scratch, achieving <span class="emphasis">predictive accuracy of 85%+</span> on production datasets</li>
+        <li class="experience-list-item">Performed comprehensive <span class="highlight">feature engineering</span> and data preprocessing on <span class="emphasis">1000+ customer records</span>, improving model performance by 23%</li>
+        <li class="experience-list-item">Led <span class="highlight">customer segmentation</span> initiative using K-Means clustering, identifying <span class="emphasis">5 distinct customer profiles</span> that drove targeted marketing strategies</li>
+        <li class="experience-list-item">Collaborated with cross-functional teams to translate business requirements into <span class="emphasis">data-driven solutions</span></li>
+       </ul>
+      </div>
+      <div class="experience-card">
+       <div class="experience-header">
+        <div>
+         <h3 class="experience-title">Freelance Graphic Designer &amp; Video Editor</h3>
+         <p class="experience-company">Self-Employed</p>
+        </div>
+        <div class="experience-meta">
+         <p class="experience-date">2020 - 2022</p>
+         <p class="experience-date">Remote</p>
+        </div>
+       </div>
+       <ul class="experience-list">
+        <li class="experience-list-item">Created <span class="highlight">brand identities and visual designs</span> for clients across various industries using <span class="emphasis">Adobe Creative Suite</span></li>
+        <li class="experience-list-item">Produced <span class="highlight">video content</span> including promotional videos, social media content, and motion graphics</li>
+        <li class="experience-list-item">Managed client relationships and delivered projects on time, building a <span class="emphasis">portfolio of 50+ successful projects</span></li>
        </ul>
       </div><!-- Education -->
-      <div style="background: rgba(17, 24, 39, 0.6); padding: 2rem; border-radius: 16px; border-left: 3px solid #a78bfa; border: 1px solid rgba(99, 102, 241, 0.2); backdrop-filter: blur(10px);">
-       <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+      <div class="experience-card">
+       <div class="experience-header">
         <div>
-         <h3 style="font-size: 1.25rem; font-weight: 600; color: #f3f4f6; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif;">B.Tech in Computer Science &amp; Engineering</h3>
-         <p style="color: #a78bfa; font-weight: 500;">Sandip University, Nashik</p>
+         <h3 class="experience-title">B.Tech in Computer Science &amp; Engineering</h3>
+         <p class="experience-company">Sandip University, Nashik</p>
         </div>
-        <div style="text-align: right;">
-         <p style="color: #9ca3af; font-size: 0.9rem;">2022 - 2026</p>
-         <p style="color: #9ca3af; font-size: 0.9rem;">Maharashtra, India</p>
+        <div class="experience-meta">
+         <p class="experience-date">2022 - 2026</p>
+         <p class="experience-date">Maharashtra, India</p>
         </div>
        </div>
-       <ul style="color: #cbd5e0; line-height: 1.9; margin-left: 1.5rem; list-style: none; padding-left: 0; margin-top: 1rem;">
-        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #a78bfa;">▹</span> Specializing in <span class="highlight">Machine Learning, Deep Learning, and Advanced Data Analytics</span></li>
-        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #a78bfa;">▹</span> Active member of <span class="emphasis">university tech communities</span>, organizing hackathons and technical workshops</li>
-        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #a78bfa;">▹</span> Led volunteering initiatives and event management for <span class="emphasis">500+ participant events</span></li>
-        <li style="padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #a78bfa;">▹</span> Relevant Coursework: <span class="emphasis">Data Structures, Algorithms, Database Systems, Statistical Methods, Neural Networks</span></li>
+       <ul class="experience-list">
+        <li class="experience-list-item">Specializing in <span class="highlight">Machine Learning, Deep Learning, and Advanced Data Analytics</span></li>
+        <li class="experience-list-item">Active member of <span class="emphasis">university tech communities</span>, organizing hackathons and technical workshops</li>
+        <li class="experience-list-item">Led volunteering initiatives and event management for <span class="emphasis">500+ participant events</span></li>
+        <li class="experience-list-item">Relevant Coursework: <span class="emphasis">Data Structures, Algorithms, Database Systems, Statistical Methods, Neural Networks</span></li>
        </ul>
       </div>
      </div>
-    </section><!-- Divider -->
-    <div style="max-width: 1200px; margin: 2rem auto; padding: 0 2rem;">
-     <div style="height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(167, 139, 250, 0.3) 50%, transparent 100%);"></div>
-    </div><!-- Technical Skills Section -->
+    </section>    <!-- Divider -->
+    <div class="section-container" style="margin: 2rem auto;">
+     <div class="divider"></div>
+    </div>    <!-- Technical Skills Section -->
     <section class="section fade-in-section">
-     <h2 style="font-size: 2rem; font-weight: 700; color: #ffffff; margin-bottom: 2.5rem; text-align: center; text-shadow: 0 0 30px rgba(138, 43, 226, 0.5);">Technical Skills</h2>
-     <div style="max-width: 900px; margin: 0 auto; display: grid; gap: 1.5rem;">
-      <div style="background: rgba(17, 24, 39, 0.6); padding: 1.5rem 2rem; border-radius: 16px; border: 1px solid rgba(99, 102, 241, 0.2); backdrop-filter: blur(10px);">
-       <h4 style="color: #a78bfa; font-weight: 600; margin-bottom: 1rem; font-size: 1rem; font-family: 'Space Grotesk', sans-serif;">Programming Languages</h4>
-       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;"><span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">Python</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">SQL</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">JavaScript</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">HTML/CSS</span>
+     <h2 style="font-size: 2rem; font-weight: 700; color: #1e293b; margin-bottom: 2.5rem; text-align: center;">Technical Skills</h2>
+     <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+      <div class="skill-category-block">
+       <h4 class="skill-category-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Programming Languages
+       </h4>
+       <div class="skill-tags-container">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">HTML/CSS</span>
        </div>
       </div>
-      <div style="background: rgba(17, 24, 39, 0.6); padding: 1.5rem 2rem; border-radius: 16px; border: 1px solid rgba(99, 102, 241, 0.2); backdrop-filter: blur(10px);">
-       <h4 style="color: #a78bfa; font-weight: 600; margin-bottom: 1rem; font-size: 1rem; font-family: 'Space Grotesk', sans-serif;">Data Science &amp; ML</h4>
-       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;"><span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">TensorFlow</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">Scikit-learn</span>
+      <div class="skill-category-block">
+       <h4 class="skill-category-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Data Science &amp; ML
+       </h4>
+       <div class="skill-tags-container">
+        <span class="skill-tag">TensorFlow</span>
+        <span class="skill-tag">Scikit-learn</span>
+        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">NumPy</span>
+        <span class="skill-tag">Matplotlib</span>
+        <span class="skill-tag">Seaborn</span>
        </div>
       </div>
-      <div style="background: rgba(17, 24, 39, 0.6); padding: 1.5rem 2rem; border-radius: 16px; border: 1px solid rgba(99, 102, 241, 0.2); backdrop-filter: blur(10px);">
-       <h4 style="color: #a78bfa; font-weight: 600; margin-bottom: 1rem; font-size: 1rem; font-family: 'Space Grotesk', sans-serif;">Data Analysis &amp; Visualization</h4>
-       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;"><span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">Pandas</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">NumPy</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">Matplotlib</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">Seaborn</span>
+      <div class="skill-category-block">
+       <h4 class="skill-category-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M3 3h18v18H3zM9 9h6v6H9z"/></svg>
+        Tools &amp; Technologies
+       </h4>
+       <div class="skill-tags-container">
+        <span class="skill-tag">Git &amp; GitHub</span>
+        <span class="skill-tag">VS Code</span>
+        <span class="skill-tag">Jupyter Notebook</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">Tableau</span>
        </div>
       </div>
-      <div style="background: rgba(17, 24, 39, 0.6); padding: 1.5rem 2rem; border-radius: 16px; border: 1px solid rgba(99, 102, 241, 0.2); backdrop-filter: blur(10px);">
-       <h4 style="color: #a78bfa; font-weight: 600; margin-bottom: 1rem; font-size: 1rem; font-family: 'Space Grotesk', sans-serif;">Tools &amp; Technologies</h4>
-       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;"><span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">Git &amp; GitHub</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">Jupyter Notebook</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">Google Colab</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">VS Code</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">MySQL</span> <span style="background: rgba(99, 102, 241, 0.15); color: #c4b5fd; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.875rem; border: 1px solid rgba(139, 92, 246, 0.2);">MongoDB</span>
+      <div class="skill-category-block">
+       <h4 class="skill-category-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Creative Suite
+       </h4>
+       <div class="skill-tags-container">
+        <span class="skill-tag">Adobe Photoshop</span>
+        <span class="skill-tag">Adobe Premiere Pro</span>
+        <span class="skill-tag">Adobe Illustrator</span>
        </div>
       </div>
      </div>
-    </section><!-- Divider -->
-    <div style="max-width: 1200px; margin: 2rem auto; padding: 0 2rem;">
-     <div style="height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(167, 139, 250, 0.3) 50%, transparent 100%);"></div>
+    </section>    <!-- Divider -->
+    <div class="section-container" style="margin: 2rem auto;">
+     <div class="divider"></div>
+    </div><!-- Soft Skills Section -->
+    <section class="section fade-in-section">
+     <h2 style="font-size: 2rem; font-weight: 700; color: #1e293b; margin-bottom: 2.5rem; text-align: center;">Soft Skills</h2>
+     <div style="max-width: 700px; margin: 0 auto; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <span style="background: #f1f5f9; color: #475569; padding: 0.6rem 1.25rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; border: 1px solid #e2e8f0;">Problem Solving</span>
+      <span style="background: #f1f5f9; color: #475569; padding: 0.6rem 1.25rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; border: 1px solid #e2e8f0;">Teamwork</span>
+      <span style="background: #f1f5f9; color: #475569; padding: 0.6rem 1.25rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; border: 1px solid #e2e8f0;">Communication</span>
+      <span style="background: #f1f5f9; color: #475569; padding: 0.6rem 1.25rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; border: 1px solid #e2e8f0;">Time Management</span>
+      <span style="background: #f1f5f9; color: #475569; padding: 0.6rem 1.25rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; border: 1px solid #e2e8f0;">Adaptability</span>
+     </div>
+    </section>    <!-- Divider -->
+    <div class="section-container" style="margin: 2rem auto;">
+     <div class="divider"></div>
     </div><!-- Certifications & Achievements -->
     <section class="section fade-in-section">
-     <h2 style="font-size: 2rem; font-weight: 700; color: #ffffff; margin-bottom: 2.5rem; text-align: center; text-shadow: 0 0 30px rgba(138, 43, 226, 0.5);">Certifications &amp; Achievements</h2>
+     <h2 style="font-size: 2rem; font-weight: 700; color: #1e293b; margin-bottom: 2.5rem; text-align: center;">Certifications &amp; Achievements</h2>
      <div style="max-width: 900px; margin: 0 auto; display: grid; gap: 1.5rem;">
-      <div style="background: rgba(99, 102, 241, 0.15); padding: 2rem; border-radius: 16px; color: white; border: 1px solid rgba(139, 92, 246, 0.3); backdrop-filter: blur(10px);">
+      <div style="background: #eff6ff; padding: 2rem; border-radius: 16px; border: 1px solid #bfdbfe; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-        <svg width="32" height="32" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="15" r="8" stroke="#c4b5fd" stroke-width="2" fill="none" /> <path d="M12 22 L12 32 L20 28 L28 32 L28 22" stroke="#c4b5fd" stroke-width="2" fill="none" />
+        <svg width="32" height="32" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="15" r="8" stroke="#60a5fa" stroke-width="2" fill="none" /> <path d="M12 22 L12 32 L20 28 L28 32 L28 22" stroke="#60a5fa" stroke-width="2" fill="none" />
         </svg>
         <div>
-         <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.25rem; font-family: 'Space Grotesk', sans-serif; color: #f3f4f6;">1st Place - Data Science Hackathon</h3>
-         <p style="opacity: 0.8; color: #d1d5db;">Brainovision Solutions | October 2023</p>
+         <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.25rem; font-family: 'Poppins', sans-serif; color: #1e293b;">1st Place - Data Science Hackathon</h3>
+         <p style="color: #64748b;">Brainovision Solutions | October 2023</p>
         </div>
        </div>
-       <p style="opacity: 0.9; line-height: 1.7; color: #e5e7eb;"><span class="emphasis">Competed against 50+ teams</span> and secured 1st place by defining clear problem statements and building robust ML models from the ground up. Performed <span class="highlight">advanced feature engineering</span> on 1000+ data entries, implemented and fine-tuned both <span class="emphasis">Linear Regression and Random Forest algorithms</span>, achieving <span class="emphasis">88% prediction accuracy</span> with optimized hyperparameters. Presented data-driven insights to a panel of industry experts.</p>
+       <p style="line-height: 1.7; color: #475569; font-size: 0.95rem;">Competed against 50+ teams and secured 1st place. Built robust ML models with advanced feature engineering, achieving 88% prediction accuracy with Linear Regression and Random Forest algorithms.</p>
       </div>
-      <div style="background: rgba(17, 24, 39, 0.6); padding: 2rem; border-radius: 16px; border: 1px solid rgba(99, 102, 241, 0.2); backdrop-filter: blur(10px);">
+      <div style="background: #f8fafc; padding: 2rem; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
        <div style="display: flex; align-items: center; gap: 1rem;">
-        <svg width="32" height="32" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="24" height="18" rx="2" stroke="#a78bfa" stroke-width="2" fill="none" /> <path d="M12 12 L12 8 C12 6.89543 12.8954 6 14 6 L26 6 C27.1046 6 28 6.89543 28 8 L28 12" stroke="#a78bfa" stroke-width="2" /> <circle cx="20" cy="21" r="3" fill="#a78bfa" />
+        <svg width="32" height="32" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="24" height="18" rx="2" stroke="#60a5fa" stroke-width="2" fill="none" /> <path d="M12 12 L12 8 C12 6.89543 12.8954 6 14 6 L26 6 C27.1046 6 28 6.89543 28 8 L28 12" stroke="#60a5fa" stroke-width="2" /> <circle cx="20" cy="21" r="3" fill="#60a5fa" />
         </svg>
         <div>
-         <h3 style="font-size: 1.125rem; font-weight: 600; color: #f3f4f6; margin-bottom: 0.25rem; font-family: 'Space Grotesk', sans-serif;">Data Analysis with Python</h3>
-         <p style="color: #9ca3af;">Certified | Jan 2024 - Mar 2024</p>
+         <h3 style="font-size: 1.125rem; font-weight: 600; color: #1e293b; margin-bottom: 0.25rem; font-family: 'Poppins', sans-serif;">Data Analysis with Python</h3>
+         <p style="color: #64748b;">Certified | Jan 2024 - Mar 2024</p>
         </div>
        </div>
       </div>
      </div>
     </section><!-- CTA Section -->
     <section class="section fade-in-section" style="text-align: center; padding-bottom: 4rem;">
-     <div style="background: rgba(99, 102, 241, 0.15); padding: 3rem 2rem; border-radius: 20px; max-width: 800px; margin: 0 auto; color: white; border: 1px solid rgba(139, 92, 246, 0.3); backdrop-filter: blur(10px);">
-      <h2 style="font-size: 1.75rem; font-weight: 600; margin-bottom: 1rem; font-family: 'Space Grotesk', sans-serif; color: #f3f4f6;">Let's Work Together</h2>
-      <p style="font-size: 1rem; color: #d1d5db; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">Open to opportunities in Data Analysis, Machine Learning, and AI. Let's connect and create something amazing!</p>
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;"><a onclick="navigateTo('contact')" style="background: #a78bfa; color: #0a0e27; padding: 0.75rem 1.75rem; border-radius: 10px; font-weight: 500; text-decoration: none; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#c4b5fd'" onmouseout="this.style.background='#a78bfa'">Get In Touch</a> <a onclick="navigateTo('projects')" style="background: rgba(255,255,255,0.1); color: #e5e7eb; padding: 0.75rem 1.75rem; border-radius: 10px; font-weight: 500; text-decoration: none; cursor: pointer; transition: all 0.2s; border: 1px solid rgba(167, 139, 250, 0.3);" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">View Projects</a>
+      <div style="background: #eff6ff; padding: 3rem 2rem; border-radius: 20px; max-width: 800px; margin: 0 auto; border: 1px solid #bfdbfe; box-shadow: 0 4px 16px rgba(59, 130, 246, 0.1);">
+      <h2 style="font-size: 1.75rem; font-weight: 600; margin-bottom: 1rem; font-family: 'Poppins', sans-serif; color: #1e293b;">Let's Work Together</h2>
+      <p style="font-size: 1rem; color: #475569; margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">Open to opportunities in Data Science, Software Engineering, Analytics, ML/AI, Web Development, and Full-Stack Development.</p>
+      <p style="font-size: 0.95rem; color: #3b82f6; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6; font-weight: 500;">🌍 Available for relocation worldwide • Remote or On-site</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;"><a onclick="navigateTo('contact')" class="cta-button-primary">Get In Touch</a> <a onclick="navigateTo('projects')" class="cta-button-secondary">View Projects</a>
       </div>
      </div>
     </section>
@@ -707,29 +927,26 @@
      <div class="footer-graphic">
       <svg viewbox="0 0 600 80" xmlns="http://www.w3.org/2000/svg"><defs>
         <lineargradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-         <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.3" />
-         <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.3" />
+         <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.25" />
+         <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0.25" />
         </lineargradient>
-       </defs> <path d="M0,40 Q150,10 300,40 T600,40" fill="none" stroke="url(#footerGrad)" stroke-width="2" /> <circle cx="150" cy="25" r="4" fill="#667eea" opacity="0.5" /> <circle cx="300" cy="40" r="4" fill="#764ba2" opacity="0.5" /> <circle cx="450" cy="25" r="4" fill="#667eea" opacity="0.5" />
+       </defs> <path d="M0,40 Q150,10 300,40 T600,40" fill="none" stroke="url(#footerGrad)" stroke-width="2" /> <circle cx="150" cy="25" r="4" fill="#3b82f6" opacity="0.4" /> <circle cx="300" cy="40" r="4" fill="#2563eb" opacity="0.4" /> <circle cx="450" cy="25" r="4" fill="#3b82f6" opacity="0.4" />
       </svg>
      </div>
-     <p>© 2024 <span id="footer-name">Shivanshu Srivastav</span>. All rights reserved.</p>
+     <p>© 2024 <span id="footer-name">Shivanshu Srivastava</span>. All rights reserved.</p>
+     <p style="font-size: 0.75rem; color: #6b7280; margin-top: 0.5rem; opacity: 0.6;">💡 Light mode: No | Light attracts bugs 🐛</p>
     </footer>
    </div><!-- About Page -->
    <div id="about" class="page">
     <section class="section fade-in-section">
      <h2 class="section-title" id="about-heading">About Me</h2>
      <div class="about-content">
-      <p id="about-text" style="margin-bottom: 2rem;">I'm a passionate computer science student with a strong interest in software development and problem-solving. I enjoy building efficient solutions and learning new technologies.</p>
-      <h3 style="font-size: 1.5rem; font-weight: 600; color: #f3f4f6; margin-bottom: 1.5rem; margin-top: 2rem;">Vision &amp; Aspirations</h3>
-      <p style="margin-bottom: 1.5rem;">My goal is to become a <span class="highlight">data science leader who bridges the gap between complex algorithms and real-world impact</span>. I envision myself working on projects that don't just analyze data, but fundamentally transform how businesses make decisions. Whether it's building recommendation systems that understand human behavior, predictive models that prevent problems before they occur, or AI solutions that democratize access to insights—I want to be at the forefront of innovation.</p>
-      <p style="margin-bottom: 1.5rem;">I'm particularly excited about the intersection of <span class="emphasis">AI, machine learning, and business intelligence</span>. The future I'm building toward involves mastering advanced techniques like deep learning, natural language processing, and reinforcement learning, while never losing sight of the business value these technologies create. I believe the next decade will be defined by organizations that can turn data into competitive advantage, and I want to be the person who makes that happen.</p>
-      <h3 style="font-size: 1.5rem; font-weight: 600; color: #f3f4f6; margin-bottom: 1.5rem; margin-top: 2.5rem;">What I'm Building Toward</h3>
-      <p style="margin-bottom: 1.5rem;">In the near future, I'm focused on <span class="highlight">deepening my expertise in machine learning engineering and MLOps</span>. I want to move beyond building models in notebooks to deploying scalable, production-grade AI systems that handle millions of predictions daily. Cloud platforms, containerization, model monitoring��these are the skills I'm aggressively developing because the best model is useless if it can't be deployed and maintained.</p>
-      <p style="margin-bottom: 1.5rem;">I'm also committed to <span class="emphasis">contributing to open-source projects and the data science community</span>. Whether it's writing technical blogs, creating tutorials, or collaborating on cutting-edge research, I believe in learning by teaching and growing by sharing. My goal is to build a portfolio of projects that not only showcase technical skills but also demonstrate my ability to solve meaningful problems.</p>
-      <h3 style="font-size: 1.5rem; font-weight: 600; color: #f3f4f6; margin-bottom: 1.5rem; margin-top: 2.5rem;">Let's Build the Future Together</h3>
-      <p>I'm seeking opportunities with <span class="emphasis">forward-thinking organizations</span> that value innovation, continuous learning, and data-driven decision making. Whether you're a startup disrupting an industry, an enterprise transforming through AI, or a research lab pushing the boundaries of what's possible—if you're building something that matters, I want to be part of it. Let's connect and create something extraordinary!</p>
-     </div>
+      <p id="about-text" style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8; color: #475569;">I'm a versatile <span class="highlight">Computer Science student</span> passionate about solving complex problems through technology. With experience spanning <span class="emphasis">data analysis, machine learning, software development, and creative design</span>, I bring a unique blend of technical and creative skills to every project.</p>
+      <p style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8; color: #475569;">My journey includes building <span class="highlight">predictive ML models</span> during my internship, creating <span class="emphasis">visual designs and video content</span> as a freelancer, and continuously exploring new technologies. I thrive in diverse environments and enjoy working across different domains—from data science and analytics to full-stack development and AI.</p>
+      <p style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8; color: #475569;">I'm open to opportunities in <span class="highlight">data science, software engineering, analytics, machine learning, AI, web development, and full-stack development</span>. Whether it's building intelligent systems, creating user-friendly applications, or extracting insights from data, I'm excited to contribute to meaningful projects that make an impact.</p>
+      <div style="background: #eff6ff; padding: 2rem; border-radius: 16px; border: 1px solid #bfdbfe; margin-top: 2.5rem; text-align: center;">
+       <h3 style="font-size: 1.25rem; font-weight: 600; color: #1e293b; margin-bottom: 1rem; font-family: 'Poppins', sans-serif;">🌍 Open to Relocate &amp; Work Worldwide</h3>
+       <p style="color: #475569; font-size: 1rem; line-height: 1.7;">I'm flexible and enthusiastic about opportunities anywhere in the world. Whether it's an on-site position, remote work, or a hybrid arrangement, I'm ready to bring my skills and passion to your team.</p>
     </section>
     <footer>
      <div class="footer-graphic">
@@ -741,7 +958,7 @@
        </defs> <path d="M0,40 Q150,10 300,40 T600,40" fill="none" stroke="url(#footerGrad2)" stroke-width="2" /> <circle cx="150" cy="25" r="4" fill="#667eea" opacity="0.5" /> <circle cx="300" cy="40" r="4" fill="#764ba2" opacity="0.5" /> <circle cx="450" cy="25" r="4" fill="#667eea" opacity="0.5" />
       </svg>
      </div>
-     <p>© 2024 <span id="footer-name-2">Shivanshu Srivastav</span>. All rights reserved.</p>
+     <p>© 2024 <span id="footer-name-2">Shivanshu Srivastava</span>. All rights reserved.</p>
     </footer>
    </div><!-- Projects Page -->
    <div id="projects" class="page">
@@ -749,49 +966,60 @@
      <h2 class="section-title" id="projects-heading">Projects</h2>
      <div class="projects-grid">
       <div class="project-card stagger-item">
-       <div class="project-icon">
-        <svg width="100" height="100" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="40" r="12" fill="white" opacity="0.3" /> <circle cx="50" cy="30" r="15" fill="white" opacity="0.5" /> <circle cx="70" cy="45" r="10" fill="white" opacity="0.4" /> <path d="M20 60 Q35 55 50 65 T80 60" stroke="white" stroke-width="2" fill="none" opacity="0.7" /> <rect x="25" y="70" width="50" height="3" rx="1.5" fill="white" opacity="0.6" /> <rect x="30" y="77" width="40" height="3" rx="1.5" fill="white" opacity="0.5" />
+       <div class="project-icon" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%); display: flex; align-items: center; justify-content: center;">
+        <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+         <path d="M40 100 L60 80 L80 90 L100 70 L120 85 L140 75 L160 60" stroke="#3b82f6" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
        </div>
        <div class="project-content">
         <h3 class="project-title">Predicting Temperature &amp; Humidity</h3>
-        <p class="project-description">Developed a <span class="highlight">real-time predictive analytics system</span> for SUN-HACK 2024 that analyzes complex temperature-humidity correlations. Implemented <span class="emphasis">time-series forecasting</span> with strong prediction accuracy. Created interactive Tableau dashboards for data visualization, processing hourly weather readings from multiple stations.</p>
+        <p class="project-description">Real-time predictive analytics system for SUN-HACK 2024. Implemented time-series forecasting with strong accuracy and created interactive Tableau dashboards.</p>
         <div class="project-tech"><span class="tech-tag">Python</span> <span class="tech-tag">Scikit-learn</span> <span class="tech-tag">Tableau</span>
         </div>
        </div>
       </div>
       <div class="project-card stagger-item">
-       <div class="project-icon">
-        <svg width="100" height="100" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="35" cy="40" r="18" fill="white" opacity="0.3" stroke="white" stroke-width="2" /> <circle cx="65" cy="40" r="18" fill="white" opacity="0.3" stroke="white" stroke-width="2" /> <circle cx="50" cy="65" r="18" fill="white" opacity="0.3" stroke="white" stroke-width="2" /> <circle cx="35" cy="40" r="5" fill="white" opacity="0.9" /> <circle cx="65" cy="40" r="5" fill="white" opacity="0.9" /> <circle cx="50" cy="65" r="5" fill="white" opacity="0.9" />
+       <div class="project-icon" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%); display: flex; align-items: center; justify-content: center;">
+        <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+         <circle cx="100" cy="75" r="40" fill="none" stroke="#2563eb" stroke-width="4"/>
+         <circle cx="100" cy="75" r="25" fill="none" stroke="#2563eb" stroke-width="4"/>
+         <circle cx="100" cy="75" r="10" fill="#2563eb"/>
         </svg>
        </div>
        <div class="project-content">
         <h3 class="project-title">Customer Segmentation</h3>
-        <p class="project-description">Architected a <span class="highlight">comprehensive customer segmentation solution</span> using K-Means and hierarchical clustering algorithms. Identified <span class="emphasis">distinct behavioral segments</span> with strong silhouette scores. Delivered actionable insights that influenced marketing budget allocation and improved campaign ROI significantly.</p>
+        <p class="project-description">Customer segmentation solution using K-Means and hierarchical clustering. Identified distinct behavioral segments with strong silhouette scores, delivering actionable marketing insights.</p>
         <div class="project-tech"><span class="tech-tag">Python</span> <span class="tech-tag">NumPy</span> <span class="tech-tag">Pandas</span>
         </div>
        </div>
       </div>
       <div class="project-card stagger-item">
-       <div class="project-icon">
-        <svg width="100" height="100" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="60" width="8" height="25" rx="2" fill="white" opacity="0.9" /> <rect x="27" y="45" width="8" height="40" rx="2" fill="white" opacity="0.9" /> <rect x="39" y="30" width="8" height="55" rx="2" fill="white" opacity="0.9" /> <rect x="51" y="50" width="8" height="35" rx="2" fill="white" opacity="0.9" /> <rect x="63" y="35" width="8" height="50" rx="2" fill="white" opacity="0.9" /> <rect x="75" y="55" width="8" height="30" rx="2" fill="white" opacity="0.9" />
+       <div class="project-icon" style="background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%); display: flex; align-items: center; justify-content: center;">
+        <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+         <rect x="50" y="90" width="25" height="30" fill="#1e40af" rx="3"/>
+         <rect x="85" y="70" width="25" height="50" fill="#1e40af" rx="3"/>
+         <rect x="120" y="50" width="25" height="70" fill="#1e40af" rx="3"/>
         </svg>
        </div>
        <div class="project-content">
         <h3 class="project-title">Sales Analysis Project</h3>
-        <p class="project-description">Performed <span class="highlight">comprehensive sales performance analysis</span> across <span class="emphasis">3 years of transaction data</span>. Utilized SQL for complex queries, Excel for pivot analysis, and Python for statistical modeling. Uncovered <span class="emphasis">seasonal patterns and product correlations</span> that led to inventory optimization recommendations.</p>
+        <p class="project-description">Comprehensive sales performance analysis across 3 years of transaction data. Used SQL, Excel, and Python to uncover seasonal patterns and product correlations for inventory optimization.</p>
         <div class="project-tech"><span class="tech-tag">Excel</span> <span class="tech-tag">SQL</span> <span class="tech-tag">Matplotlib</span>
         </div>
        </div>
       </div>
       <div class="project-card stagger-item">
-       <div class="project-icon">
-        <svg width="100" height="100" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="35" r="15" fill="white" opacity="0.3" stroke="white" stroke-width="2" /> <path d="M35 50 Q50 60 65 50" stroke="white" stroke-width="2" fill="none" opacity="0.8" /> <rect x="30" y="65" width="40" height="5" rx="2.5" fill="white" opacity="0.9" /> <rect x="35" y="73" width="30" height="3" rx="1.5" fill="white" opacity="0.7" /> <circle cx="42" cy="32" r="2" fill="white" opacity="0.9" /> <circle cx="58" cy="32" r="2" fill="white" opacity="0.9" />
+       <div class="project-icon" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%); display: flex; align-items: center; justify-content: center;">
+        <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+         <circle cx="100" cy="60" r="20" fill="none" stroke="#3b82f6" stroke-width="4"/>
+         <path d="M85 50 Q100 45 115 50" stroke="#3b82f6" stroke-width="3" fill="none"/>
+         <path d="M85 70 Q100 75 115 70" stroke="#3b82f6" stroke-width="3" fill="none"/>
+         <rect x="80" y="90" width="40" height="25" rx="3" fill="#3b82f6" opacity="0.3"/>
         </svg>
        </div>
        <div class="project-content">
         <h3 class="project-title">DietGPT - AI Fitness Guide</h3>
-        <p class="project-description">Built a <span class="highlight">personalized AI-powered fitness application</span> using Flask and deployed on Vercel. Integrated <span class="emphasis">OpenAI API</span> to generate customized diet plans and workout routines. Created an intuitive web interface with responsive design, helping users achieve their fitness goals through data-driven recommendations. <a href="https://getfitdiet.vercel.app" target="_blank" rel="noopener noreferrer" style="color: #a78bfa; text-decoration: underline;">Live Demo →</a></p>
+        <p class="project-description">AI-powered fitness application using Flask and OpenAI API. Generates personalized diet plans and workout routines. Deployed on Vercel with responsive design. <a href="https://getfitdiet.vercel.app" target="_blank" rel="noopener noreferrer" style="color: #3b82f6; text-decoration: underline; font-weight: 500;">Live Demo →</a></p>
         <div class="project-tech"><span class="tech-tag">Flask</span> <span class="tech-tag">Python</span> <span class="tech-tag">OpenAI API</span> <span class="tech-tag">Vercel</span>
         </div>
        </div>
@@ -808,20 +1036,20 @@
        </defs> <path d="M0,40 Q150,10 300,40 T600,40" fill="none" stroke="url(#footerGrad3)" stroke-width="2" /> <circle cx="150" cy="25" r="4" fill="#667eea" opacity="0.5" /> <circle cx="300" cy="40" r="4" fill="#764ba2" opacity="0.5" /> <circle cx="450" cy="25" r="4" fill="#667eea" opacity="0.5" />
       </svg>
      </div>
-     <p>© 2024 <span id="footer-name-3">Shivanshu Srivastav</span>. All rights reserved.</p>
+     <p>© 2024 <span id="footer-name-3">Shivanshu Srivastava</span>. All rights reserved.</p>
     </footer>
    </div><!-- Contact Page -->
    <div id="contact" class="page">
     <section class="section">
      <h2 class="section-title" id="contact-heading">Get In Touch</h2><!-- Contact Methods -->
      <div style="max-width: 900px; margin: 0 auto 4rem;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;"><a href="mailto:shivanshu.srivastava.work@gmail.com" class="contact-link" id="email-link" target="_blank" rel="noopener noreferrer">
-        <svg class="contact-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /> <polyline points="22,6 12,13 2,6"></polyline>
-        </svg><span id="contact-email" style="font-size: 0.85rem;">shivanshu.srivastava.work@gmail.com</span> </a> <a href="https://github.com/brrrezy" class="contact-link" id="github-link" target="_blank" rel="noopener noreferrer">
-        <svg class="contact-icon" viewbox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-        </svg><span id="contact-github" style="font-size: 0.85rem;">github.com/brrrezy</span> </a> <a href="https://www.linkedin.com/in/srivastavashivanshu/" class="contact-link" id="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <svg class="contact-icon" viewbox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-        </svg><span id="contact-linkedin" style="font-size: 0.85rem;">linkedin.com/srivastavashivanshu/</span> </a>
+      <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;"><a href="https://www.instagram.com/gotta.be.sane?igsh=eGRmNmkyaTZ6aHhz" class="contact-link" id="instagram-link" target="_blank" rel="noopener noreferrer" style="width: 60px; height: 60px; padding: 0; display: flex; align-items: center; justify-content: center;">
+        <svg class="contact-icon" viewbox="0 0 24 24" fill="currentColor" style="width: 32px; height: 32px;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162 0 3.403 2.759 6.162 6.162 6.162 3.403 0 6.162-2.759 6.162-6.162 0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4 2.209 0 4 1.791 4 4 0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+        </svg> </a> <a href="https://github.com/brrrezy" class="contact-link" id="github-link" target="_blank" rel="noopener noreferrer" style="width: 60px; height: 60px; padding: 0; display: flex; align-items: center; justify-content: center;">
+        <svg class="contact-icon" viewbox="0 0 24 24" fill="currentColor" style="width: 32px; height: 32px;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+        </svg> </a> <a href="https://www.linkedin.com/in/srivastavashivanshu/" class="contact-link" id="linkedin-link" target="_blank" rel="noopener noreferrer" style="width: 60px; height: 60px; padding: 0; display: flex; align-items: center; justify-content: center;">
+        <svg class="contact-icon" viewbox="0 0 24 24" fill="currentColor" style="width: 32px; height: 32px;"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+        </svg> </a>
       </div><!-- Download CV Button -->
       <div style="text-align: center; margin-top: 2rem;"><a href="Shivanshu_Srivastava_CV.pdf" id="cv-download-link" download="Shivanshu_Srivastava_CV.pdf" style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2rem; background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%); color: #ffffff; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 1rem; transition: all 0.3s; box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3); cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(167, 139, 250, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(167, 139, 250, 0.3)'">
         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /> <polyline points="7 10 12 15 17 10"></polyline> <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -830,24 +1058,25 @@
      </div><!-- Contact Form & Meeting Scheduler -->
      <div style="max-width: 1000px; margin: 0 auto;">
       <div class="contact-form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: start;"><!-- Contact Form -->
-       <div style="background: rgba(17, 24, 39, 0.6); padding: 2rem; border-radius: 16px; border: 1px solid rgba(99, 102, 241, 0.2); backdrop-filter: blur(10px); height: 100%; display: flex; flex-direction: column;">
-        <h3 style="font-size: 1.5rem; font-weight: 600; color: #f3f4f6; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif;">Send a Message</h3>
-        <p style="color: #9ca3af; margin-bottom: 2rem; font-size: 0.9rem;">Have a question? Drop me a message and I'll get back to you soon!</p>
+       <div style="background: #f8fafc; padding: 2rem; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column;">
+        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1e293b; margin-bottom: 0.5rem; font-family: 'Poppins', sans-serif;">Send a Message</h3>
+        <p style="color: #64748b; margin-bottom: 2rem; font-size: 0.9rem;">Have a question? Drop me a message and I'll get back to you soon!</p>
         <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.25rem;">
-         <div><label for="form-name" style="display: block; color: #cbd5e0; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 500;">Your Name</label> <input type="text" id="form-name" required style="width: 100%; padding: 0.75rem; background: rgba(10, 14, 39, 0.8); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 8px; color: #e5e7eb; font-size: 0.95rem; font-family: inherit; transition: all 0.3s;" placeholder="John Doe">
+         <div><label for="form-name" style="display: block; color: #475569; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 500;">Your Name</label> <input type="text" id="form-name" required style="width: 100%; padding: 0.75rem; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; color: #1e293b; font-size: 0.95rem; font-family: inherit; transition: all 0.3s;" placeholder="John Doe">
          </div>
-         <div><label for="form-email" style="display: block; color: #cbd5e0; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 500;">Your Email</label> <input type="email" id="form-email" required style="width: 100%; padding: 0.75rem; background: rgba(10, 14, 39, 0.8); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 8px; color: #e5e7eb; font-size: 0.95rem; font-family: inherit; transition: all 0.3s;" placeholder="john@example.com">
+         <div><label for="form-email" style="display: block; color: #475569; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 500;">Your Email</label> <input type="email" id="form-email" required style="width: 100%; padding: 0.75rem; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; color: #1e293b; font-size: 0.95rem; font-family: inherit; transition: all 0.3s;" placeholder="john@example.com">
          </div>
-         <div><label for="form-message" style="display: block; color: #cbd5e0; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 500;">Your Message</label> <textarea id="form-message" required rows="5" style="width: 100%; padding: 0.75rem; background: rgba(10, 14, 39, 0.8); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 8px; color: #e5e7eb; font-size: 0.95rem; font-family: inherit; resize: vertical; transition: all 0.3s;" placeholder="Tell me about your project or inquiry..."></textarea>
-         </div><button type="submit" id="submitBtn" style="background: #a78bfa; color: #0a0e27; padding: 0.875rem 1.5rem; border-radius: 8px; font-weight: 600; border: none; cursor: pointer; transition: all 0.3s; font-size: 0.95rem; font-family: inherit;"> Send Message </button>
+         <div><label for="form-message" style="display: block; color: #475569; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 500;">Your Message</label> <textarea id="form-message" required rows="5" style="width: 100%; padding: 0.75rem; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; color: #1e293b; font-size: 0.95rem; font-family: inherit; resize: vertical; transition: all 0.3s;" placeholder="Tell me about your project or inquiry..."></textarea>
+         </div><button type="submit" id="submitBtn" style="background: #3b82f6; color: #ffffff; padding: 0.875rem 1.5rem; border-radius: 8px; font-weight: 600; border: none; cursor: pointer; transition: all 0.3s; font-size: 0.95rem; font-family: inherit;"> Send Message </button>
          <div id="formMessage" style="display: none; padding: 1rem; border-radius: 8px; font-size: 0.9rem; text-align: center;"></div>
         </form>
+        <p style="color: #64748b; margin-top: 2rem; font-size: 0.9rem; text-align: center; line-height: 1.6;">If you want to contact me directly, reach me at <a href="mailto:shivanshu.srivastava.work@gmail.com" style="color: #3b82f6; text-decoration: none; font-weight: 500;">shivanshu.srivastava.work@gmail.com</a></p>
       </div><!-- Meeting Scheduler -->
-      <div style="background: rgba(17, 24, 39, 0.6); padding: 2rem; border-radius: 16px; border: 1px solid rgba(99, 102, 241, 0.2); backdrop-filter: blur(10px); height: 100%; display: flex; flex-direction: column;">
-       <h3 style="font-size: 1.5rem; font-weight: 600; color: #f3f4f6; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif;">Schedule a Meeting</h3>
-       <p style="color: #9ca3af; margin-bottom: 2rem; font-size: 0.9rem;">Pick a time that works for you and let's connect!</p>
+      <div style="background: #f8fafc; padding: 2rem; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column;">
+       <h3 style="font-size: 1.5rem; font-weight: 600; color: #1e293b; margin-bottom: 0.5rem; font-family: 'Poppins', sans-serif;">Schedule a Meeting</h3>
+       <p style="color: #64748b; margin-bottom: 2rem; font-size: 0.9rem;">Pick a time that works for you and let's connect!</p>
        <div style="flex: 1; min-height: 700px;">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/shivanshu-srivastava-work/30min?background_color=0a0e27&amp;text_color=f3f4f6&amp;primary_color=a78bfa" style="min-width:320px;height:100%;"></div>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/shivanshu-srivastava-work/30min?background_color=ffffff&amp;text_color=1e293b&amp;primary_color=3b82f6" style="min-width:320px;height:100%;"></div>
        </div>
        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
@@ -864,7 +1093,7 @@
        </defs> <path d="M0,40 Q150,10 300,40 T600,40" fill="none" stroke="url(#footerGrad4)" stroke-width="2" /> <circle cx="150" cy="25" r="4" fill="#667eea" opacity="0.5" /> <circle cx="300" cy="40" r="4" fill="#764ba2" opacity="0.5" /> <circle cx="450" cy="25" r="4" fill="#667eea" opacity="0.5" />
       </svg>
      </div>
-     <p>© 2024 <span id="footer-name-4">Shivanshu Srivastav</span>. All rights reserved.</p>
+     <p>© 2024 <span id="footer-name-4">Shivanshu Srivastava</span>. All rights reserved.</p>
     </footer>
    </div>
   </div>
@@ -903,175 +1132,191 @@
       TEMPLATE_ID: 'YOUR_TEMPLATE_ID' // From: Email Templates section
     };
 
-    // Initialize EmailJS when the page loads
-    document.addEventListener('DOMContentLoaded', () => {
-      // Initialize EmailJS with public key
+    // Initialize EmailJS and form handler
+    function initEmailForm() {
       if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
         emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
       }
   
       const contactForm = document.getElementById('contactForm');
+      if (!contactForm) return;
       
-      if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          const submitBtn = document.getElementById('submitBtn');
-          const formMessage = document.getElementById('formMessage');
-          const name = document.getElementById('form-name').value;
-          const email = document.getElementById('form-email').value;
-          const message = document.getElementById('form-message').value;
-          
-          // Check if EmailJS is configured
-          if (EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY' || 
-              EMAILJS_CONFIG.SERVICE_ID === 'YOUR_SERVICE_ID' || 
-              EMAILJS_CONFIG.TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
-            // Show configuration error
-            formMessage.style.display = 'block';
-            formMessage.style.background = 'rgba(239, 68, 68, 0.2)';
-            formMessage.style.color = '#ef4444';
-            formMessage.style.border = '1px solid rgba(239, 68, 68, 0.3)';
-            formMessage.innerHTML = '⚠️ Email service not configured. Please set up EmailJS in the code.';
-            return;
+      const submitBtn = document.getElementById('submitBtn');
+      const formMessage = document.getElementById('formMessage');
+      
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('form-name').value.trim();
+        const email = document.getElementById('form-email').value.trim();
+        const message = document.getElementById('form-message').value.trim();
+        
+        // Validation
+        if (!name || !email || !message) {
+          showFormMessage(formMessage, 'Please fill in all fields.', 'error');
+          return;
+        }
+        
+        // Check if EmailJS is configured
+        if (EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY' || 
+            EMAILJS_CONFIG.SERVICE_ID === 'YOUR_SERVICE_ID' || 
+            EMAILJS_CONFIG.TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
+          showFormMessage(formMessage, '⚠️ Email service not configured. Please set up EmailJS in the code.', 'error');
+          return;
+        }
+        
+        // Disable button and show loading state
+        setButtonState(submitBtn, true, 'Sending...');
+        formMessage.style.display = 'none';
+        
+        // Send email using EmailJS
+        emailjs.send(
+          EMAILJS_CONFIG.SERVICE_ID,
+          EMAILJS_CONFIG.TEMPLATE_ID,
+          {
+            from_name: name,
+            from_email: email,
+            message: message,
+            to_email: 'shivanshu.srivastava.work@gmail.com'
           }
-          
-          // Disable button and show loading state
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Sending...';
-          submitBtn.style.opacity = '0.6';
-          formMessage.style.display = 'none';
-          
-          // Send email using EmailJS
-          emailjs.send(
-            EMAILJS_CONFIG.SERVICE_ID,
-            EMAILJS_CONFIG.TEMPLATE_ID,
-            {
-              from_name: name,
-              from_email: email,
-              message: message,
-              to_email: 'shivanshu.srivastava.work@gmail.com' // Your email address
-            }
-          )
-          .then(function() {
-            // Success
-            formMessage.style.display = 'block';
-            formMessage.style.background = 'rgba(16, 185, 129, 0.2)';
-            formMessage.style.color = '#10b981';
-            formMessage.style.border = '1px solid rgba(16, 185, 129, 0.3)';
-            formMessage.innerHTML = '✓ Message sent successfully! I\'ll get back to you soon.';
-            
-            // Reset form
-            contactForm.reset();
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
-            submitBtn.style.opacity = '1';
-            
-            // Hide message after 8 seconds
-            setTimeout(() => {
-              formMessage.style.display = 'none';
-            }, 8000);
-          })
-          .catch(function(error) {
-            // Error
-            console.error('EmailJS Error:', error);
-            formMessage.style.display = 'block';
-            formMessage.style.background = 'rgba(239, 68, 68, 0.2)';
-            formMessage.style.color = '#ef4444';
-            formMessage.style.border = '1px solid rgba(239, 68, 68, 0.3)';
-            formMessage.innerHTML = '✗ Failed to send message. Please try again or email me directly.';
-            
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
-            submitBtn.style.opacity = '1';
-            
-            // Hide error message after 8 seconds
-            setTimeout(() => {
-              formMessage.style.display = 'none';
-            }, 8000);
-          });
+        )
+        .then(() => {
+          showFormMessage(formMessage, '✓ Message sent successfully! I\'ll get back to you soon.', 'success');
+          contactForm.reset();
+          setButtonState(submitBtn, false, 'Send Message');
+        })
+        .catch((error) => {
+          console.error('EmailJS Error:', error);
+          showFormMessage(formMessage, '✗ Failed to send message. Please try again or email me directly.', 'error');
+          setButtonState(submitBtn, false, 'Send Message');
         });
+      });
+    }
+
+    function showFormMessage(element, message, type) {
+      element.style.display = 'block';
+      if (type === 'success') {
+        element.style.background = 'rgba(16, 185, 129, 0.2)';
+        element.style.color = '#10b981';
+        element.style.border = '1px solid rgba(16, 185, 129, 0.3)';
+      } else {
+        element.style.background = 'rgba(239, 68, 68, 0.2)';
+        element.style.color = '#ef4444';
+        element.style.border = '1px solid rgba(239, 68, 68, 0.3)';
       }
-    });
+      element.innerHTML = message;
+      setTimeout(() => {
+        element.style.display = 'none';
+      }, 8000);
+    }
+
+    function setButtonState(button, disabled, text) {
+      button.disabled = disabled;
+      button.textContent = text;
+      button.style.opacity = disabled ? '0.6' : '1';
+    }
 
     function navigateTo(pageId) {
-      document.querySelectorAll('.page').forEach(page => {
-        page.classList.remove('active');
-      });
-      
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-      });
-      
-      document.getElementById(pageId).classList.add('active');
-      document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
-      
+      document.querySelectorAll('.page, .nav-link').forEach(el => el.classList.remove('active'));
+      document.getElementById(pageId)?.classList.add('active');
+      document.querySelector(`[data-page="${pageId}"]`)?.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      
-      setTimeout(() => {
-        initScrollAnimations();
-      }, 100);
+      setTimeout(initScrollAnimations, 100);
     }
 
+    let parallaxElements = null;
     function handleParallax() {
-      const scrolled = window.pageYOffset;
-      const parallaxElements = document.querySelectorAll('.parallax-layer');
-      
-      parallaxElements.forEach((element, index) => {
-        const speed = (index + 1) * 0.15;
-        element.style.transform = `translateY(${scrolled * speed}px)`;
+      if (!parallaxElements) parallaxElements = document.querySelectorAll('.parallax-layer');
+      if (!parallaxElements.length) return;
+      const scrolled = window.pageYOffset || document.documentElement.scrollTop;
+      parallaxElements.forEach((el, i) => {
+        el.style.transform = `translateY(${scrolled * (i + 1) * 0.15}px)`;
       });
     }
 
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    
     function initScrollAnimations() {
-      const fadeElements = document.querySelectorAll('.fade-in-section');
-      const staggerElements = document.querySelectorAll('.stagger-item');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      fadeElements.forEach(el => observer.observe(el));
-      
-      staggerElements.forEach((el, index) => {
-        el.style.transitionDelay = `${index * 0.15}s`;
-        observer.observe(el);
+      const elements = document.querySelectorAll('.fade-in-section:not(.visible), .stagger-item:not(.visible)');
+      elements.forEach((el, i) => {
+        if (el.classList.contains('stagger-item')) el.style.transitionDelay = `${i * 0.15}s`;
+        scrollObserver.observe(el);
       });
     }
 
+    const scrollProgressEl = document.getElementById('scrollProgress');
     function updateScrollProgress() {
-      const scrollProgress = document.getElementById('scrollProgress');
-      if (!scrollProgress) return;
-      
+      if (!scrollProgressEl) return;
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrollPercentage = (scrollTop / scrollHeight) * 100;
-      
-      scrollProgress.style.width = scrollPercentage + '%';
+      scrollProgressEl.style.width = Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100)) + '%';
     }
 
-    window.addEventListener('scroll', () => {
-      handleParallax();
-      updateScrollProgress();
-    });
+    let scrollRaf;
+    function handleScroll() {
+      if (!scrollRaf) {
+        scrollRaf = requestAnimationFrame(() => {
+          handleParallax();
+          updateScrollProgress();
+          scrollRaf = null;
+        });
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
-    document.addEventListener('DOMContentLoaded', () => {
+    function initApp() {
+      initEmailForm();
       initScrollAnimations();
       updateScrollProgress();
-    });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initApp);
+    } else {
+      initApp();
+    }
+
+    // Cache DOM elements for config changes
+    let cachedElements = null;
+    
+    function getCachedElements() {
+      if (!cachedElements) {
+        cachedElements = {
+          body: document.body,
+          portfolioContainer: document.querySelector('.portfolio-container'),
+          nav: document.querySelector('nav'),
+          footers: document.querySelectorAll('footer'),
+          projectCards: document.querySelectorAll('.project-card'),
+          contactLinks: document.querySelectorAll('.contact-link'),
+          heroName: document.querySelector('.hero-name'),
+          sectionTitles: document.querySelectorAll('.section-title'),
+          navName: document.getElementById('nav-name'),
+          projectTitles: document.querySelectorAll('.project-title'),
+          navLinks: document.querySelectorAll('.nav-links a'),
+          heroTagline: document.querySelector('.hero-tagline'),
+          aboutContent: document.querySelector('.about-content'),
+          projectDescriptions: document.querySelectorAll('.project-description'),
+          techTags: document.querySelectorAll('.tech-tag')
+        };
+      }
+      return cachedElements;
+    }
 
     async function onConfigChange(config) {
       const customFont = config.font_family || defaultConfig.font_family;
       const baseFontStack = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
       const baseSize = config.font_size || defaultConfig.font_size;
+      const els = getCachedElements();
 
-      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+      els.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
 
       const bgColor = config.background_color || defaultConfig.background_color;
       const surfaceColor = config.surface_color || defaultConfig.surface_color;
@@ -1079,100 +1324,69 @@
       const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
       const secondaryColor = config.secondary_action_color || defaultConfig.secondary_action_color;
 
-      document.body.style.backgroundColor = bgColor;
-      document.querySelector('.portfolio-container').style.backgroundColor = bgColor;
-      document.querySelector('nav').style.backgroundColor = `${bgColor}f2`;
-      document.querySelectorAll('footer').forEach(footer => {
-        footer.style.backgroundColor = surfaceColor;
+      els.body.style.backgroundColor = bgColor;
+      if (els.portfolioContainer) els.portfolioContainer.style.backgroundColor = bgColor;
+      if (els.nav) els.nav.style.backgroundColor = `${bgColor}f2`;
+      [...els.footers, ...els.projectCards, ...els.contactLinks].forEach(el => el.style.backgroundColor = surfaceColor);
+
+      [els.heroName, ...els.sectionTitles, els.navName, ...els.projectTitles].forEach(el => {
+        if (el) el.style.color = textColor;
       });
 
-      document.querySelectorAll('.project-card').forEach(card => {
-        card.style.backgroundColor = surfaceColor;
+      // Remove old event listeners by cloning nodes (cleaner approach)
+      els.navLinks.forEach(link => {
+        const isActive = link.classList.contains('active');
+        link.style.color = isActive ? textColor : primaryColor;
       });
 
-      document.querySelectorAll('.contact-link').forEach(link => {
-        link.style.backgroundColor = surfaceColor;
+      [els.heroTagline, els.aboutContent, ...els.projectDescriptions, ...els.contactLinks, ...els.footers].forEach(el => {
+        if (el) el.style.color = secondaryColor;
       });
+      els.techTags.forEach(el => el.style.color = primaryColor);
 
-      document.querySelectorAll('.hero-name, .section-title, #nav-name').forEach(el => {
-        el.style.color = textColor;
-      });
+      const sizes = {
+        heroName: 2.19, heroTagline: 0.94, sectionTitle: 1.56, projectTitle: 0.94,
+        aboutContent: 0.7, projectDesc: 1, contactLink: 1, techTag: 0.55, footer: 0.88
+      };
+      if (els.heroName) els.heroName.style.fontSize = `${baseSize * sizes.heroName}px`;
+      if (els.heroTagline) els.heroTagline.style.fontSize = `${baseSize * sizes.heroTagline}px`;
+      els.sectionTitles.forEach(el => el.style.fontSize = `${baseSize * sizes.sectionTitle}px`);
+      els.projectTitles.forEach(el => el.style.fontSize = `${baseSize * sizes.projectTitle}px`);
+      if (els.aboutContent) els.aboutContent.style.fontSize = `${baseSize * sizes.aboutContent}px`;
+      els.projectDescriptions.forEach(el => el.style.fontSize = `${baseSize * sizes.projectDesc}px`);
+      els.contactLinks.forEach(el => el.style.fontSize = `${baseSize * sizes.contactLink}px`);
+      els.techTags.forEach(el => el.style.fontSize = `${baseSize * sizes.techTag}px`);
+      els.footers.forEach(el => el.style.fontSize = `${baseSize * sizes.footer}px`);
 
-      document.querySelectorAll('.project-title').forEach(el => {
-        el.style.color = textColor;
-      });
-
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        if (!link.classList.contains('active')) {
-          link.style.color = primaryColor;
-        } else {
-          link.style.color = textColor;
-        }
-        link.addEventListener('mouseenter', function() {
-          this.style.color = textColor;
-        });
-        link.addEventListener('mouseleave', function() {
-          if (!this.classList.contains('active')) {
-            this.style.color = primaryColor;
-          }
-        });
-      });
-
-      document.querySelectorAll('.hero-tagline, .about-content, .project-description, .contact-link, footer').forEach(el => {
-        el.style.color = secondaryColor;
-      });
-
-      document.querySelectorAll('.tech-tag').forEach(tag => {
-        tag.style.color = primaryColor;
-      });
-
-      document.querySelector('.hero-name').style.fontSize = `${baseSize * 2.19}px`;
-      document.querySelector('.hero-tagline').style.fontSize = `${baseSize * 0.94}px`;
-      document.querySelectorAll('.section-title').forEach(el => {
-        el.style.fontSize = `${baseSize * 1.56}px`;
-      });
-      document.querySelectorAll('.project-title').forEach(el => {
-        el.style.fontSize = `${baseSize * 0.94}px`;
-      });
-      document.querySelector('.about-content').style.fontSize = `${baseSize * 0.7}px`;
-      document.querySelectorAll('.project-description, .contact-link').forEach(el => {
-        el.style.fontSize = `${baseSize}px`;
-      });
-      document.querySelectorAll('.tech-tag').forEach(el => {
-        el.style.fontSize = `${baseSize * 0.55}px`;
-      });
-      document.querySelectorAll('footer').forEach(el => {
-        el.style.fontSize = `${baseSize * 0.88}px`;
-      });
-
+      // Text content updates
       const name = config.name || defaultConfig.name;
       const tagline = config.tagline || defaultConfig.tagline;
       const aboutHeading = config.about_heading || defaultConfig.about_heading;
       const aboutText = config.about_text || defaultConfig.about_text;
       const projectsHeading = config.projects_heading || defaultConfig.projects_heading;
       const contactHeading = config.contact_heading || defaultConfig.contact_heading;
-      const email = config.contact_email || defaultConfig.contact_email;
       const github = config.contact_github || defaultConfig.contact_github;
       const linkedin = config.contact_linkedin || defaultConfig.contact_linkedin;
 
-      document.getElementById('nav-name').textContent = name;
-      document.getElementById('hero-name').textContent = name;
-      document.getElementById('hero-tagline').textContent = tagline;
-      document.getElementById('about-heading').textContent = aboutHeading;
-      document.getElementById('about-text').textContent = aboutText;
-      document.getElementById('projects-heading').textContent = projectsHeading;
-      document.getElementById('contact-heading').textContent = contactHeading;
-      document.getElementById('contact-email').textContent = email;
-      document.getElementById('contact-github').textContent = `github.com/${github}`;
-      document.getElementById('contact-linkedin').textContent = linkedin;
-      document.getElementById('footer-name').textContent = name;
-      document.getElementById('footer-name-2').textContent = name;
-      document.getElementById('footer-name-3').textContent = name;
-      document.getElementById('footer-name-4').textContent = name;
+      const textEls = {
+        'nav-name': name, 'hero-name': name, 'hero-tagline': tagline,
+        'about-heading': aboutHeading, 'about-text': aboutText,
+        'projects-heading': projectsHeading, 'contact-heading': contactHeading
+      };
+      Object.entries(textEls).forEach(([id, text]) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = text;
+      });
+      
+      ['footer-name', 'footer-name-2', 'footer-name-3', 'footer-name-4'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = name;
+      });
 
-      document.getElementById('email-link').href = `mailto:${email}`;
-      document.getElementById('github-link').href = `https://github.com/${github}`;
-      document.getElementById('linkedin-link').href = `https://${linkedin}`;
+      const githubLinkEl = document.getElementById('github-link');
+      const linkedinLinkEl = document.getElementById('linkedin-link');
+      if (githubLinkEl) githubLinkEl.href = `https://github.com/${github}`;
+      if (linkedinLinkEl) linkedinLinkEl.href = `https://${linkedin}`;
     }
 
     if (window.elementSdk) {
