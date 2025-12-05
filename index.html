@@ -255,6 +255,41 @@
       line-height: 1.8;
       text-align: left;
     }
+    .about-paragraph {
+      margin-bottom: 1.75rem;
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      line-height: 1.75;
+      color: #475569;
+    }
+    .about-panel {
+      background: #eff6ff;
+      padding: 1.75rem;
+      border-radius: 14px;
+      border: 1px solid #bfdbfe;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .about-panel h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    .about-panel p {
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+    @media (min-width: 1024px) {
+      .about-content { max-width: 720px; }
+      .about-paragraph {
+        font-size: 0.98rem;
+        line-height: 1.65;
+      }
+      .about-panel { padding: 1.5rem; }
+    }
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
@@ -585,7 +620,7 @@
       object-fit: cover;
       display: block;
     }
-    .nav-brand { font-weight: 600; color: #3b82f6; font-family: 'Poppins', sans-serif; }
+    /* nav-brand already defined above; duplicate removed */
     .soft-skill-tag {
       background: #f1f5f9;
       color: #475569;
@@ -1088,7 +1123,7 @@
         font-size: 0.8rem;
       }
       .experience-list-item {
-        font-size: 0.85rem;
+        font-size: 0.6rem;
         line-height: 1.65;
         margin-bottom: 0.5rem;
         padding-left: 1.125rem;
@@ -1437,43 +1472,20 @@
       </div>
      </div>
     </section>
-    <footer>
-     <div class="footer-graphic">
-      <svg viewbox="0 0 600 80" xmlns="http://www.w3.org/2000/svg"><defs>
-        <lineargradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-         <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.25" />
-         <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0.25" />
-        </lineargradient>
-       </defs> <path d="M0,40 Q150,10 300,40 T600,40" fill="none" stroke="url(#footerGrad)" stroke-width="2" /> <circle cx="150" cy="25" r="4" fill="#3b82f6" opacity="0.4" /> <circle cx="300" cy="40" r="4" fill="#2563eb" opacity="0.4" /> <circle cx="450" cy="25" r="4" fill="#3b82f6" opacity="0.4" />
-      </svg>
-     </div>
-     <p>© 2024 <span id="footer-name">Shivanshu Srivastava</span>. All rights reserved.</p>
-     <p style="font-size: 0.75rem; color: #6b7280; margin-top: 0.5rem; opacity: 0.6;">💡 Light mode: No | Light attracts bugs 🐛</p>
-    </footer>
    </div><!-- About Page -->
    <div id="about" class="page">
     <section class="section fade-in-section">
      <h2 class="section-title" id="about-heading">About Me</h2>
      <div class="about-content">
-      <p id="about-text" style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8; color: #475569;">I'm a versatile <span class="highlight">Computer Science student</span> passionate about solving complex problems through technology. With experience spanning <span class="emphasis">data analysis, machine learning, software development, and creative design</span>, I bring a unique blend of technical and creative skills to every project.</p>
-      <p style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8; color: #475569;">My journey includes building <span class="highlight">predictive ML models</span> during my internship, creating <span class="emphasis">visual designs and video content</span> as a freelancer, and continuously exploring new technologies. I thrive in diverse environments and enjoy working across different domains—from data science and analytics to full-stack development and AI.</p>
-      <p style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8; color: #475569;">I'm open to opportunities in <span class="highlight">data science, software engineering, analytics, machine learning, AI, web development, and full-stack development</span>. Whether it's building intelligent systems, creating user-friendly applications, or extracting insights from data, I'm excited to contribute to meaningful projects that make an impact.</p>
-      <div style="background: #eff6ff; padding: 2rem; border-radius: 16px; border: 1px solid #bfdbfe; margin-top: 2.5rem; text-align: center;">
-       <h3 style="font-size: 1.25rem; font-weight: 600; color: #1e293b; margin-bottom: 1rem; font-family: 'Poppins', sans-serif;">🌍 Open to Relocate &amp; Work Worldwide</h3>
-       <p style="color: #475569; font-size: 1rem; line-height: 1.7;">I'm flexible and enthusiastic about opportunities anywhere in the world. Whether it's an on-site position, remote work, or a hybrid arrangement, I'm ready to bring my skills and passion to your team.</p>
-    </section>
-    <footer>
-     <div class="footer-graphic">
-      <svg viewbox="0 0 600 80" xmlns="http://www.w3.org/2000/svg"><defs>
-        <lineargradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-         <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.25" />
-         <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0.25" />
-        </lineargradient>
-       </defs> <path d="M0,40 Q150,10 300,40 T600,40" fill="none" stroke="url(#footerGrad)" stroke-width="2" /> <circle cx="150" cy="25" r="4" fill="#3b82f6" opacity="0.4" /> <circle cx="300" cy="40" r="4" fill="#2563eb" opacity="0.4" /> <circle cx="450" cy="25" r="4" fill="#3b82f6" opacity="0.4" />
-      </svg>
+      <p id="about-text" class="about-paragraph">I'm a <span class="highlight">Computer Science student</span> who loves turning ideas into practical tools. I work across <span class="emphasis">data analysis, machine learning, software development, and creative design</span>, blending technical and visual thinking on every project.</p>
+      <p class="about-paragraph">Recent work includes building <span class="highlight">predictive ML models</span> during an internship, shipping <span class="emphasis">design and video content</span> as a freelancer, and experimenting with full-stack and AI projects to sharpen my toolkit.</p>
+      <p class="about-paragraph">I'm open to roles in <span class="highlight">data science, analytics, ML/AI, and web or full-stack development</span>. Whether it's smarter systems, cleaner UIs, or insights from data, I enjoy delivering results that make an impact.</p>
+      <div class="about-panel">
+       <h3>🌍 Open to Relocate &amp; Work Worldwide</h3>
+       <p>On-site, remote, or hybrid—I’m flexible and ready to join teams that value thoughtful builds and clear communication.</p>
+      </div>
      </div>
-     <p>© 2024 <span id="footer-name-2">Shivanshu Srivastava</span>. All rights reserved.</p>
-    </footer>
+    </section>
    </div><!-- Projects Page -->
    <div id="projects" class="page">
     <section class="section">
@@ -1540,18 +1552,6 @@
       </div>
      </div>
     </section>
-    <footer>
-     <div class="footer-graphic">
-      <svg viewbox="0 0 600 80" xmlns="http://www.w3.org/2000/svg"><defs>
-        <lineargradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-         <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.25" />
-         <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0.25" />
-        </lineargradient>
-       </defs> <path d="M0,40 Q150,10 300,40 T600,40" fill="none" stroke="url(#footerGrad)" stroke-width="2" /> <circle cx="150" cy="25" r="4" fill="#3b82f6" opacity="0.4" /> <circle cx="300" cy="40" r="4" fill="#2563eb" opacity="0.4" /> <circle cx="450" cy="25" r="4" fill="#3b82f6" opacity="0.4" />
-      </svg>
-     </div>
-     <p>© 2024 <span id="footer-name-3">Shivanshu Srivastava</span>. All rights reserved.</p>
-    </footer>
    </div><!-- Contact Page -->
    <div id="contact" class="page">
     <section class="section">
@@ -1580,9 +1580,9 @@
         <h3 style="font-size: 1.5rem; font-weight: 600; color: #1e293b; margin-bottom: 0.5rem; font-family: 'Poppins', sans-serif;">Send a Message</h3>
         <p style="color: #64748b; margin-bottom: 2rem; font-size: 0.9rem;">Have a question? Drop me a message and I'll get back to you soon!</p>
         <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.25rem;">
-         <div><label for="form-name" class="form-label">Your Name</label> <input type="text" id="form-name" required class="form-input" placeholder="John Doe">
+         <div><label for="form-name" class="form-label">Your Name</label> <input type="text" id="form-name" required class="form-input" placeholder="Your Name">
          </div>
-         <div><label for="form-email" class="form-label">Your Email</label> <input type="email" id="form-email" required class="form-input" placeholder="john@example.com">
+         <div><label for="form-email" class="form-label">Your Email</label> <input type="email" id="form-email" required class="form-input" placeholder="your-email@example.com">
          </div>
          <div><label for="form-message" class="form-label">Your Message</label> <textarea id="form-message" required rows="5" class="form-textarea" placeholder="Tell me about your project or inquiry..."></textarea>
          </div><button type="submit" id="submitBtn" class="form-button"> Send Message </button>
@@ -1601,19 +1601,20 @@
       </div>
      </div>
     </section>
-    <footer>
-     <div class="footer-graphic">
-      <svg viewbox="0 0 600 80" xmlns="http://www.w3.org/2000/svg"><defs>
-        <lineargradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-         <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.25" />
-         <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0.25" />
-        </lineargradient>
-       </defs> <path d="M0,40 Q150,10 300,40 T600,40" fill="none" stroke="url(#footerGrad)" stroke-width="2" /> <circle cx="150" cy="25" r="4" fill="#3b82f6" opacity="0.4" /> <circle cx="300" cy="40" r="4" fill="#2563eb" opacity="0.4" /> <circle cx="450" cy="25" r="4" fill="#3b82f6" opacity="0.4" />
-      </svg>
-     </div>
-     <p>© 2024 <span id="footer-name-4">Shivanshu Srivastava</span>. All rights reserved.</p>
-    </footer>
    </div>
+  <footer>
+   <div class="footer-graphic">
+    <svg viewbox="0 0 600 80" xmlns="http://www.w3.org/2000/svg"><defs>
+      <lineargradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+       <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.25" />
+       <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0.25" />
+      </lineargradient>
+     </defs> <path d="M0,40 Q150,10 300,40 T600,40" fill="none" stroke="url(#footerGrad)" stroke-width="2" /> <circle cx="150" cy="25" r="4" fill="#3b82f6" opacity="0.4" /> <circle cx="300" cy="40" r="4" fill="#2563eb" opacity="0.4" /> <circle cx="450" cy="25" r="4" fill="#3b82f6" opacity="0.4" />
+    </svg>
+   </div>
+   <p>© 2024 <span id="footer-name">Shivanshu Srivastava</span>. All rights reserved.</p>
+   <p style="font-size: 0.75rem; color: #6b7280; margin-top: 0.5rem; opacity: 0.6;">💡 Light mode: No | Light attracts bugs 🐛</p>
+  </footer>
   </div>
   <script>
     const defaultConfig = {
@@ -1635,15 +1636,6 @@
       contact_linkedin: 'linkedin.com/in/srivastavashivanshu/'
     };
 
-    // EmailJS Configuration
-    // ============================================
-    // SETUP INSTRUCTIONS:
-    // 1. Go to https://www.emailjs.com/ and sign up for a free account
-    // 2. Create an Email Service (Gmail, Outlook, etc.)
-    // 3. Create an Email Template
-    // 4. Get your Public Key from: https://dashboard.emailjs.com/admin/integration
-    // 5. Replace the values below with your credentials
-    // ============================================
     const EMAILJS_CONFIG = {
       PUBLIC_KEY: 'iPIlmCVeeRTkDz0rY', // From: https://dashboard.emailjs.com/admin/integration
       SERVICE_ID: 'service_isnlwer', // From: Email Services section
