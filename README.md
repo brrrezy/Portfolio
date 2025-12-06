@@ -1,95 +1,71 @@
-# Portfolio Website
+# 🌐 Personal Portfolio — Shivanshu Srivastava
 
-A modern, responsive portfolio website showcasing projects, experience, and skills.
+Welcome to the source code of my **personal portfolio website**, showcasing my work in **Data Analytics, Business Intelligence, and Fraud Analytics**.  
+This website includes my skills, projects, experience, and a downloadable copy of my latest CV.
 
-## 🚀 Deployment on Vercel
+🔗 **Live Website:**  
+👉 **https://portfolio-shivanshu-srivastava.vercel.app/**
 
-### Method 1: Deploy via Vercel Dashboard
-
-1. **Push your code to GitHub**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin <your-github-repo-url>
-   git push -u origin main
-   ```
-
-2. **Deploy on Vercel**
-   - Go to [vercel.com](https://vercel.com)
-   - Sign up or log in
-   - Click "New Project"
-   - Import your GitHub repository
-   - Vercel will auto-detect the settings
-   - Click "Deploy"
-
-### Method 2: Deploy via Vercel CLI
-
-1. **Install Vercel CLI**
-   ```bash
-   npm i -g vercel
-   ```
-
-2. **Login to Vercel**
-   ```bash
-   vercel login
-   ```
-
-3. **Deploy**
-   ```bash
-   vercel
-   ```
-   
-   For production deployment:
-   ```bash
-   vercel --prod
-   ```
+---
 
 ## 📁 Project Structure
 
-```
-Portfolio/
-├── index.html          # Main HTML file
-├── vercel.json        # Vercel configuration
-└── README.md          # This file
-```
+├── index.html # Main portfolio webpage
+├── pfp.jpg # Profile picture used on the site
+├── Shivanshu_Srivastava_CV.pdf # Latest downloadable CV
+├── CV_Update/ # Folder for CV revisions
+└── vercel.json # Vercel deployment configuration
 
-## ⚙️ Configuration
+---
 
-The `vercel.json` file is configured to:
-- Serve the static HTML file
-- Handle routing for single-page application
-- Set security headers
-- Configure caching for static assets
+## 🚀 Features
 
-## 🔧 Custom Domain
+- ✔️ Fully responsive and modern design  
+- ✔️ Direct **CV download** available  
+- ✔️ Clean sections: About, Skills, Experience, Projects, Contact  
+- ✔️ Hosted on **Vercel** with zero-config  
+- ✔️ Lightweight (pure HTML/CSS/JS)  
+- ✔️ Fast loading with optimized assets  
 
-After deployment, you can add a custom domain:
-1. Go to your project settings on Vercel
-2. Navigate to "Domains"
-3. Add your custom domain
-4. Follow the DNS configuration instructions
+---
 
-## 📝 Notes
+## 🔧 Deployment (Vercel)
 
-- The portfolio uses client-side routing, so all routes redirect to `index.html`
-- External resources (fonts, CDN scripts) will load from their respective sources
-- If you need to modify SDK scripts (`/_sdk/*`), ensure they're properly hosted
+This project is configured for smooth deployment on Vercel.
 
-## 🛠️ Local Development
+**Steps:**
+1. Push this repository to GitHub  
+2. Connect your GitHub repo to Vercel  
+3. Vercel auto-detects and deploys `index.html`  
 
-Simply open `index.html` in a web browser, or use a local server:
+You can customize deployment via `vercel.json`.
 
-```bash
-# Using Python
-python -m http.server 8000
+---
 
-# Using Node.js (http-server)
-npx http-server
+## 📄 Resume
 
-# Using PHP
-php -S localhost:8000
-```
+The repository includes:
 
-Then visit `http://localhost:8000` in your browser.
+- **Shivanshu_Srivastava_CV.pdf** — the latest version of my resume  
+- `CV_Update/` — folder for managing future CV updates  
 
+A download button is available directly on the website.
+
+---
+
+## 🌍 Live Preview
+
+View the deployed portfolio here:
+
+👉 **https://portfolio-shivanshu-srivastava.vercel.app/**
+
+---
+
+## 🤝 Contributing
+
+This is a personal project, but suggestions and improvements are welcome.  
+Feel free to open an Issue or submit a Pull Request.
+
+---
+
+Just tell me!
