@@ -1,0 +1,170 @@
+\input{utilities}
+
+% ---------- PERSONAL INFO ----------
+\def\firstname{Shivanshu}
+\def\lastname{Srivastava}
+\def\phone{+91 9198865041}
+\def\email{shivanshu.srivastava.work@gmail.com}
+\def\linkedin{https://www.linkedin.com/in/srivastavashivanshu/}
+\def\github{https://github.com/brrrezy}
+
+% Shorthand for bullet list blocks used inside entries
+\def\bullets{\resumeItemListStart}
+\def\bullet{\resumeItem}
+\def\bulletsEnd{\resumeItemListEnd}
+
+% ---------- SUMMARY ----------
+\def\summary{
+  \section{Summary}
+  Full-stack developer focused on AI-powered financial systems, quantitative trading infrastructure, and intelligent productivity platforms. Experienced in building scalable applications using Python, FastAPI, Next.js, MongoDB, Firebase, and modern AI tooling. Strong emphasis on automation, quantitative analytics, low-latency architectures, and high-fidelity product design.
+}
+
+% ---------- SKILLS ----------
+\def\skills{
+  \bullets
+    \bullet{Languages: Python, SQL, TypeScript, JavaScript, HTML/CSS}
+    \bullet{Frameworks \& Concepts: FastAPI, Next.js 15, Flask, LangChain, REST API, Microservices, Agile, Scrum}
+    \bullet{Libraries: Pandas, NumPy, TA-Lib, Scikit-learn, Recharts, SQLAlchemy}
+    \bullet{Tools \& Infrastructure: Docker, Kubernetes, CI/CD, DevOps, AWS, Azure, PostgreSQL, MongoDB, Vercel, GitHub Actions, JIRA}
+    \bullet{Core: Data Structures, Algorithms, Unit Testing, Debugging}
+  \bulletsEnd
+}
+
+% ---------- EDUCATION ----------
+\EducationEntry{College}
+  {2022}{Present}
+  {Sandip University}
+  {B.Tech}{Computer Science and Engineering}
+
+\EducationEntry{School}
+  {2018}{2021}
+  {GlenHill School}
+  {SSC \& HSC}{}
+
+% ---------- INTERNSHIPS ----------
+\InternshipEntry{BrainOVision}
+  {Jan 2024}{Mar 2024}
+  {Machine Learning Intern}
+  {Brain O Vision}
+  {Hyderabad, India}
+  {
+    \bullets
+      \bullet{Fine-tuned ML models improving prediction accuracy by 15\% and workflow efficiency by 20\%.}
+      \bullet{Executed feature engineering and clustering for behavioral data analysis.}
+      \bullet{Led customer segmentation initiative using K-Means clustering, identifying 5 distinct customer profiles.}
+    \bulletsEnd
+  }
+
+\InternshipEntry{CodeAlpha}
+  {Nov 2023}{Dec 2023}
+  {Python Programming Intern}
+  {Code Alpha}
+  {Lucknow, India}
+  {
+    \bullets
+      \bullet{Engineered Python automation scripts and clean-code software solutions, improving execution speed by 15\%.}
+      \bullet{Strengthened core algorithm implementation and real-world dev workflows.}
+      \bullet{Streamlined code structure ensuring better maintainability across multiple projects.}
+    \bulletsEnd
+  }
+
+% ---------- PROJECTS ----------
+
+\ProjectEntry{TradeFlow}
+  {}
+  {TradeFlow}
+  {\href{https://thetradeflow.vercel.app}{Live} $|$ Next.js 15, TypeScript, FastAPI, MongoDB, TailwindCSS}
+  {
+    \bullets
+      \bullet{Institutional-grade trading intelligence terminal engineered for high-performance traders.}
+      \bullet{Integrated risk management with algorithmic position sizing and stop-loss logic.}
+      \bullet{Real-time watchlists, AI-powered behavioral coaching, and interactive P\&L heatmaps.}
+    \bulletsEnd
+  }
+
+\ProjectEntry{NSEScreener}
+  {}
+  {NSE Swing Screener}
+  {\href{https://findswingstocks.up.railway.app/}{Live} $|$ Python, FastAPI, SQLite, Railway}
+  {
+    \bullets
+      \bullet{Institutional-grade quantitative stock screening terminal scanning 2,600+ stocks in < 60s.}
+      \bullet{Detects Minervini Stage 2, VCP, SFP, and IPO base patterns using Relative Strength ranking.}
+    \bulletsEnd
+  }
+
+\ProjectEntry{DietGPT}
+  {}
+  {DietGPT}
+  {\href{https://fixyourdiet.vercel.app}{Live} $|$ Flask, Firebase, LangChain, Groq, OpenRouter}
+  {
+    \bullets
+      \bullet{AI-powered nutrition and fitness coaching platform inspired by Apple Health design systems.}
+      \bullet{Smart meal logging with automatic calorie/macro estimation and personalized diet generation.}
+    \bulletsEnd
+  }
+
+\ProjectEntry{NSEBreakoutMonitor}
+  {}
+  {NSE Momentum Burst Scanner}
+  {\href{https://github.com/brrrezy/NSE-Breakout-Monitor}{Source} $|$ Python, GitHub Actions, Telegram API}
+  {
+    \bullets
+      \bullet{Orchestrated an automated breakout detection engine continuously scanning the Nifty 500 universe.}
+      \bullet{Multi-phase breakout filtering with EMA trend structure and programmatic Telegram alerts.}
+    \bulletsEnd
+  }
+
+\ProjectEntry{AeronexisAI}
+  {}
+  {Aeronexis AI}
+  {\href{https://aeronexis.vercel.app}{Live} $|$ Next.js 15, Tailwind CSS, Framer Motion, MongoDB Atlas}
+  {
+    \bullets
+      \bullet{High-performance, AI-native engineering design platform providing a seamless browser-based experience.}
+      \bullet{Architected a high-visibility landing page and robust waitlist acquisition system using MongoDB.}
+    \bulletsEnd
+  }
+
+\ProjectEntry{ShootersOfIndia}
+  {}
+  {Shooters of India}
+  {\href{https://shootersofindia.com}{Live} $|$ HTML/CSS, JavaScript}
+  {
+    \bullets
+      \bullet{Search-enhanced platform for shooting sports with integrated performance analytics.}
+      \bullet{Refined asset delivery and synthesized statistical tracking for athlete performance.}
+    \bulletsEnd
+  }
+
+\ProjectEntry{ClimaCast}
+  {}
+  {Clima-Cast}
+  {\href{https://github.com/brrrezy/Clima-Cast}{Source} $|$ Python, scikit-learn}
+  {
+    \bullets
+      \bullet{Modelled an MLPRegressor neural network to predict temperature and humidity from IoT sensor data.}
+      \bullet{Deployed automated data pipelines for CSV loading, model training, and performance visualization.}
+    \bulletsEnd
+  }
+
+% ---------- HACKATHONS ----------
+\ProjectEntry{HackAICTE}
+  {Oct 2023}
+  {Data Science Hackathon}
+  {AICTE}
+  {
+    \bullets
+      \bullet{Synthesized regression models and performed feature engineering on 1000+ records.}
+    \bulletsEnd
+  }
+
+\ProjectEntry{SunHacks}
+  {2024}
+  {HVAC Smart Control System}
+  {SUNHACKS 2024}
+  {
+    \bullets
+      \bullet{Designed a predictive model for HVAC energy optimization and climate control.}
+    \bulletsEnd
+  }

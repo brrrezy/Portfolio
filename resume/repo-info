@@ -1,0 +1,121 @@
+# TradeFlow
+Institutional-grade trading intelligence terminal engineered for high-performance traders. TradeFlow combines real-time analytics, AI-powered behavioral coaching, advanced journaling, and portfolio intelligence into a unified trading workspace.
+
+**Tech Stack:** Next.js 15, TypeScript, FastAPI, MongoDB, TailwindCSS
+
+### Key Features
+- Multi-environment trading workspace for intraday and swing traders
+- Real-time watchlists with browser alerts and sector categorization
+- AI trading coach for execution grading, edge discovery, and overtrading prevention
+- Interactive analytics including P&L heatmaps and sector exposure tracking
+- Secure JWT authentication with isolated per-user data architecture
+
+Link: thetradeflow.vercel.app
+
+---
+
+# NSE Momentum Burst Scanner
+Orchestrated an automated breakout detection engine for NSE stocks implementing the Momentum Burst swing trading strategy. Continuously scans the Nifty 500 universe and sends actionable Telegram alerts for high-probability breakout setups.
+
+**Tech Stack:** Python, GitHub Actions, Telegram Bot API
+
+### Core Capabilities
+- Multi-phase breakout detection using trend, consolidation, and volume expansion
+- Market regime filtering with EMA trend structure
+- Confluence scoring using RSI, MACD, ADX, stochastic momentum, and volume analytics
+- Automated watchlist generation and breakout alerts
+
+### Automation
+- Fully serverless deployment through GitHub Actions
+- Zero infrastructure cost
+- Integrated Telegram alerting system
+
+Link: github.com/brrrezy/NSE-Breakout-Monitor
+
+---
+
+# NSE Swing Screener
+Institutional-grade quantitative stock screening terminal for the Indian stock market. Designed to identify high-probability swing trading opportunities across the NSE universe.
+
+**Tech Stack:** Python, FastAPI, SQLite, Railway
+
+### Features
+- Scans 2,600+ NSE stocks in under 60 seconds
+- Relative Strength ranking engine with Minervini Stage 2 detection
+- Advanced setup detection including VCP, SFP, and IPO base patterns
+- Interactive dark-mode dashboard with real-time filtering
+
+### Infrastructure
+- Parallel stock-processing engine
+- SQLite caching layer reducing repeated network overhead
+- Railway-ready deployment pipeline
+
+Link: findswingstocks.up.railway.app
+
+---
+
+# DietGPT
+AI-powered nutrition and fitness coaching platform inspired by Apple Health design systems. Enables intelligent meal tracking, personalized diet planning, and conversational nutrition guidance.
+
+**Tech Stack:** Flask, Firebase, LangChain, Groq, OpenRouter
+
+### Features
+- AI nutritionist with persistent contextual memory
+- Smart meal logging with automatic calorie and macronutrient estimation
+- Personalized workout and diet generation
+- Firebase-authenticated health dashboard
+
+### AI Infrastructure
+- Multi-model LLM integration
+- Personalized recommendations using user context and historical food logs
+- Optimized for serverless Vercel deployment
+
+Link: fixyourdiet.vercel.app
+
+---
+
+# Aeronexis AI
+A high-performance, AI-native engineering design platform providing a seamless browser-based experience for engineering workflows, from text prompts to CAD and simulation.
+
+**Tech Stack:** Next.js 15, Tailwind CSS, Framer Motion, MongoDB Atlas
+Link: aeronexis.vercel.app
+
+---
+
+# Shooters of India
+Search-enhanced platform for shooting sports with integrated performance analytics and refined asset delivery for athlete performance tracking.
+
+**Tech Stack:** HTML/CSS, JavaScript
+Link: shootersofindia.com
+
+---
+
+# Clima-Cast
+Modelled an MLPRegressor neural network to predict temperature and humidity from IoT sensor data. Deployed automated data pipelines for CSV loading, model training, and performance visualization.
+
+**Tech Stack:** Python, scikit-learn
+Link: github.com/brrrezy/Clima-Cast
+
+---
+
+# Trade Vector
+Analysis System for parsing historical trading signals from Telegram. Structures Indian Stock Market (NIFTY 50, SENSEX) options data for pattern recognition and quantitative strategy analysis.
+
+**Tech Stack:** Python, Pandas
+Link: github.com/brrrezy/Trade-Vector
+
+---
+
+# NameShift
+Bulk file renamer tool with both a Clean Terminal Interface (CMD) and a graphical interface (GUI). Supports custom prefixes and automatic sequence numbering.
+
+**Tech Stack:** Python, Tkinter
+Link: github.com/brrrezy/NameShift
+
+---
+
+# Portfolio Summary
+Full-stack developer focused on AI-powered financial systems, quantitative trading infrastructure, and intelligent productivity platforms. Experienced in building scalable applications using Python, FastAPI, Next.js, MongoDB, Firebase, and modern AI tooling. Strong emphasis on automation, quantitative analytics, low-latency architectures, and high-fidelity product design.
+
+Portfolio: shivanshusr.vercel.app  
+GitHub: github.com/brrrezy

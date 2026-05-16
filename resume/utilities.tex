@@ -1,0 +1,23 @@
+\usepackage{forarray}
+
+% Usage: \EducationEntry{ID}{StartYear}{EndYear}{Institution}{Degree}{Field}
+\newcommand{\EducationEntry}[6]{
+  \DefineArrayVar{#1}{@}
+    {|}{Start|End|Institution|Degree|Field}
+    {|}{{#2}|{#3}|{#4}|{#5}|{#6}}
+}
+
+% Usage: \InternshipEntry{ID}{StartMonth}{EndMonth}{Role}{Company}{Location}{Bullets}
+\newcommand{\InternshipEntry}[7]{
+  \DefineArrayVar{#1}{@}
+    {|}{Start|End|Role|Company|Location|Bullets}
+    {|}{{#2}|{#3}|{#4}|{#5}|{#6}|{#7}}
+}
+
+% Usage: \ProjectEntry{ID}{Date}{Title}{Subtitle}{Bullets}
+% Subtitle can be a link e.g. \href{...}{Live}, or plain text like "Team Project", or empty {}
+\newcommand{\ProjectEntry}[5]{
+  \DefineArrayVar{#1}{@}
+    {|}{Date|Title|Subtitle|Bullets}
+    {|}{{#2}|{#3}|{#4}|{#5}}
+}

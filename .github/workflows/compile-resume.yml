@@ -1,0 +1,67 @@
+name: Compile and Update Resume
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'resume/**'
+  workflow_dispatch:
+
+jobs:
+  build-resume:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: resume/
+
+      - name: Update Portfolio PDF and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 1. Pull latest changes to ensure we are up to date
+          git pull --rebase origin master
+          
+          # 2. Move the newly compiled PDF to the target directory
+          if [ -f "resume/main.pdf" ]; then
+            mkdir -p public/assets/docs/
+            # This overwrites any existing PDF with the one we just compiled
+            mv resume/main.pdf public/assets/docs/Shivanshu_Srivastava_cv.pdf
+            echo "Resume compiled and moved to public/assets/docs/Shivanshu_Srivastava_cv.pdf."
+          else
+            echo "Error: main.pdf not found after compilation."
+            exit 1
+          fi
+          
+          # 3. Commit and push if there are changes
+          git add public/assets/docs/Shivanshu_Srivastava_cv.pdf
+          if git diff --staged --quiet; then
+            echo "No changes in the PDF. Skipping push."
+          else
+            git commit -m "chore: auto-compile resume from source"
+            git push origin master
+          fi
+          
+          # 4. Force update the latest-resume tag
+          git tag -f latest-resume
+          git push -f origin latest-resume
+
+      - name: Create or Update Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: "latest-resume"
+          name: "Latest Resume"
+          body: "Automatically compiled from LaTeX source on the latest commit to the resume folder."
+          artifacts: "public/assets/docs/Shivanshu_Srivastava_cv.pdf"
+          allowUpdates: true
+          replacesArtifacts: true
+
