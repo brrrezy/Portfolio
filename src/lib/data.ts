@@ -17,49 +17,56 @@ export const personalInfo = {
 export const projects = [
   {
     title: "TradeFlow",
-    description: "Institutional-grade trading intelligence terminal engineered for high-performance traders.",
+    description: "Trading intelligence terminal engineered for intraday and swing traders.",
     tags: ["Next.js 15", "TypeScript", "FastAPI", "MongoDB", "TailwindCSS"],
     link: "https://thetradeflow.vercel.app",
     image: "/tradeflow_mockup_1778786278461.png"
   },
   {
     title: "NSE Swing Screener",
-    description: "Institutional-grade quantitative stock screening terminal for the Indian stock market.",
+    description: "Quantitative stock screening terminal scanning 2,600+ stocks for setups.",
     tags: ["Python", "FastAPI", "SQLite", "Railway"],
     link: "https://findswingstocks.up.railway.app/",
     image: "/screener_mockup_1778786293976.png"
   },
   {
     title: "DietGPT",
-    description: "AI-powered nutrition and fitness coaching platform inspired by Apple Health design systems.",
+    description: "AI-powered nutrition and fitness coaching platform inspired by modern health design systems.",
     tags: ["Flask", "Firebase", "LangChain", "Groq"],
     link: "https://fixyourdiet.vercel.app",
     image: "/dietgpt_mockup_1778786312853.png"
   },
   {
     title: "NSE Momentum Burst Scanner",
-    description: "Orchestrated an automated breakout detection engine for NSE stocks implementing the Momentum Burst strategy.",
+    description: "Orchestrated an automated breakout detection engine for NSE stocks scanning the Nifty 500.",
     tags: ["Python", "GitHub Actions", "Telegram API"],
     link: "https://github.com/brrrezy/NSE-Breakout-Monitor",
     image: "/breakout_monitor_mockup_1778786330940.png"
   },
   {
     title: "Aeronexis AI",
-    description: "High-visibility engineering design platform architected for seamless browser-based CAD and simulation.",
+    description: "Engineering design platform providing a browser-based experience for engineering workflows.",
     tags: ["Next.js 15", "Tailwind CSS", "Framer Motion", "MongoDB"],
     link: "https://aeronexis.vercel.app",
     image: "/aeronexis_mockup_1778786407702.png"
   },
   {
     title: "Shooters of India",
-    description: "Search-enhanced platform for shooting sports with integrated performance analytics and refined asset delivery.",
+    description: "Search-optimized platform for shooting sports with integrated performance analytics.",
     tags: ["HTML/CSS", "JavaScript", "Analytics"],
     link: "https://shootersofindia.com",
     image: "/sales_intelligence_mockup_1778786384472.png"
   },
   {
+    title: "Third Eye",
+    description: "Autonomous Organizational Memory system capturing decisions, rationale, and context using RAG.",
+    tags: ["Python", "ChromaDB", "RAG", "AI"],
+    link: "https://github.com/brrrezy/Third-Eye",
+    image: "/ragmemory_mockup_1778786346410.png"
+  },
+  {
     title: "Clima-Cast",
-    description: "Modelled an MLPRegressor neural network to predict temperature and humidity from IoT sensor data.",
+    description: "Modelled an MLPRegressor neural network to predict temperature and humidity from IoT data.",
     tags: ["Python", "scikit-learn", "IoT", "Data Science"],
     link: "https://github.com/brrrezy/Clima-Cast",
     image: "/climacast_mockup_1778786421605.png"
@@ -175,7 +182,7 @@ export const services = [
   {
     id: "03",
     title: "Full-Stack Dev",
-    description: "Assembling end-to-end applications with FastAPI, Next.js, and scalable cloud architectures."
+    description: "Building end-to-end applications with FastAPI, Next.js, and scalable cloud architectures."
   },
   {
     id: "04",
