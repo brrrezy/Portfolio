@@ -88,7 +88,7 @@ export const experience = [
   {
     title: "Python Programming Intern",
     company: "Code Alpha",
-    date: "Nov 2023 - Dec 2023",
+    date: "Nov 2025",
     location: "Lucknow, India",
     description: [
       "Wrote asynchronous Python scripts to automate routine tasks and optimize data processing workflows.",
