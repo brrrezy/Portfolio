@@ -5,68 +5,68 @@ export const personalInfo = {
   location: "Varanasi, India - 221010",
   email: "shivanshu.srivastava.work@gmail.com",
   phone: "+91 9198865041",
-  tagline: "Specializing in RAG Pipelines, AI Agents, and Predictive Analytics.",
+  tagline: "Focusing on RAG Pipelines, AI Agents, and Predictive Analytics.",
   bio: "Thank you for visiting my portfolio! I'm truly grateful for your time and interest in my work. Let's connect and build something meaningful together. ❤️",
   socials: {
     github: "https://github.com/brrrezy",
     linkedin: "https://www.linkedin.com/in/srivastavashivanshu/",
-    twitter: "https://twitter.com/shivanshusr",
+    twitter: "https://twitter.com/ez_brrrezy",
   }
 };
 
 export const projects = [
   {
     title: "TradeFlow",
-    description: "Architected an institutional-grade trading terminal for 200+ traders, achieving sub-second market data updates and automated algorithmic risk management.",
+    description: "Built an interactive trade journaling dashboard featuring real-time market data updates and automated trade analysis.",
     tags: ["Next.js", "TypeScript", "FastAPI", "MongoDB", "TailwindCSS"],
     link: "https://thetradeflow.vercel.app",
     image: "/tradeflow_mockup_1778786278461.png"
   },
   {
     title: "NSE Swing Screener",
-    description: "Engineered a high-performance quantitative stock screening engine scanning 2,600+ NSE stocks in under 60 seconds using technical pattern detection.",
+    description: "Developed a quantitative stock screening tool that scans 500+ NSE stocks to detect technical patterns and swing trading setups.",
     tags: ["Python", "FastAPI", "SQLite", "Railway"],
     link: "https://findswingstocks.up.railway.app/",
     image: "/screener_mockup_1778786293976.png"
   },
   {
     title: "DietGPT",
-    description: "Developed an AI-driven fitness coach leveraging LangChain & Groq LLMs to deliver personalized meal plans and automated calorie estimation in under 2s.",
+    description: "Developed a fitness assistant leveraging LangChain and Groq LLMs to provide personalized meal plans and automated calorie estimations via a chatbot interface.",
     tags: ["Flask", "Firebase", "LangChain", "Groq"],
     link: "https://fixyourdiet.vercel.app",
     image: "/dietgpt_mockup_1778786312853.png"
   },
   {
     title: "NSE Momentum Burst Scanner",
-    description: "Orchestrated an automated, serverless breakout detection system scanning Nifty 500 stocks to deliver programmatic alerts to 150+ subscribers.",
+    description: "Created an automated script that scans Nifty 500 stocks for breakout signals and delivers daily alerts via a Telegram bot.",
     tags: ["Python", "GitHub Actions", "Telegram API"],
     link: "https://github.com/brrrezy/NSE-Breakout-Monitor",
     image: "/breakout_monitor_mockup_1778786330940.png"
   },
   {
     title: "Aeronexis AI",
-    description: "Created a browser-based collaborative simulation experience for engineering workflows, acquiring 1,200+ pre-launch users in 30 days.",
+    description: "Designed a responsive landing page and pre-registration waitlist system, storing user sign-up details in MongoDB.",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "MongoDB"],
     link: "https://aeronexis.vercel.app",
     image: "/aeronexis_mockup_1778786407702.png"
   },
   {
     title: "Shooters of India",
-    description: "Designed and deployed a search-optimized sports analytics platform, increasing organic search visibility by 40% with custom tracking systems.",
+    description: "Designed and deployed a search-optimized e-commerce website for sports shooting accessories, integrated with Google Analytics.",
     tags: ["HTML/CSS", "JavaScript", "Analytics"],
     link: "https://shootersofindia.com",
     image: "/sales_intelligence_mockup_1778786384472.png"
   },
   {
     title: "Autonomous Organizational Memory",
-    description: "Built an autonomous corporate knowledge memory system utilizing ChromaDB vector store and high-accuracy RAG pipelines for semantic Q&A.",
+    description: "Built a knowledge base prototype utilizing ChromaDB and RAG pipelines for semantic question-answering.",
     tags: ["Python", "ChromaDB", "RAG", "AI"],
     link: "https://github.com/brrrezy/Third-Eye",
     image: "/ragmemory_mockup_1778786346410.png"
   },
   {
     title: "Clima-Cast",
-    description: "Trained and optimized an MLPRegressor neural network model to predict temperature and humidity from IoT sensor telemetry with 94% accuracy.",
+    description: "Trained an MLPRegressor model to predict ambient temperature and humidity using historical weather datasets.",
     tags: ["Python", "scikit-learn", "IoT", "Data Science"],
     link: "https://github.com/brrrezy/Clima-Cast",
     image: "/climacast_mockup_1778786421605.png"
@@ -80,9 +80,9 @@ export const experience = [
     date: "Jan 2024 - Mar 2024",
     location: "Hyderabad, India",
     description: [
-      "Fine-tuned custom XGBoost and Random Forest models, boosting predictive accuracy by 18% and saving 12 hours of manual analysis weekly.",
-      "Engineered high-dimensional feature pipelines and behavioral clustering models on 50,000+ consumer records.",
-      "Spearheaded a customer segmentation initiative using K-Means, identifying 5 high-value cohorts to tailor marketing campaigns."
+      "Fine-tuned XGBoost and Random Forest models on consumer datasets to assist in improving predictive accuracy.",
+      "Developed feature engineering pipelines and behavioral clustering models to preprocess customer data.",
+      "Collaborated on a customer segmentation project using K-Means to identify distinct user cohorts for marketing analysis."
     ]
   },
   {
@@ -91,9 +91,9 @@ export const experience = [
     date: "Nov 2023 - Dec 2023",
     location: "Lucknow, India",
     description: [
-      "Engineered asynchronous Python automation scripts that reduced runtime by 22% across multi-threaded data pipelines.",
-      "Designed and implemented unit tests, improving overall test coverage by 30% and eliminating critical system bugs.",
-      "Refactored legacy codebases into modular, OOP architectures, reducing codebase complexity metrics by 15%."
+      "Wrote asynchronous Python scripts to automate routine tasks and optimize data processing workflows.",
+      "Implemented unit tests to increase codebase reliability and identify bugs during active development cycles.",
+      "Refactored older scripts into modular, object-oriented structures to improve code readability and maintenance."
     ]
   },
   {
@@ -102,9 +102,9 @@ export const experience = [
     date: "2022 - Present",
     location: "Nashik, Maharashtra",
     description: [
-      "Specializing in Machine Learning, Deep Learning, and Advanced Data Analytics.",
-      "Relevant Coursework: Data Structures, Algorithms, Database Systems, Neural Networks, System Architecture.",
-      "Maintaining a strong focus on RAG pipelines and Vector Databases in academic research and projects."
+      "Focusing on Machine Learning, Data Science, and Full-Stack Development.",
+      "Relevant Coursework: Data Structures, Algorithms, Database Management Systems, Neural Networks.",
+      "Exploring RAG pipelines and Vector Databases through personal projects and academic studies."
     ]
   }
 ];
@@ -132,7 +132,6 @@ export const skills = {
   ],
   tools: [
     { name: "Docker", level: 80, slug: "docker" },
-    { name: "Kubernetes", level: 70, slug: "kubernetes" },
     { name: "CI/CD", level: 85, slug: "githubactions" },
     { name: "AWS", level: 75, slug: "amazonaws" },
     { name: "PostgreSQL", level: 85, slug: "postgresql" },
@@ -173,21 +172,21 @@ export const services = [
   {
     id: "01",
     title: "Data Science",
-    description: "Predictive modeling and deep data analysis to extract actionable business insights from complex datasets."
+    description: "Applying predictive modeling and data analysis to uncover insights from structured datasets."
   },
   {
     id: "02",
     title: "AI Agents",
-    description: "Implementing RAG pipelines and autonomous AI agents using LangChain and large language models."
+    description: "Building customized RAG pipelines and assistant interfaces using LangChain and LLMs."
   },
   {
     id: "03",
     title: "Full-Stack Dev",
-    description: "Building end-to-end applications with FastAPI, Next.js, and scalable cloud architectures."
+    description: "Developing responsive web applications using Next.js, TailwindCSS, and FastAPI."
   },
   {
     id: "04",
     title: "Machine Learning",
-    description: "Training and deploying specialized ML models for high-accuracy predictions on production datasets."
+    description: "Training and deploying machine learning models for classification, regression, and forecasting."
   }
 ];
