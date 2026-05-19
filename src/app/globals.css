@@ -1401,6 +1401,12 @@ body {
   padding: 1.5rem;
 }
 
+@media (max-width: 767px) {
+  .modal-overlay {
+    padding: 0.75rem;
+  }
+}
+
 /* HUD Futuristic Terminal Modal */
 .hud-modal {
   background: #060606;
@@ -1408,10 +1414,19 @@ body {
   border-radius: 12px;
   width: 100%;
   max-width: 780px;
+  max-height: 85dvh;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.9), 0 0 15px rgba(255, 214, 0, 0.08);
   font-family: var(--font-label);
   position: relative;
+}
+
+@media (max-width: 767px) {
+  .hud-modal {
+    max-height: 88dvh;
+  }
 }
 
 /* scanline overlay effect for vintage cathode CRT display look */
@@ -1481,6 +1496,25 @@ body {
   grid-template-columns: 1.15fr 0.85fr;
   border-top: none;
   background: rgba(10, 10, 10, 0.4);
+  flex: 1;
+  overflow-y: auto;
+}
+
+.hud-grid::-webkit-scrollbar {
+  width: 5px;
+}
+
+.hud-grid::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.hud-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 214, 0, 0.2);
+  border-radius: 4px;
+}
+
+.hud-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 214, 0, 0.45);
 }
 
 @media (max-width: 767px) {
@@ -1494,6 +1528,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+}
+
+@media (max-width: 767px) {
+  .hud-col {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
 }
 
 .hud-col--left {
