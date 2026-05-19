@@ -63,6 +63,7 @@
   \begin{center}
     {\Huge \scshape \firstname\ \lastname} \\ \vspace{4pt}
     \small
+    \location \ \textbar\ 
     \phone \ \textbar\ 
     \href{mailto:\email}{\email} \ \textbar\ 
     \href{\linkedin}{LinkedIn} \ \textbar\ 
@@ -102,12 +103,14 @@
   \resumeSubheading
     {\csname College@Institution\endcsname}
     {\csname College@Start\endcsname\ --\ \csname College@End\endcsname}
-    {\csname College@Degree\endcsname, \csname College@Field\endcsname}{}
+    {\csname College@Degree\endcsname, \csname College@Field\endcsname}
+    {\csname College@Location\endcsname}
 
   \resumeSubheading
     {\csname School@Institution\endcsname}
     {\csname School@Start\endcsname\ --\ \csname School@End\endcsname}
-    {\csname School@Degree\endcsname}{}
+    {\csname School@Degree\endcsname}
+    {\csname School@Location\endcsname}
 \resumeSubHeadingListEnd
 
 \section{Technical Skills}
@@ -133,8 +136,9 @@
 
 \section{Hackathons}
 \resumeSubHeadingListStart
-  \renderProject{HackAICTE}
+  \renderProject{SunHacks2026}
   \renderProject{SunHacks}
+  \renderProject{HackAICTE}
 \resumeSubHeadingListEnd
 
 \end{document}

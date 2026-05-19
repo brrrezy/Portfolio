@@ -21,12 +21,12 @@ const oxanium = Oxanium({
 });
 
 export const metadata: Metadata = {
-  title: "Shivanshu Srivastava | Data Scientist & Full-Stack Developer",
+  title: "Shivanshu Srivastava | Data Enthusiast & Full-Stack Developer",
   description: "Official portfolio of Shivanshu Srivastava showcasing RAG pipelines, Data Science, and Full-Stack AI applications.",
   keywords: ["Data Science", "Machine Learning", "RAG Pipelines", "Full-Stack Development", "Python", "FastAPI", "Next.js"],
   authors: [{ name: "Shivanshu Srivastava" }],
   openGraph: {
-    title: "Shivanshu Srivastava | Data Scientist & Full-Stack Developer",
+    title: "Shivanshu Srivastava | Data Enthusiast & Full-Stack Developer",
     description: "Official portfolio of Shivanshu Srivastava showcasing RAG pipelines, Data Science, and Full-Stack AI applications.",
     url: "https://shivanshusr.vercel.app/",
     siteName: "Shivanshu Srivastava Portfolio",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shivanshu Srivastava | Data Scientist & Full-Stack Developer",
+    title: "Shivanshu Srivastava | Data Enthusiast & Full-Stack Developer",
     description: "Official portfolio of Shivanshu Srivastava showcasing RAG pipelines, Data Science, and Full-Stack AI applications.",
   },
 };

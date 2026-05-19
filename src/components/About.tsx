@@ -22,7 +22,7 @@ export function About() {
           <div className="flex flex-col gap-4">
             {[
               { label: "FREELANCE:", value: "AVAILABLE" },
-              { label: "LOCATION:", value: "MAHARASHTRA, IN" },
+              { label: "LOCATION:", value: "VARANASI, IN" },
               { label: "LANGUAGES:", value: "EN, HI" },
             ].map((item) => (
               <div key={item.label} className="flex justify-between items-center gap-6">

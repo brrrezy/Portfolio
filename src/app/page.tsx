@@ -8,7 +8,7 @@ import { Projects } from "@/components/Projects";
 import { Skills } from "@/components/Skills";
 import { Experience } from "@/components/Experience";
 import { Contact } from "@/components/Contact";
-import { User, Briefcase, Code2, GraduationCap, Mail, Sun } from "lucide-react";
+import { User, Briefcase, Code2, GraduationCap, Mail, Sun, HelpCircle } from "lucide-react";
 import { VaporwaveBackground } from "@/components/ui/VaporwaveBackground";
 
 const TABS = [
@@ -30,6 +30,7 @@ const HERO: Record<string, { sub: string; title: string }> = {
 export default function Home() {
   const [tab, setTab] = useState("about");
   const [ok, setOk] = useState(false);
+  const [showUpdates, setShowUpdates] = useState(false);
   useEffect(() => setOk(true), []);
 
   const h = HERO[tab] || HERO.about;
@@ -54,9 +55,14 @@ export default function Home() {
 
       <div className="grid-shell">
 
-        {/* P1: Logo / Home */}
-        <div className="pane p-logo" onClick={() => setTab("about")}>
-          <span>SR</span>
+        {/* P1: Logo / Home - Yellow Question Button */}
+        <div className="pane p-logo" onClick={() => setShowUpdates(true)}>
+          <button className="help-trigger-btn" title="Current Updates & Facts">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ display: "block" }}>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+          </button>
         </div>
 
         {/* P2: Mode Toggle */}
@@ -143,6 +149,135 @@ export default function Home() {
           );
         })}
       </nav>
+
+      {/* System Status & Updates Modal */}
+      <AnimatePresence>
+        {showUpdates && (
+          <div className="modal-overlay" onClick={() => setShowUpdates(false)}>
+            <motion.div 
+              className="hud-modal"
+              initial={{ opacity: 0, scale: 0.93, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.93, y: 15 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div className="hud-header">
+                <div className="hud-title-wrap">
+                  <span className="hud-glitch-dot" />
+                  <span className="hud-code">SYS.LOG // CORE_OPERATIONS</span>
+                </div>
+                <button className="hud-close" onClick={() => setShowUpdates(false)}>
+                  [ ESC_ ]
+                </button>
+              </div>
+
+              {/* Grid Body */}
+              <div className="hud-grid">
+                {/* Column 1: Active Operations */}
+                <div className="hud-col hud-col--left">
+                  <div className="hud-section">
+                    <div className="hud-section-header">
+                      <span className="hud-section-num">01/</span>
+                      <span className="hud-section-title">ACTIVE PIPELINES</span>
+                    </div>
+                    <div className="hud-activity">
+                      <div className="hud-activity-item">
+                        <div className="hud-activity-status">
+                          <span className="hud-pulse-dot" />
+                          <span className="hud-status-tag">DEV_RUNNING</span>
+                        </div>
+                        <p className="hud-activity-desc">
+                          Webhook-based compliance monitor tracking live regulatory changes from <strong>NSE, BSE, MCX, & RBI</strong>. (SunHacks '26)
+                        </p>
+                      </div>
+                      <div className="hud-activity-item">
+                        <div className="hud-activity-status">
+                          <span className="hud-pulse-dot" />
+                          <span className="hud-status-tag">STABLE</span>
+                        </div>
+                        <p className="hud-activity-desc">
+                          TradeFlow terminal integrations: automated position sizing, algorithmic risk controls, and GPT-4 trading execution grader.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="hud-section">
+                    <div className="hud-section-header">
+                      <span className="hud-section-num">02/</span>
+                      <span className="hud-section-title">TECHNOLOGY GRID</span>
+                    </div>
+                    <div className="hud-tech-tags">
+                      <span className="hud-tag">Python</span>
+                      <span className="hud-tag">Next.js</span>
+                      <span className="hud-tag">FastAPI</span>
+                      <span className="hud-tag">ChromaDB</span>
+                      <span className="hud-tag">LangChain</span>
+                      <span className="hud-tag">Docker</span>
+                      <span className="hud-tag">AWS</span>
+                      <span className="hud-tag">PostgreSQL</span>
+                      <span className="hud-tag">MongoDB</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Column 2: Operator Metadata */}
+                <div className="hud-col hud-col--right">
+                  <div className="hud-section">
+                    <div className="hud-section-header">
+                      <span className="hud-section-num">03/</span>
+                      <span className="hud-section-title">OPERATOR LOG</span>
+                    </div>
+                    <div className="hud-log-lines">
+                      <div className="hud-log-line">
+                        <span className="hud-log-label">LOC:</span>
+                        <span className="hud-log-value">Varanasi, UP, IN</span>
+                      </div>
+                      <div className="hud-log-line">
+                        <span className="hud-log-label">STATUS:</span>
+                        <span className="hud-log-value text-accent">FREELANCE / CONTRACT</span>
+                      </div>
+                      <div className="hud-log-line">
+                        <span className="hud-log-label">AWS AUTH:</span>
+                        <span className="hud-log-value">CERTIFIED DEVELOPER</span>
+                      </div>
+                      <div className="hud-log-line">
+                        <span className="hud-log-label">AGILE:</span>
+                        <span className="hud-log-value">SCRUM MASTER (CSM)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="hud-section">
+                    <div className="hud-section-header">
+                      <span className="hud-section-num">04/</span>
+                      <span className="hud-section-title">ACHIEVEMENT METRICS</span>
+                    </div>
+                    <div className="hud-metrics">
+                      <div className="hud-metric-row">
+                        <span className="hud-metric-label">AICTE HACKATHON</span>
+                        <span className="hud-metric-badge">WINNER</span>
+                      </div>
+                      <div className="hud-metric-row">
+                        <span className="hud-metric-label">SUNHACKS 24 / 26</span>
+                        <span className="hud-metric-badge badge-accent">TOP 10</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Visual Terminal Bar */}
+                  <div className="hud-terminal-bar">
+                    <div className="hud-terminal-text">&gt; SH_SRV_ONLINE // SECURE</div>
+                    <div className="hud-terminal-cursor" />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

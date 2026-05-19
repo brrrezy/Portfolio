@@ -1,10 +1,10 @@
 \usepackage{forarray}
 
-% Usage: \EducationEntry{ID}{StartYear}{EndYear}{Institution}{Degree}{Field}
-\newcommand{\EducationEntry}[6]{
+% Usage: \EducationEntry{ID}{StartYear}{EndYear}{Institution}{Degree}{Field}{Location}
+\newcommand{\EducationEntry}[7]{
   \DefineArrayVar{#1}{@}
-    {|}{Start|End|Institution|Degree|Field}
-    {|}{{#2}|{#3}|{#4}|{#5}|{#6}}
+    {|}{Start|End|Institution|Degree|Field|Location}
+    {|}{{#2}|{#3}|{#4}|{#5}|{#6}|{#7}}
 }
 
 % Usage: \InternshipEntry{ID}{StartMonth}{EndMonth}{Role}{Company}{Location}{Bullets}
