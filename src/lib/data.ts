@@ -1,11 +1,11 @@
 export const personalInfo = {
   name: "Shivanshu Srivastava",
-  role: "Data Enthusiast & Full-Stack Developer",
+  role: "Python Developer & Backend Engineer",
   education: "Computer Science Student @ Sandip University",
   location: "Varanasi, India - 221010",
   email: "shivanshu.srivastava.work@gmail.com",
   phone: "+91 9198865041",
-  tagline: "Focusing on RAG Pipelines, AI Agents, and Predictive Analytics.",
+  tagline: "Focusing on REST APIs, Automated Scripting, and Intelligent RAG Pipelines.",
   bio: "Thank you for visiting my portfolio! I'm truly grateful for your time and interest in my work. Let's connect and build something meaningful together. ❤️",
   socials: {
     github: "https://github.com/brrrezy",
@@ -17,31 +17,45 @@ export const personalInfo = {
 export const projects = [
   {
     title: "TradeFlow",
-    description: "Built an interactive trade journaling dashboard featuring real-time market data updates and automated trade analysis.",
-    tags: ["Next.js", "TypeScript", "FastAPI", "MongoDB", "TailwindCSS"],
+    description: "Built an institutional-grade trading intelligence terminal. Engineered the FastAPI backend for real-time market data updates, automated trade ingestion, and risk-calculation pipelines.",
+    tags: ["Python", "FastAPI", "MongoDB", "LangChain", "Next.js"],
     link: "https://thetradeflow.vercel.app",
     image: "/tradeflow_mockup_1778786278461.png"
   },
   {
     title: "NSE Swing Screener",
-    description: "Developed a quantitative stock screening tool that scans 500+ NSE stocks to detect technical patterns and swing trading setups.",
-    tags: ["Python", "FastAPI", "SQLite", "Railway"],
+    description: "Developed a quantitative stock screening tool scanning 500+ NSE stocks. Built a custom parallel processing engine to fetch and analyze historical data, caching results in SQLite.",
+    tags: ["Python", "FastAPI", "SQLite", "BeautifulSoup", "APScheduler"],
     link: "https://findswingstocks.up.railway.app/",
     image: "/screener_mockup_1778786293976.png"
   },
   {
     title: "DietGPT",
-    description: "Developed a fitness assistant leveraging LangChain and Groq LLMs to provide personalized meal plans and automated calorie estimations via a chatbot interface.",
-    tags: ["Flask", "Firebase", "LangChain", "Groq"],
+    description: "Developed an AI fitness assistant utilizing Flask and LangChain. Implemented robust pipelines for meal parsing, calorie estimation, and conversational diet recommendations via LLM APIs.",
+    tags: ["Python", "Flask", "LangChain", "Firebase", "Groq"],
     link: "https://fixyourdiet.vercel.app",
     image: "/dietgpt_mockup_1778786312853.png"
   },
   {
     title: "NSE Momentum Burst Scanner",
-    description: "Created an automated script that scans Nifty 500 stocks for breakout signals and delivers daily alerts via a Telegram bot.",
-    tags: ["Python", "GitHub Actions", "Telegram API"],
+    description: "Created an automated stock scanner script executing daily on GitHub Actions. Scrapes Nifty 500 stock trends and delivers real-time breakout alerts to a Telegram channel.",
+    tags: ["Python", "BeautifulSoup", "GitHub Actions", "Telegram API"],
     link: "https://github.com/brrrezy/NSE-Breakout-Monitor",
     image: "/breakout_monitor_mockup_1778786330940.png"
+  },
+  {
+    title: "Autonomous Organizational Memory",
+    description: "Built a knowledge base query system implementing a Retrieval-Augmented Generation (RAG) pipeline. Integrated ChromaDB vector store for semantic document chunking and vector search.",
+    tags: ["Python", "ChromaDB", "RAG", "LangChain", "FastAPI"],
+    link: "https://github.com/brrrezy/Third-Eye",
+    image: "/ragmemory_mockup_1778786346410.png"
+  },
+  {
+    title: "Clima-Cast",
+    description: "Trained an MLPRegressor neural network to predict ambient temperature and humidity using historical weather datasets. Built a data pipeline for clean preprocessing and visualization.",
+    tags: ["Python", "scikit-learn", "Pandas", "Data Science"],
+    link: "https://github.com/brrrezy/Clima-Cast",
+    image: "/climacast_mockup_1778786421605.png"
   },
   {
     title: "Aeronexis AI",
@@ -56,20 +70,6 @@ export const projects = [
     tags: ["HTML/CSS", "JavaScript", "Analytics"],
     link: "https://shootersofindia.com",
     image: "/sales_intelligence_mockup_1778786384472.png"
-  },
-  {
-    title: "Autonomous Organizational Memory",
-    description: "Built a knowledge base prototype utilizing ChromaDB and RAG pipelines for semantic question-answering.",
-    tags: ["Python", "ChromaDB", "RAG", "AI"],
-    link: "https://github.com/brrrezy/Third-Eye",
-    image: "/ragmemory_mockup_1778786346410.png"
-  },
-  {
-    title: "Clima-Cast",
-    description: "Trained an MLPRegressor model to predict ambient temperature and humidity using historical weather datasets.",
-    tags: ["Python", "scikit-learn", "IoT", "Data Science"],
-    link: "https://github.com/brrrezy/Clima-Cast",
-    image: "/climacast_mockup_1778786421605.png"
   }
 ];
 
@@ -111,32 +111,31 @@ export const experience = [
 
 export const skills = {
   programming: [
-    { name: "Python", level: 85, slug: "python" },
-    { name: "SQL", level: 81, slug: "sqlite" },
-    { name: "TypeScript", level: 87, slug: "typescript" },
-    { name: "JavaScript", level: 93, slug: "javascript" },
-    { name: "HTML/CSS", level: 75, slug: "html5" }
+    { name: "Python", level: 95, slug: "python" },
+    { name: "SQL", level: 88, slug: "postgresql" },
+    { name: "HTML/CSS", level: 80, slug: "html5" },
+    { name: "Bash (basic)", level: 65, slug: "gnubash" }
   ],
   frameworks: [
-    { name: "FastAPI", level: 85, slug: "fastapi" },
-    { name: "Next.js", level: 90, slug: "nextdotjs" },
-    { name: "Flask", level: 75, slug: "flask" },
-    { name: "LangChain", level: 80, slug: "langchain" }
+    { name: "FastAPI", level: 92, slug: "fastapi" },
+    { name: "Flask", level: 85, slug: "flask" },
+    { name: "Django (basic)", level: 70, slug: "django" },
+    { name: "LangChain", level: 82, slug: "langchain" }
   ],
   libraries: [
-    { name: "Pandas", level: 85, slug: "pandas" },
-    { name: "NumPy", level: 80, slug: "numpy" },
-    { name: "TA-Lib", level: 75, slug: "tradingview" },
-    { name: "Scikit-learn", level: 80, slug: "scikitlearn" },
-    { name: "SQLAlchemy", level: 82, slug: "sqlalchemy" }
+    { name: "Pandas & NumPy", level: 88, slug: "pandas" },
+    { name: "BeautifulSoup", level: 90, slug: "python" },
+    { name: "SQLAlchemy ORM", level: 85, slug: "sqlalchemy" },
+    { name: "Requests", level: 92, slug: "postman" },
+    { name: "Scikit-learn", level: 75, slug: "scikitlearn" }
   ],
   tools: [
-    { name: "Docker", level: 80, slug: "docker" },
-    { name: "CI/CD", level: 85, slug: "githubactions" },
-    { name: "AWS", level: 75, slug: "amazonaws" },
-    { name: "PostgreSQL", level: 85, slug: "postgresql" },
-    { name: "MongoDB", level: 90, slug: "mongodb" },
-    { name: "Vercel", level: 88, slug: "vercel" }
+    { name: "Docker (basic)", level: 75, slug: "docker" },
+    { name: "Git & GitHub", level: 90, slug: "git" },
+    { name: "PostgreSQL & SQLite", level: 88, slug: "postgresql" },
+    { name: "MongoDB", level: 85, slug: "mongodb" },
+    { name: "Linux/Ubuntu", level: 80, slug: "linux" },
+    { name: "Pytest & Unit Testing", level: 85, slug: "pytest" }
   ]
 };
 

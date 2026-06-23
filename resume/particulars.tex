@@ -16,18 +16,19 @@
 
 % ---------- SUMMARY ----------
 \def\summary{
-  \section{Summary}
-  Data enthusiast and full-stack developer passionate about building data-driven systems, AI applications, and responsive web platforms. Experienced with Python, FastAPI, Next.js, and MongoDB, with a strong focus on automation and clean software design.
+  \section{Professional Summary}
+  Motivated and results-oriented B.Tech Computer Science student specializing in Python development, automated scripting, and backend engineering. Hands-on experience designing RESTful APIs with FastAPI and Flask, implementing RAG pipelines with LangChain and vector databases, and engineering robust web scrapers. Skilled in relational and non-relational database integration, Git-based workflows, and writing clean, object-oriented code. Quick learner with a problem-solving mindset seeking a Python Developer / Backend Engineer role.
 }
 
 % ---------- SKILLS ----------
 \def\skills{
   \bullets
-    \bullet{Languages: Python, SQL, TypeScript, JavaScript, HTML/CSS}
-    \bullet{Frameworks \& AI: FastAPI, Next.js, Flask, LangChain, REST APIs}
-    \bullet{Libraries: Pandas, NumPy, Scikit-learn, TA-Lib, SQLAlchemy}
-    \bullet{Tools \& DevOps: Docker, Kubernetes, AWS, PostgreSQL, MongoDB, Git, CI/CD}
-    \bullet{Methodologies \& Core: Data Structures, Algorithms, System Architecture, Agile/Scrum, Quantitative Analytics}
+    \bullet{Languages: Python 3.x, SQL, HTML/CSS, Bash (basic)}
+    \bullet{Frameworks \& Libs: FastAPI, Flask, Django (basic), Pandas, NumPy, BeautifulSoup, Requests, LangChain}
+    \bullet{Databases: PostgreSQL, SQLite, MongoDB, MySQL (basic), SQLAlchemy ORM}
+    \bullet{Tools \& Platforms: Git, GitHub, VS Code, Postman, Linux/Ubuntu, Docker (basic), Jupyter Notebook}
+    \bullet{Core Concepts: REST APIs, OOP (Object-Oriented Programming), Data Structures \& Algorithms, Web Scraping, Automation}
+    \bullet{Testing: Pytest, Unit Testing, Debugging, Code Review}
   \bulletsEnd
 }
 
@@ -75,24 +76,25 @@
 
 \ProjectEntry{TradeFlow}
   {}
-  {TradeFlow}
-  {\href{https://thetradeflow.vercel.app}{Live} $|$ Next.js, TypeScript, FastAPI, MongoDB, TailwindCSS}
+  {TradeFlow -- Trading Workspace}
+  {\href{https://thetradeflow.vercel.app}{Live} $|$ Python, FastAPI, MongoDB, LangChain, Next.js}
   {
     \bullets
-      \bullet{Built an interactive trade journaling dashboard featuring real-time market data updates and key performance analytics.}
-      \bullet{Integrated risk management logic to calculate recommended position sizes and manage risk levels.}
-      \bullet{Implemented an AI-driven feedback feature leveraging LLMs to analyze execution logs and track trading patterns.}
+      \bullet{Built a high-performance REST API with FastAPI supporting real-time data streaming and trade ingestion.}
+      \bullet{Designed a flexible MongoDB schema with isolated per-user data architectures; integrated secure JWT authentication.}
+      \bullet{Engineered an AI coaching module with LangChain and LLMs to parse execution logs and discover trading behavioral biases.}
     \bulletsEnd
   }
 
 \ProjectEntry{NSEScreener}
   {}
   {NSE Swing Screener}
-  {\href{https://findswingstocks.up.railway.app/}{Live} $|$ Python, FastAPI, SQLite, Railway}
+  {\href{https://findswingstocks.up.railway.app/}{Live} $|$ Python, FastAPI, SQLite, BeautifulSoup, APScheduler}
   {
     \bullets
-      \bullet{Developed a quantitative stock screening tool scanning 500+ NSE stocks to detect technical patterns and setup alerts.}
-      \bullet{Implemented pattern detection for setups like Minervini Stage 2 and Volatility Contraction Pattern (VCP) using historical data.}
+      \bullet{Developed a quantitative stock screener scanning 500+ NSE stocks in parallel, lowering scanning runtime to under 60 seconds.}
+      \bullet{Implemented Minervini Stage 2 and Volatility Contraction Pattern (VCP) detection mathematical algorithms on historical data.}
+      \bullet{Utilized BeautifulSoup to scrape stock metrics and integrated SQLite as a local caching layer to optimize API rate-limits.}
     \bulletsEnd
   }
 
@@ -110,11 +112,12 @@
 \ProjectEntry{NSEBreakoutMonitor}
   {}
   {NSE Momentum Burst Scanner}
-  {\href{https://github.com/brrrezy/NSE-Breakout-Monitor}{Source} $|$ Python, GitHub Actions, Telegram API}
+  {\href{https://github.com/brrrezy/NSE-Breakout-Monitor}{Source} $|$ Python, BeautifulSoup, GitHub Actions, Telegram API}
   {
     \bullets
-      \bullet{Created an automated script that scans Nifty 500 stocks for breakout signals using GitHub Actions.}
-      \bullet{Implemented a trend filter utilizing exponential moving averages (EMA) to deliver daily alerts via a Telegram bot.}
+      \bullet{Engineered an automated script running daily on GitHub Actions to scan Nifty 500 stocks for high-probability breakouts.}
+      \bullet{Parsed HTML pages using BeautifulSoup to track stock trend confluences (RSI, ADX, MACD, and stochastic momentum).}
+      \bullet{Integrated the Telegram Bot API to dispatch instant alert watchlists directly to active channel subscribers.}
     \bulletsEnd
   }
 
@@ -153,12 +156,13 @@
 
 \ProjectEntry{ThirdEye}
   {}
-  {Autonomous Organizational Memory}
-  {\href{https://github.com/brrrezy/Third-Eye}{Source} $|$ Python, ChromaDB, RAG}
+  {Autonomous Organizational Memory (ThirdEye)}
+  {\href{https://github.com/brrrezy/Third-Eye}{Source} $|$ Python, ChromaDB, RAG, LangChain, FastAPI}
   {
     \bullets
-      \bullet{Developed a prototype knowledge base system to query corporate documentation and technical logs.}
-      \bullet{Built a Retrieval-Augmented Generation (RAG) pipeline utilizing ChromaDB vector store for semantic question-answering.}
+      \bullet{Created a Retrieval-Augmented Generation (RAG) platform to query system logs and corporate documentation.}
+      \bullet{Integrated ChromaDB vector database for semantic search, custom text chunking, and similarity-based retrieval.}
+      \bullet{Built FastAPI endpoints delivering natural language answers backed by custom source citations.}
     \bulletsEnd
   }
 

@@ -217,7 +217,7 @@ body {
   left: 0;
   width: 100%;
   height: 450px;
-  background-image: url('https://ryancv.bslthemes.com/product-designer/wp-content/uploads/sites/27/2026/03/bg-img7.jpg');
+  background-image: url('/assets/mountain_bg.png');
   background-size: cover;
   background-position: top center;
   z-index: 0;
