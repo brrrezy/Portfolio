@@ -114,12 +114,12 @@ export const skills = {
     { name: "Python", level: 95, slug: "python" },
     { name: "SQL", level: 88, slug: "postgresql" },
     { name: "HTML/CSS", level: 80, slug: "html5" },
-    { name: "Bash (basic)", level: 65, slug: "gnubash" }
+    { name: "Bash", level: 75, slug: "gnubash" }
   ],
   frameworks: [
     { name: "FastAPI", level: 92, slug: "fastapi" },
     { name: "Flask", level: 85, slug: "flask" },
-    { name: "Django (basic)", level: 70, slug: "django" },
+    { name: "Django", level: 75, slug: "django" },
     { name: "LangChain", level: 82, slug: "langchain" }
   ],
   libraries: [
@@ -130,7 +130,7 @@ export const skills = {
     { name: "Scikit-learn", level: 75, slug: "scikitlearn" }
   ],
   tools: [
-    { name: "Docker (basic)", level: 75, slug: "docker" },
+    { name: "Docker", level: 80, slug: "docker" },
     { name: "Git & GitHub", level: 90, slug: "git" },
     { name: "PostgreSQL & SQLite", level: 88, slug: "postgresql" },
     { name: "MongoDB", level: 85, slug: "mongodb" },
@@ -151,19 +151,19 @@ export const achievements = [
     description: "Formal training and certification in Agile methodologies and Scrum framework."
   },
   {
-    title: "Sunhacks 2026 (Top 10)",
+    title: "Sunhacks 2026 (Top 10) - April 2026",
     organization: "Sandip University & ESDS",
     description: "Developed a real-time compliance dashboard tracking regulatory updates from NSE, BSE, MCX, and RBI."
   },
   {
-    title: "Sunhacks 2024 (Top 10)",
+    title: "Sunhacks 2024 (Top 10) - April 2024",
     organization: "Sandip University & ESDS",
     description: "Designed a predictive model for HVAC energy optimization and smart climate control."
   },
   {
-    title: "AICTE Data Science Hackathon (Winner)",
-    organization: "AICTE | Pune",
-    description: "Secured 1st place in the national-level hackathon. Developed high-accuracy predictive models."
+    title: "Sales Prediction & Product Performance Predictor Model",
+    organization: "AICTE Data Science Hackathon (Winner) | Pune",
+    description: "Secured 1st place in the national-level hackathon. Developed high-accuracy predictive regression models."
   }
 ];
 
