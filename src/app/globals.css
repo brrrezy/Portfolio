@@ -213,9 +213,9 @@ body {
 .p-profile::before {
   content: '';
   position: absolute;
-  top: -20px;
-  left: -8px;
-  right: -8px;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 470px;
   background-image: url('/assets/mountain_bg.png');
   background-size: cover;
