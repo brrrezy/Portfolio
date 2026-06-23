@@ -213,18 +213,19 @@ body {
 .p-profile::before {
   content: '';
   position: absolute;
-  top: -8px;
-  left: -8px;
-  right: -8px;
-  height: 460px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 450px;
   background-image: url('/assets/mountain_bg.png');
   background-size: cover;
   background-position: top center;
   z-index: 0;
   pointer-events: none;
   opacity: 0.45;
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 95%);
-  mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 95%);
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(ellipse at top center, black 30%, transparent 80%);
+  mask-image: radial-gradient(ellipse at top center, black 30%, transparent 80%);
 }
 
 .p-content::after,
