@@ -20,56 +20,56 @@ export const projects = [
     description: "Built an institutional-grade trading intelligence terminal. Engineered the FastAPI backend for real-time market data updates, automated trade ingestion, and risk-calculation pipelines.",
     tags: ["Python", "FastAPI", "MongoDB", "LangChain", "Next.js"],
     link: "https://thetradeflow.vercel.app",
-    image: "/tradeflow_mockup_1778786278461.png"
+    image: "/tradeflow_ui.png"
   },
   {
     title: "NSE Swing Screener",
     description: "Developed a quantitative stock screening tool scanning 500+ NSE stocks. Built a custom parallel processing engine to fetch and analyze historical data, caching results in SQLite.",
     tags: ["Python", "FastAPI", "SQLite", "BeautifulSoup", "APScheduler"],
     link: "https://findswingstocks.up.railway.app/",
-    image: "/screener_mockup_1778786293976.png"
+    image: "/nse_screener_ui.png"
   },
   {
     title: "DietGPT",
     description: "Developed an AI fitness assistant utilizing Flask and LangChain. Implemented robust pipelines for meal parsing, calorie estimation, and conversational diet recommendations via LLM APIs.",
     tags: ["Python", "Flask", "LangChain", "Firebase", "Groq"],
     link: "https://fixyourdiet.vercel.app",
-    image: "/dietgpt_mockup_1778786312853.png"
+    image: "/dietgpt_ui.png"
   },
   {
     title: "NSE Momentum Burst Scanner",
     description: "Created an automated stock scanner script executing daily on GitHub Actions. Scrapes Nifty 500 stock trends and delivers real-time breakout alerts to a Telegram channel.",
     tags: ["Python", "BeautifulSoup", "GitHub Actions", "Telegram API"],
     link: "https://github.com/brrrezy/NSE-Breakout-Monitor",
-    image: "/breakout_monitor_mockup_1778786330940.png"
+    image: "/nse_burst_ui.png"
   },
   {
     title: "Autonomous Organizational Memory",
     description: "Built a knowledge base query system implementing a Retrieval-Augmented Generation (RAG) pipeline. Integrated ChromaDB vector store for semantic document chunking and vector search.",
     tags: ["Python", "ChromaDB", "RAG", "LangChain", "FastAPI"],
     link: "https://github.com/brrrezy/Third-Eye",
-    image: "/ragmemory_mockup_1778786346410.png"
+    image: "/rag_memory_ui.png"
   },
   {
     title: "Clima-Cast",
     description: "Trained an MLPRegressor neural network to predict ambient temperature and humidity using historical weather datasets. Built a data pipeline for clean preprocessing and visualization.",
     tags: ["Python", "scikit-learn", "Pandas", "Data Science"],
     link: "https://github.com/brrrezy/Clima-Cast",
-    image: "/climacast_mockup_1778786421605.png"
+    image: "/climacast_ui.png"
   },
   {
     title: "Aeronexis AI",
     description: "Designed a responsive landing page and pre-registration waitlist system, storing user sign-up details in MongoDB.",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "MongoDB"],
     link: "https://aeronexis.vercel.app",
-    image: "/aeronexis_mockup_1778786407702.png"
+    image: "/aeronexis_ui.png"
   },
   {
     title: "Shooters of India",
     description: "Designed and deployed a search-optimized e-commerce website for sports shooting accessories, integrated with Google Analytics.",
     tags: ["HTML/CSS", "JavaScript", "Analytics"],
     link: "https://shootersofindia.vercel.app/",
-    image: "/sales_intelligence_mockup_1778786384472.png"
+    image: "/shooters_ecommerce_ui.png"
   }
 ];
 
