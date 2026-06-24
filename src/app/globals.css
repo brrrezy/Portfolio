@@ -31,6 +31,12 @@ body {
 
 /* Background animation handled by WebGL canvas */
 
+/* ===== PAGE ENTRY ANIMATION ===== */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ===== 6-PANE GRID ===== */
 .grid-shell {
   position: relative;
@@ -46,6 +52,7 @@ body {
     "mode  content profile"
     "nav   content profile"
     "nav   footer  profile";
+  animation: page-enter 0.6s ease-out;
 }
 
 /* Shared pane style */
@@ -54,7 +61,8 @@ body {
   backdrop-filter: blur(32px);
   border: 1px solid var(--color-border);
   border-radius: 16px;
-  overflow: hidden
+  overflow: hidden;
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* P1: Logo */
@@ -177,6 +185,7 @@ body {
 
 .nav-icon--active {
   color: var(--color-accent);
+  text-shadow: 0 0 12px rgba(255, 179, 0, 0.4);
 }
 
 .nav-icon--active::before {
@@ -187,7 +196,8 @@ body {
   height: 50%;
   width: 2px;
   background: var(--color-accent);
-  border-radius: 0 2px 2px 0
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 8px rgba(255, 179, 0, 0.5);
 }
 
 /* P4: Content (left main, changes) */
@@ -222,10 +232,11 @@ body {
   background-position: center -30px;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.45;
-  mix-blend-mode: screen;
-  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  opacity: 0.55;
+  /* Keep standard blend mode to prevent BPC shadow, but increase visibility */
+  filter: brightness(0.8) contrast(1.2);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 15%, rgba(0,0,0,0.5) 55%, transparent 95%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 15%, rgba(0,0,0,0.5) 55%, transparent 95%);
   border-radius: inherit;
 }
 
@@ -368,6 +379,12 @@ body {
   display: none;
 }
 
+/* Ambient glow ring around avatar */
+@keyframes avatar-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 179, 0, 0.15), 0 0 40px rgba(255, 179, 0, 0.05); }
+  50%      { box-shadow: 0 0 25px rgba(255, 179, 0, 0.25), 0 0 50px rgba(255, 179, 0, 0.1); }
+}
+
 .prof-avatar__img {
   position: relative;
   width: 140px;
@@ -375,13 +392,19 @@ body {
   border-radius: 50%;
   overflow: hidden;
   z-index: 2;
-  border: 3px solid rgba(10, 10, 10, 0.9)
+  border: 3px solid rgba(10, 10, 10, 0.9);
+  animation: avatar-glow 4s ease-in-out infinite;
 }
 
 .prof-avatar__img img {
   width: 100%;
   height: 100%;
-  object-fit: cover
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.prof-avatar:hover .prof-avatar__img img {
+  transform: scale(1.05);
 }
 
 .prof-name {
@@ -613,19 +636,21 @@ body {
 
 .lesson-card {
   background: rgba(8, 8, 8, .7);
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.04);
   border-left: 3px solid var(--color-accent);
-  border-radius: 0;
+  border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   min-height: 220px;
-  transition: transform .3s, background .3s
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .lesson-card:hover {
-  transform: translateX(10px);
+  transform: translateX(10px) translateY(-2px);
   background: rgba(15, 15, 15, .9);
+  border-color: rgba(255, 179, 0, 0.12);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
 }
 
 .lesson-card__img {
@@ -719,12 +744,20 @@ body {
 .exp-card {
   background: rgba(8, 8, 8, .6);
   border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border-radius: 10px;
   padding: 1.5rem;
   margin-bottom: 1rem;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 1.5rem
+  gap: 1.5rem;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.exp-card:hover {
+  background: rgba(12, 12, 12, .8);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .exp-card__co,
@@ -838,16 +871,20 @@ body {
 
 .svc-card {
   background: #111;
-  border: none;
-  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   height: 100%;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .svc-card:hover {
   background: #141414;
+  transform: translateY(-3px);
+  border-color: rgba(255, 179, 0, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 179, 0, 0.04);
 }
 
 .svc-card__hd,
@@ -1066,6 +1103,8 @@ body {
     overflow: auto;
     height: auto;
     font-size: 16px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
   }
 
   .grid-shell {
@@ -1081,6 +1120,7 @@ body {
       "footer"
       "footer";
     position: relative;
+    animation: page-enter 0.5s ease-out;
   }
 
   /* Hide sidebar nav on mobile */
@@ -1092,8 +1132,8 @@ body {
   /* Logo becomes an independent floating help button on mobile */
   .p-logo {
     position: absolute;
-    top: 16px;
-    left: 16px;
+    top: 14px;
+    left: 14px;
     z-index: 1001;
     background: transparent !important;
     border: none !important;
@@ -1106,92 +1146,124 @@ body {
   }
 
   .p-logo .help-trigger-btn {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    background: rgba(255, 214, 0, 0.12) !important;
-    border: 1px solid rgba(255, 214, 0, 0.35) !important;
+    background: rgba(255, 214, 0, 0.1) !important;
+    border: 1px solid rgba(255, 214, 0, 0.3) !important;
     color: var(--color-accent) !important;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
   }
 
-  .p-logo .help-trigger-btn:hover {
-    background: var(--color-accent) !important;
-    border-color: var(--color-accent) !important;
-    color: #000 !important;
-    box-shadow: 0 0 12px rgba(255, 214, 0, 0.45);
+  .p-logo .help-trigger-btn:active {
+    transform: scale(0.92);
   }
 
-  /* Profile becomes a horizontal card at top */
+  /* Profile section — refined mobile layout */
   .p-profile {
     border-radius: 0;
-    border-top: 1px solid var(--color-border);
+    border-top: none;
+    background: rgba(20, 20, 20, 0.9);
   }
 
   .p-content__hero,
   .p-profile__hero {
-    height: 160px;
+    height: 150px;
+  }
+
+  /* Mountain BG smaller on mobile */
+  .p-content::before,
+  .p-profile::before {
+    height: 280px;
+    opacity: 0.45;
   }
 
   .p-profile__body {
-    margin-top: -60px;
-    padding: 1rem 1.2rem;
+    margin-top: -50px;
+    padding: 0 1.5rem 1rem;
     overflow: visible;
   }
 
   .prof-avatar {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     margin: 0 auto 0.8rem;
   }
 
   .prof-avatar__img {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
+    border: 3px solid rgba(255, 179, 0, 0.25);
   }
 
   .prof-name {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    letter-spacing: .06em;
   }
 
   .prof-role {
     font-size: 12px;
+    color: var(--color-dim);
   }
 
   .prof-bio {
     font-size: 13px;
     max-width: 100%;
     margin-bottom: 1rem;
+    line-height: 1.6;
+    text-align: center;
   }
 
   .prof-divider {
     margin: 0.8rem auto;
+    width: 60%;
   }
 
   .prof-socials {
     margin-bottom: 1rem;
+    gap: 0.75rem;
+  }
+
+  .prof-social {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    transition: all 0.25s ease;
+  }
+
+  .prof-social:active {
+    transform: scale(0.9);
   }
 
   .prof-actions {
-    height: 56px;
+    height: 52px;
+    border-radius: 0;
   }
 
   .prof-btn {
     font-size: 11px;
+    transition: all 0.2s ease;
+  }
+
+  .prof-btn:active {
+    background: rgba(255, 255, 255, 0.04);
+    transform: scale(0.97);
   }
 
   /* Content area */
   .p-content {
     border-radius: 0;
+    background: rgba(18, 18, 18, 0.92);
   }
 
   .p-content__body {
-    padding: 1.2rem 1rem;
+    padding: 1.5rem 1.25rem;
   }
 
   .hero-title {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
 
   .hero-sub {
@@ -1201,11 +1273,18 @@ body {
   /* Card layouts stack on mobile */
   .card-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .svc-card {
-    padding: 1.25rem !important;
+    padding: 1.4rem !important;
+    border-radius: 12px !important;
+    transition: all 0.25s ease;
+  }
+
+  .svc-card:active {
+    transform: scale(0.98);
+    background: rgba(255, 255, 255, 0.03);
   }
 
   .svc-card__hd,
@@ -1215,27 +1294,43 @@ body {
   }
 
   .svc-card__desc {
-    font-size: 12px;
+    font-size: 12.5px;
+    line-height: 1.6;
   }
 
   .exp-card {
     grid-template-columns: 1fr;
-    padding: 1rem;
+    padding: 1.25rem;
     gap: 1rem;
+    border-radius: 12px;
+  }
+
+  .exp-card:active {
+    transform: scale(0.98);
   }
 
   .lesson-card {
     flex-direction: column;
     min-height: auto;
+    border-radius: 12px !important;
+  }
+
+  .lesson-card:active {
+    transform: scale(0.98) !important;
   }
 
   .lesson-card__img {
     width: 100%;
     aspect-ratio: 16/9;
+    border-radius: 12px 12px 0 0;
   }
 
   .lesson-card__body {
-    padding: 1rem;
+    padding: 1.1rem;
+  }
+
+  .lesson-card__title {
+    font-size: .8rem;
   }
 
   /* About page grid stacks */
@@ -1249,9 +1344,10 @@ body {
     padding-left: 0;
   }
 
-  /* Mobile bottom nav */
+  /* Mobile footer */
   .p-footer {
     border-radius: 0;
+    padding: 1rem 0;
   }
 
   .p-footer p {
@@ -1262,6 +1358,8 @@ body {
   .form-in,
   .form-input {
     font-size: 16px; /* prevents iOS zoom */
+    border-radius: 10px;
+    padding: .85rem 1rem;
   }
 
   /* Info rows wrap */
@@ -1277,6 +1375,19 @@ body {
   /* Skills grid */
   .filter-tabs {
     gap: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-tab {
+    white-space: nowrap;
+    padding: 6px 10px;
   }
 
   /* Disable tooltip popovers on touch */
@@ -1296,15 +1407,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: help;
   position: relative;
 }
 
 .skill-icon:hover {
   background: #fff;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(255, 179, 0, 0.25);
 }
 
 .skill-icon::after {
@@ -1322,6 +1434,7 @@ body {
   letter-spacing: .05em;
   text-transform: uppercase;
   white-space: nowrap;
+  border-radius: 4px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1348,11 +1461,13 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(20px);
-    border-top: 1px solid var(--color-border);
-    padding: 6px 0;
-    padding-bottom: env(safe-area-inset-bottom, 6px);
+    background: rgba(8, 8, 8, 0.88);
+    backdrop-filter: blur(28px) saturate(1.5);
+    -webkit-backdrop-filter: blur(28px) saturate(1.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 4px 6px;
+    padding-bottom: env(safe-area-inset-bottom, 4px);
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.5);
   }
 
   .mobile-nav__btn {
@@ -1360,13 +1475,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3px;
+    gap: 2px;
     background: none;
     border: none;
     color: var(--color-dim);
     cursor: pointer;
-    padding: 6px 0;
-    transition: color 0.2s;
+    padding: 8px 0 6px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .mobile-nav__btn:active {
+    transform: scale(0.88);
   }
 
   .mobile-nav__btn span {
@@ -1374,16 +1495,31 @@ body {
     font-size: 9px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
+    transition: color 0.25s ease;
   }
 
   .mobile-nav__btn--active {
     color: var(--color-accent);
+    background: rgba(255, 179, 0, 0.06);
+  }
+
+  .mobile-nav__btn--active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background: var(--color-accent);
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 0 8px rgba(255, 179, 0, 0.5);
   }
 
   /* Add bottom padding so content isn't hidden behind the nav */
   .grid-shell {
-    padding-bottom: 70px;
+    padding-bottom: 72px;
   }
 }
 

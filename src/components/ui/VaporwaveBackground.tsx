@@ -110,7 +110,7 @@ export const VaporwaveBackground: React.FC = () => {
         if (!hit) {
           // ── Sky ──
           float skyT = clamp((rd.y + 0.1) / 0.5, 0.0, 1.0);
-          vec3 skyBot = vec3(0.05, 0.05, 0.05);
+          vec3 skyBot = vec3(0.06, 0.05, 0.04);
           vec3 skyTop = vec3(0.0, 0.0, 0.0);
           vec3 color = mix(skyBot, skyTop, skyT);
 
@@ -118,18 +118,18 @@ export const VaporwaveBackground: React.FC = () => {
           float mFront = mountain(uv.x * 8.0 + 10.0) * 0.14;
           float ha = max(rd.y * 2.0, 0.0);
 
-          if (ha < mBack) color = vec3(0.10, 0.10, 0.10);
-          if (ha < mFront) color = vec3(0.04, 0.04, 0.04);
+          if (ha < mBack) color = vec3(0.09, 0.08, 0.07);
+          if (ha < mFront) color = vec3(0.04, 0.035, 0.03);
 
-          float glow = exp(-max(rd.y, 0.0) * 15.0) * 0.2;
-          color += vec3(0.20, 0.20, 0.20) * glow;
+          // Warm amber horizon glow
+          float glow = exp(-max(rd.y, 0.0) * 12.0) * 0.22;
+          color += vec3(0.28, 0.20, 0.08) * glow;
 
           fragColor = vec4(color, 1.0);
           return;
         }
 
         // ── Grid on terrain ──
-        // Scale line thickness by distance so lines stay thin near camera but visible far away
         float dist = length(hitPos - ro);
         float lineW = 0.02 + dist * 0.001;
 
@@ -140,11 +140,12 @@ export const VaporwaveBackground: React.FC = () => {
         float fog = 1.0 - smoothstep(20.0, 65.0, dist);
 
         vec3 bgColor   = vec3(0.0, 0.0, 0.0);
-        vec3 lineColor = vec3(0.35, 0.35, 0.35);
+        vec3 lineColor = vec3(0.32, 0.30, 0.26);
         vec3 color = mix(bgColor, lineColor, grid * fog);
 
-        float glow = exp(-max(hitPos.y, 0.0) * 2.0) * 0.12;
-        color += vec3(0.18, 0.18, 0.20) * glow * fog;
+        // Warm ambient glow near ground
+        float glow = exp(-max(hitPos.y, 0.0) * 2.0) * 0.10;
+        color += vec3(0.20, 0.16, 0.10) * glow * fog;
 
         fragColor = vec4(color, 1.0);
       }
@@ -206,8 +207,9 @@ export const VaporwaveBackground: React.FC = () => {
     };
 
     const resize = () => {
-      // 0.6x scale — good balance between crisp lines and smooth performance
-      const scale = 0.6;
+      // Adaptive scale: lower on mobile for performance, higher on desktop for clarity
+      const isMobile = window.innerWidth < 768;
+      const scale = isMobile ? 0.45 : 0.6;
       canvas.width  = window.innerWidth * scale;
       canvas.height = window.innerHeight * scale;
     };

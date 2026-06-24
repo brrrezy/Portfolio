@@ -68,7 +68,7 @@ export const projects = [
     title: "Shooters of India",
     description: "Designed and deployed a search-optimized e-commerce website for sports shooting accessories, integrated with Google Analytics.",
     tags: ["HTML/CSS", "JavaScript", "Analytics"],
-    link: "https://shootersofindia.com",
+    link: "https://shootersofindia.vercel.app/",
     image: "/sales_intelligence_mockup_1778786384472.png"
   }
 ];

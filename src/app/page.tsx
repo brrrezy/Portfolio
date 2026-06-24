@@ -94,7 +94,7 @@ export default function Home() {
             <span className="hero-dot hero-dot--1" />
             <span className="hero-dot hero-dot--2" />
             <AnimatePresence mode="wait">
-              <motion.div key={tab + "-h"} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.2 }} style={{ textAlign: "center", zIndex: 5, position: "relative" }}>
+              <motion.div key={tab + "-h"} initial={{ opacity: 0, y: 8, scale: 0.98 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -8, scale: 0.98 }} transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }} style={{ textAlign: "center", zIndex: 5, position: "relative" }}>
                 <p className="hero-sub">{h.sub}</p>
                 <h1 className="hero-title">{h.title}</h1>
               </motion.div>
@@ -102,7 +102,7 @@ export default function Home() {
           </div>
           <div className="p-content__body">
             <AnimatePresence mode="wait">
-              <motion.div key={tab} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.22 }}>
+              <motion.div key={tab} initial={{ opacity: 0, y: 14, scale: 0.99 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -10, scale: 0.99 }} transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}>
                 {content()}
               </motion.div>
             </AnimatePresence>
