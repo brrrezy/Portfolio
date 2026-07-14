@@ -99,7 +99,7 @@ export const experience = [
   {
     title: "B.Tech in Computer Science & Engineering",
     company: "Sandip University, Nashik",
-    date: "2022 - Present",
+    date: "2022 - 2026",
     location: "Nashik, Maharashtra",
     description: [
       "Graduated with an 8.49 GPA.",
