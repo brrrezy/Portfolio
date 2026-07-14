@@ -55,7 +55,26 @@ body {
   animation: page-enter 0.5s ease-out;
 }
 
-/* Mountain BG removed to resolve shadow/box conflicts. Using WebGL background instead. */
+.grid-shell::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 470px;
+  background-image: url('/assets/mountain_bg.png');
+  background-size: cover;
+  background-position: center -30px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.45;
+  mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  border-radius: inherit;
+}
+
+/* Mountain BG restored as .grid-shell::before */
 
 /* Shared pane style */
 .pane {

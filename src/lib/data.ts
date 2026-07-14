@@ -102,6 +102,7 @@ export const experience = [
     date: "2022 - Present",
     location: "Nashik, Maharashtra",
     description: [
+      "Graduated with an 8.49 GPA.",
       "Focusing on Machine Learning, Data Science, and Full-Stack Development.",
       "Relevant Coursework: Data Structures, Algorithms, Database Management Systems, Neural Networks.",
       "Exploring RAG pipelines and Vector Databases through personal projects and academic studies."
