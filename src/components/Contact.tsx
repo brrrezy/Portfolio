@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { personalInfo } from "@/lib/data";
 import { Send, MapPin, Mail, Phone, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -63,70 +64,82 @@ export function Contact() {
     <div className="contact-grid">
       {/* Left: Info */}
       <div className="contact-info-col">
-        <h3 className="sub-header">
-          <div><span>D</span>ON&apos;T BE SHY !</div>
-        </h3>
+        <ScrollReveal direction="left" delay={0.1} distance={40}>
+          <h3 className="sub-header">
+            <div><span>D</span>ON&apos;T BE SHY !</div>
+          </h3>
+        </ScrollReveal>
         <div className="contact-info-list">
-          <ContactItem icon={<MapPin size={16} />} label="Location" value={personalInfo.location} />
-          <ContactItem icon={<Mail size={16} />} label="Email" value={personalInfo.email} />
-          <ContactItem icon={<Phone size={16} />} label="Phone" value={personalInfo.phone} />
+          {[
+            { icon: <MapPin size={16} />, label: "Location", value: personalInfo.location },
+            { icon: <Mail size={16} />, label: "Email", value: personalInfo.email },
+            { icon: <Phone size={16} />, label: "Phone", value: personalInfo.phone },
+          ].map((item, idx) => (
+            <ScrollReveal key={item.label} direction="left" delay={0.2 + idx * 0.12} distance={30}>
+              <ContactItem icon={item.icon} label={item.label} value={item.value} />
+            </ScrollReveal>
+          ))}
         </div>
       </div>
 
       {/* Right: Form */}
       <div className="contact-form-col">
-        <h3 className="sub-header">
-          <div><span>M</span>ESSAGE ME</div>
-        </h3>
-        <form onSubmit={handleSubmit} className="contact-form">
-          <div className="form-row">
-            <input 
-              type="text" 
-              placeholder="Full Name" 
+        <ScrollReveal direction="right" delay={0.1} distance={40}>
+          <h3 className="sub-header">
+            <div><span>M</span>ESSAGE ME</div>
+          </h3>
+        </ScrollReveal>
+        <ScrollReveal direction="up" delay={0.25} distance={30} blur={3}>
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="form-row">
+              <input 
+                type="text" 
+                placeholder="Full Name" 
+                className="form-input" 
+                required
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              />
+              <input 
+                type="email" 
+                placeholder="Email Address" 
+                className="form-input" 
+                required
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              />
+            </div>
+            <textarea 
+              placeholder="Your Message" 
+              rows={5} 
               className="form-input" 
+              style={{ resize: 'none' }} 
               required
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             />
-            <input 
-              type="email" 
-              placeholder="Email Address" 
-              className="form-input" 
-              required
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            />
-          </div>
-          <textarea 
-            placeholder="Your Message" 
-            rows={5} 
-            className="form-input" 
-            style={{ resize: 'none' }} 
-            required
-            value={formData.message}
-            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          />
-          
-          <button 
-            type="submit" 
-            className={`form-submit ${status}`}
-            disabled={status === "loading" || status === "success"}
-          >
-            {status === "loading" ? (
-              <><Loader2 size={13} className="animate-spin" /> Sending...</>
-            ) : status === "success" ? (
-              <><CheckCircle2 size={13} /> Message Sent!</>
-            ) : status === "error" ? (
-              <><AlertCircle size={13} /> Error</>
-            ) : (
-              <><Send size={13} /> Send Message</>
-            )}
-          </button>
+            
+            <button 
+              type="submit" 
+              className={`form-submit ${status}`}
+              disabled={status === "loading" || status === "success"}
+            >
+              {status === "loading" ? (
+                <><Loader2 size={13} className="animate-spin" /> Sending...</>
+              ) : status === "success" ? (
+                <><CheckCircle2 size={13} /> Message Sent!</>
+              ) : status === "error" ? (
+                <><AlertCircle size={13} /> Error</>
+              ) : (
+                <><Send size={13} /> Send Message</>
+              )}
+            </button>
 
-          {status === "error" && (
-            <p className="form-error-msg">{errorMessage}</p>
-          )}
-        </form>
+            {status === "error" && (
+              <p className="form-error-msg">{errorMessage}</p>
+            )}
+          </form>
+        </ScrollReveal>
       </div>
 
       <style jsx>{`

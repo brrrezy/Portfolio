@@ -17,18 +17,17 @@
 % ---------- SUMMARY ----------
 \def\summary{
   \section{Professional Summary}
-  Motivated and results-oriented B.Tech Computer Science student specializing in Python development, automated scripting, and backend engineering. Hands-on experience designing RESTful APIs with FastAPI and Flask, implementing RAG pipelines with LangChain and vector databases, and engineering robust web scrapers. Skilled in relational and non-relational database integration, Git-based workflows, and writing clean, object-oriented code. Quick learner with a problem-solving mindset seeking a Python Developer / Backend Engineer role.
+  Backend Engineer and Python Developer focused on architecting high-performance APIs, asynchronous data pipelines, and scalable system infrastructure. Proven experience engineering institutional-grade trading backends (FastAPI, WebSockets, MongoDB), autonomous RAG systems (LangChain, ChromaDB), and resilient automation architectures. Adept at leveraging object-oriented design and async paradigms to resolve distributed computing bottlenecks, optimize database retrieval, and accelerate system deployments.
 }
 
 % ---------- SKILLS ----------
 \def\skills{
   \bullets
-    \bullet{Languages: Python 3.x, SQL, HTML/CSS, Bash}
-    \bullet{Frameworks \& Libs: FastAPI, Flask, Django, Pandas, NumPy, BeautifulSoup, Requests, LangChain}
-    \bullet{Databases: PostgreSQL, SQLite, MongoDB, MySQL, SQLAlchemy ORM}
-    \bullet{Tools \& Platforms: Git, GitHub, VS Code, Postman, Linux/Ubuntu, Docker, Jupyter Notebook}
-    \bullet{Core Concepts: REST APIs, OOP (Object-Oriented Programming), Data Structures \& Algorithms, Web Scraping, Automation}
-    \bullet{Testing: Pytest, Unit Testing, Debugging, Code Review}
+    \bullet{\textbf{Languages:} Python 3.x, SQL, HTML/CSS, Bash}
+    \bullet{\textbf{Frameworks \& Libs:} FastAPI, Flask, Django, Pandas, NumPy, BeautifulSoup, Requests, LangChain}
+    \bullet{\textbf{Databases:} PostgreSQL, SQLite, MongoDB, MySQL, SQLAlchemy ORM}
+    \bullet{\textbf{Tools \& Platforms:} Git, GitHub, VS Code, Postman, Linux/Ubuntu, Docker, Pytest}
+    \bullet{\textbf{Core Concepts:} REST APIs, OOP, Distributed Systems, Web Scraping, AsyncIO, Vector Databases}
   \bulletsEnd
 }
 
@@ -46,19 +45,6 @@
   {Varanasi, Uttar Pradesh}
 
 % ---------- INTERNSHIPS ----------
-\InternshipEntry{BrainOVision}
-  {Jan 2024}{Mar 2024}
-  {Machine Learning Intern}
-  {Brain O Vision}
-  {Hyderabad, India}
-  {
-    \bullets
-      \bullet{Fine-tuned XGBoost and Random Forest models on consumer datasets to assist in improving predictive accuracy.}
-      \bullet{Developed feature engineering pipelines and behavioral clustering models to preprocess customer data.}
-      \bullet{Collaborated on a customer segmentation project using K-Means to identify distinct user cohorts for marketing analysis.}
-    \bulletsEnd
-  }
-
 \InternshipEntry{CodeAlpha}
   {Nov 2025}{Nov 2025}
   {Python Programming Intern}
@@ -66,9 +52,22 @@
   {Lucknow, India}
   {
     \bullets
-      \bullet{Wrote asynchronous Python scripts to automate routine tasks and optimize data processing workflows.}
-      \bullet{Implemented unit tests to increase codebase reliability and identify bugs during active development cycles.}
-      \bullet{Refactored older scripts into modular, object-oriented structures to improve code readability and maintenance.}
+      \bullet{Engineered asynchronous Python workflows to automate data ingestion and processing, reducing routine task execution time by over 40\%.}
+      \bullet{Strengthened system reliability by implementing comprehensive Pytest suites, increasing test coverage and accelerating deployment cycles.}
+      \bullet{Refactored legacy monolith scripts into modular, object-oriented micro-components, significantly improving maintainability and system extensibility.}
+    \bulletsEnd
+  }
+
+\InternshipEntry{BrainOVision}
+  {Jan 2024}{Mar 2024}
+  {Machine Learning Intern}
+  {Brain O Vision}
+  {Hyderabad, India}
+  {
+    \bullets
+      \bullet{Developed scalable feature engineering pipelines and behavioral clustering models (K-Means) to preprocess and segment large consumer datasets.}
+      \bullet{Fine-tuned XGBoost and Random Forest algorithms, achieving measurable improvements in predictive accuracy for customer cohort analysis.}
+      \bullet{Collaborated with cross-functional teams to integrate predictive models into analytical dashboards for marketing optimization.}
     \bulletsEnd
   }
 
@@ -76,59 +75,81 @@
 
 \ProjectEntry{TradeFlow}
   {}
-  {TradeFlow -- Trading Workspace}
-  {\href{https://thetradeflow.vercel.app}{Live} $|$ Python, FastAPI, MongoDB, LangChain, Next.js}
+  {TradeFlow -- Trading Terminal}
+  {\href{https://thetradeflow.vercel.app}{Live} $|$ Python, FastAPI, MongoDB, LangChain, WebSockets}
   {
     \bullets
-      \bullet{Built a high-performance REST API with FastAPI supporting real-time data streaming and trade ingestion.}
-      \bullet{Designed a flexible MongoDB schema with isolated per-user data architectures; integrated secure JWT authentication.}
-      \bullet{Engineered an AI coaching module with LangChain and LLMs to parse execution logs and discover trading behavioral biases.}
+      \bullet{Engineered a high-performance trading API using FastAPI, implementing WebSockets for sub-100ms real-time market data streaming.}
+      \bullet{Designed a highly scalable MongoDB schema enforcing strict per-user data isolation; integrated secure JWT-based authentication.}
+      \bullet{Architected an AI coaching module leveraging LangChain and Groq LLMs to automate position sizing and execute risk analysis pipelines.}
     \bulletsEnd
   }
 
 \ProjectEntry{NSEScreener}
   {}
   {NSE Swing Screener}
-  {\href{https://findswingstocks.up.railway.app/}{Live} $|$ Python, FastAPI, SQLite, BeautifulSoup, APScheduler}
+  {\href{https://findswingstocks.up.railway.app/}{Live} $|$ Python, FastAPI, SQLite, BeautifulSoup, AsyncIO}
   {
     \bullets
-      \bullet{Developed a quantitative stock screener scanning 500+ NSE stocks in parallel, lowering scanning runtime to under 60 seconds.}
-      \bullet{Implemented Minervini Stage 2 and Volatility Contraction Pattern (VCP) detection mathematical algorithms on historical data.}
-      \bullet{Utilized BeautifulSoup to scrape stock metrics and integrated SQLite as a local caching layer to optimize API rate-limits.}
+      \bullet{Architected a custom parallel processing engine scanning 500+ NSE stocks for quantitative trading signals.}
+      \bullet{Reduced historical data analysis latency by leveraging asynchronous task scheduling (APScheduler) and optimized SQLite caching layers.}
+      \bullet{Served processed market insights and breakout patterns via a lightweight FastAPI backend for frontend consumption.}
+    \bulletsEnd
+  }
+
+\ProjectEntry{ThirdEye}
+  {}
+  {Autonomous Org Memory (ThirdEye)}
+  {\href{https://github.com/brrrezy/Third-Eye}{Source} $|$ Python, ChromaDB, RAG, LangChain, FastAPI}
+  {
+    \bullets
+      \bullet{Engineered a scalable Retrieval-Augmented Generation (RAG) backend utilizing FastAPI and ChromaDB vector store.}
+      \bullet{Solved unstructured data retrieval bottlenecks by implementing semantic document chunking and optimized vector search.}
+      \bullet{Enabled context-aware LLM query responses for internal knowledge bases, securely exposing answers via API endpoints.}
     \bulletsEnd
   }
 
 \ProjectEntry{DietGPT}
   {}
-  {DietGPT}
-  {\href{https://fixyourdiet.vercel.app}{Live} $|$ Flask, Firebase, LangChain, Groq}
+  {DietGPT Assistant}
+  {\href{https://fixyourdiet.vercel.app}{Live} $|$ Flask, Firebase, LangChain, Groq API}
   {
     \bullets
-      \bullet{Built a fitness assistant leveraging LangChain and Groq LLMs to generate personalized meal plans based on user profiles.}
-      \bullet{Integrated a pipeline for parsing food entries and delivering instant calorie and macronutrient estimations.}
+      \bullet{Designed a backend AI fitness ecosystem integrating Flask and LangChain with remote LLM APIs (Groq).}
+      \bullet{Built robust data pipelines for natural language meal parsing, dynamic calorie estimation, and conversational state persistence via Firebase.}
     \bulletsEnd
   }
 
 \ProjectEntry{NSEBreakoutMonitor}
   {}
-  {NSE Momentum Burst Scanner}
+  {NSE Momentum Scanner}
   {\href{https://github.com/brrrezy/NSE-Breakout-Monitor}{Source} $|$ Python, BeautifulSoup, GitHub Actions, Telegram API}
   {
     \bullets
-      \bullet{Engineered an automated script running daily on GitHub Actions to scan Nifty 500 stocks for high-probability breakouts.}
-      \bullet{Parsed HTML pages using BeautifulSoup to track stock trend confluences (RSI, ADX, MACD, and stochastic momentum).}
-      \bullet{Integrated the Telegram Bot API to dispatch instant alert watchlists directly to active channel subscribers.}
+      \bullet{Automated daily market scanning by building a resilient GitHub Actions pipeline that scrapes and processes Nifty 500 trends.}
+      \bullet{Engineered real-time breakout alerting algorithms with instant push notifications dispatched via the Telegram API.}
+    \bulletsEnd
+  }
+
+\ProjectEntry{ClimaCast}
+  {}
+  {Clima-Cast}
+  {\href{https://github.com/brrrezy/Clima-Cast}{Source} $|$ Python, scikit-learn, Pandas}
+  {
+    \bullets
+      \bullet{Engineered robust data pipelines for clean preprocessing and visualization of historical weather datasets.}
+      \bullet{Trained and deployed an MLPRegressor neural network to accurately forecast ambient temperature and humidity metrics.}
     \bulletsEnd
   }
 
 \ProjectEntry{AeronexisAI}
   {}
   {Aeronexis AI}
-  {\href{https://aeronexis.vercel.app}{Live} $|$ Next.js, Tailwind CSS, Framer Motion, MongoDB}
+  {\href{https://aeronexis.vercel.app}{Live} $|$ Next.js, Tailwind CSS, MongoDB}
   {
     \bullets
-      \bullet{Designed a responsive landing page and waitlist registration system for an engineering simulation platform.}
-      \bullet{Integrated MongoDB Atlas to store pre-registration contact details and user sign-ups securely.}
+      \bullet{Designed a responsive landing page and pre-registration waitlist system for an engineering simulation platform.}
+      \bullet{Integrated MongoDB Atlas to store and manage pre-registration contact details and user sign-ups securely.}
     \bulletsEnd
   }
 
@@ -139,30 +160,6 @@
   {
     \bullets
       \bullet{Designed and deployed a search-optimized e-commerce website for sports shooting accessories, improving search visibility.}
-      \bullet{Integrated Google Analytics to track user traffic, session engagement, and conversion metrics.}
-    \bulletsEnd
-  }
-
-\ProjectEntry{ClimaCast}
-  {}
-  {Clima-Cast}
-  {\href{https://github.com/brrrezy/Clima-Cast}{Source} $|$ Python, scikit-learn}
-  {
-    \bullets
-      \bullet{Trained an MLPRegressor model to predict ambient temperature and humidity using historical weather datasets.}
-      \bullet{Built a basic data pipeline for cleaning raw data, formatting inputs, and visualizing prediction accuracy.}
-    \bulletsEnd
-  }
-
-\ProjectEntry{ThirdEye}
-  {}
-  {Autonomous Organizational Memory (ThirdEye)}
-  {\href{https://github.com/brrrezy/Third-Eye}{Source} $|$ Python, ChromaDB, RAG, LangChain, FastAPI}
-  {
-    \bullets
-      \bullet{Created a Retrieval-Augmented Generation (RAG) platform to query system logs and corporate documentation.}
-      \bullet{Integrated ChromaDB vector database for semantic search, custom text chunking, and similarity-based retrieval.}
-      \bullet{Built FastAPI endpoints delivering natural language answers backed by custom source citations.}
     \bulletsEnd
   }
 
@@ -173,8 +170,8 @@
   {Sunhacks 2026}
   {
     \bullets
-      \bullet{Developed a real-time, webhook-based compliance monitor tracking regulatory updates from NSE, BSE, MCX, and RBI.}
-      \bullet{Engineered an interactive dashboard for visualizing policy updates and automating alerts for guideline changes.}
+      \bullet{Engineered a real-time compliance dashboard tracking regulatory updates via webhooks from NSE, BSE, MCX, and RBI.}
+      \bullet{Automated policy diffing and alerts for critical trading guideline changes.}
     \bulletsEnd
   }
 
@@ -184,7 +181,7 @@
   {Sunhacks 2024 by Sandip University \& ESDS}
   {
     \bullets
-      \bullet{Designed a predictive model for HVAC energy optimization and climate control.}
+      \bullet{Designed a predictive machine learning pipeline for HVAC energy optimization and smart climate control.}
     \bulletsEnd
   }
 
@@ -194,6 +191,6 @@
   {AICTE Data Science Hackathon (Winner)}
   {
     \bullets
-      \bullet{Built regression models and performed feature engineering on 1000+ records.}
+      \bullet{Secured 1st place by engineering high-accuracy predictive regression models for sales intelligence and product forecasting.}
     \bulletsEnd
   }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ProfileCard } from "@/components/ProfileCard";
 import { About } from "@/components/About";
@@ -9,7 +9,8 @@ import { Skills } from "@/components/Skills";
 import { Experience } from "@/components/Experience";
 import { Contact } from "@/components/Contact";
 import { User, Briefcase, Code2, GraduationCap, Mail, Sun, HelpCircle } from "lucide-react";
-import { VaporwaveBackground } from "@/components/ui/VaporwaveBackground";
+import { AuroraBackground } from "@/components/ui/AuroraBackground";
+import { LoadingScreen } from "@/components/ui/LoadingScreen";
 
 const TABS = [
   { id: "about", icon: User },
@@ -27,11 +28,32 @@ const HERO: Record<string, { sub: string; title: string }> = {
   contact: { sub: "Get In Touch", title: "Contact" },
 };
 
+// Staggered entrance for the grid panes
+const paneVariants = {
+  hidden: { opacity: 0, y: 25, scale: 0.96 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.55,
+      delay: i * 0.08,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  }),
+};
+
 export default function Home() {
   const [tab, setTab] = useState("about");
   const [ok, setOk] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const [showUpdates, setShowUpdates] = useState(false);
+
   useEffect(() => setOk(true), []);
+
+  const handleLoadComplete = useCallback(() => {
+    setLoaded(true);
+  }, []);
 
   const h = HERO[tab] || HERO.about;
 
@@ -46,55 +68,90 @@ export default function Home() {
     }
   };
 
-  if (!ok) return <div style={{ background: "#000", height: "100vh" }} />;
+  if (!ok) return <div style={{ background: "#050505", height: "100vh" }} />;
 
   return (
     <>
-      {/* Background Effect */}
-      <VaporwaveBackground />
+      {/* Loading Screen */}
+      {!loaded && <LoadingScreen onComplete={handleLoadComplete} />}
 
-      <div className="grid-shell">
+      {/* Background Effect */}
+      <AuroraBackground />
+
+      <div className="grid-shell" style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.3s ease" }}>
 
         {/* P1: Logo / Home - Yellow Question Button */}
-        <div className="pane p-logo" onClick={() => setShowUpdates(true)}>
+        <motion.div
+          className="pane p-logo"
+          onClick={() => setShowUpdates(true)}
+          custom={0}
+          initial="hidden"
+          animate={loaded ? "visible" : "hidden"}
+          variants={paneVariants}
+        >
           <button className="help-trigger-btn" title="Current Updates & Facts">
             <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ display: "block" }}>
               <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
               <line x1="12" y1="17" x2="12.01" y2="17" />
             </svg>
           </button>
-        </div>
+        </motion.div>
 
         {/* P2: Mode Toggle */}
-        <div className="pane p-mode">
+        <motion.div
+          className="pane p-mode"
+          custom={1}
+          initial="hidden"
+          animate={loaded ? "visible" : "hidden"}
+          variants={paneVariants}
+        >
           <button title="Toggle theme" className="nav-icon" data-label="MODE">
             <Sun size={24} />
           </button>
-        </div>
+        </motion.div>
 
         {/* P3: Nav Icons */}
-        <nav className="pane p-nav">
-          {TABS.map((t) => {
+        <motion.nav
+          className="pane p-nav"
+          custom={2}
+          initial="hidden"
+          animate={loaded ? "visible" : "hidden"}
+          variants={paneVariants}
+        >
+          {TABS.map((t, i) => {
             const Icon = t.icon;
             return (
-              <button key={t.id} onClick={() => setTab(t.id)}
+              <motion.button
+                key={t.id}
+                onClick={() => setTab(t.id)}
                 className={`nav-icon ${tab === t.id ? "nav-icon--active" : ""}`}
                 title={t.id}
                 data-label={t.id.toUpperCase()}
+                initial={{ opacity: 0, x: -15 }}
+                animate={loaded ? { opacity: 1, x: 0 } : { opacity: 0, x: -15 }}
+                transition={{ duration: 0.4, delay: 0.3 + i * 0.07 }}
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.92 }}
               >
                 <Icon size={24} />
-              </button>
+              </motion.button>
             );
           })}
-        </nav>
+        </motion.nav>
 
         {/* P4: Content (changes) */}
-        <div className="pane p-content">
+        <motion.div
+          className="pane p-content"
+          custom={3}
+          initial="hidden"
+          animate={loaded ? "visible" : "hidden"}
+          variants={paneVariants}
+        >
           <div className="p-content__hero">
             <span className="hero-dot hero-dot--1" />
             <span className="hero-dot hero-dot--2" />
             <AnimatePresence mode="wait">
-              <motion.div key={tab + "-h"} initial={{ opacity: 0, y: 8, scale: 0.98 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -8, scale: 0.98 }} transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }} style={{ textAlign: "center", zIndex: 5, position: "relative" }}>
+              <motion.div key={tab + "-h"} initial={{ opacity: 0, y: 12, scale: 0.96, filter: "blur(6px)" }} animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }} exit={{ opacity: 0, y: -10, scale: 0.96, filter: "blur(6px)" }} transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }} style={{ textAlign: "center", zIndex: 5, position: "relative" }}>
                 <p className="hero-sub">{h.sub}</p>
                 <h1 className="hero-title">{h.title}</h1>
               </motion.div>
@@ -102,15 +159,21 @@ export default function Home() {
           </div>
           <div className="p-content__body">
             <AnimatePresence mode="wait">
-              <motion.div key={tab} initial={{ opacity: 0, y: 14, scale: 0.99 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -10, scale: 0.99 }} transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}>
+              <motion.div key={tab} initial={{ opacity: 0, y: 20, scale: 0.98, filter: "blur(4px)" }} animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }} exit={{ opacity: 0, y: -14, scale: 0.98, filter: "blur(4px)" }} transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}>
                 {content()}
               </motion.div>
             </AnimatePresence>
           </div>
-        </div>
+        </motion.div>
 
         {/* P5: Profile (constant) */}
-        <aside className="pane p-profile">
+        <motion.aside
+          className="pane p-profile"
+          custom={4}
+          initial="hidden"
+          animate={loaded ? "visible" : "hidden"}
+          variants={paneVariants}
+        >
           <div className="p-profile__hero">
             {/* Same height as content hero */}
           </div>
@@ -125,12 +188,18 @@ export default function Home() {
               <span className="prof-btn__icon">@</span> Contact Me
             </button>
           </div>
-        </aside>
+        </motion.aside>
 
         {/* P6: Footer */}
-        <div className="pane p-footer">
+        <motion.div
+          className="pane p-footer"
+          custom={5}
+          initial="hidden"
+          animate={loaded ? "visible" : "hidden"}
+          variants={paneVariants}
+        >
           <p>© 2026 <span className="hl">Shivanshu</span> · powered by <span className="hl">Next.js</span></p>
-        </div>
+        </motion.div>
       </div>
 
       {/* Mobile Bottom Nav - visible only on small screens */}
@@ -156,10 +225,10 @@ export default function Home() {
           <div className="modal-overlay" onClick={() => setShowUpdates(false)}>
             <motion.div 
               className="hud-modal"
-              initial={{ opacity: 0, scale: 0.93, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.93, y: 15 }}
-              transition={{ duration: 0.22, ease: "easeOut" }}
+              initial={{ opacity: 0, scale: 0.88, y: 20, filter: "blur(10px)" }}
+              animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 0.88, y: 20, filter: "blur(10px)" }}
+              transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}

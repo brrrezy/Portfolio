@@ -16,43 +16,43 @@ export const personalInfo = {
 
 export const projects = [
   {
-    title: "TradeFlow",
-    description: "Built an institutional-grade trading intelligence terminal. Engineered the FastAPI backend for real-time market data updates, automated trade ingestion, and risk-calculation pipelines.",
-    tags: ["Python", "FastAPI", "MongoDB", "LangChain", "Next.js"],
+    title: "TradeFlow Terminal",
+    description: "Engineered a high-performance trading API with FastAPI, implementing WebSockets for sub-100ms real-time market data streaming and strict MongoDB user isolation. Integrated a LangChain AI coaching module for automated position sizing and risk analysis.",
+    tags: ["Python", "FastAPI", "MongoDB", "LangChain", "WebSockets"],
     link: "https://thetradeflow.vercel.app",
     image: "/tradeflow_ui.png"
   },
   {
     title: "NSE Swing Screener",
-    description: "Developed a quantitative stock screening tool scanning 500+ NSE stocks. Built a custom parallel processing engine to fetch and analyze historical data, caching results in SQLite.",
-    tags: ["Python", "FastAPI", "SQLite", "BeautifulSoup", "APScheduler"],
+    description: "Architected a custom parallel processing engine scanning 500+ NSE stocks for quantitative signals. Reduced analysis latency via asynchronous task scheduling (APScheduler) and optimized SQLite caching layers, serving data through a lightweight API.",
+    tags: ["Python", "FastAPI", "SQLite", "BeautifulSoup", "AsyncIO"],
     link: "https://findswingstocks.up.railway.app/",
     image: "/nse_screener_ui.png"
   },
   {
-    title: "DietGPT",
-    description: "Developed an AI fitness assistant utilizing Flask and LangChain. Implemented robust pipelines for meal parsing, calorie estimation, and conversational diet recommendations via LLM APIs.",
-    tags: ["Python", "Flask", "LangChain", "Firebase", "Groq"],
-    link: "https://fixyourdiet.vercel.app",
-    image: "/dietgpt_ui.png"
-  },
-  {
-    title: "NSE Momentum Burst Scanner",
-    description: "Created an automated stock scanner script executing daily on GitHub Actions. Scrapes Nifty 500 stock trends and delivers real-time breakout alerts to a Telegram channel.",
-    tags: ["Python", "BeautifulSoup", "GitHub Actions", "Telegram API"],
-    link: "https://github.com/brrrezy/NSE-Breakout-Monitor",
-    image: "/nse_burst_ui.png"
-  },
-  {
-    title: "Autonomous Organizational Memory",
-    description: "Built a knowledge base query system implementing a Retrieval-Augmented Generation (RAG) pipeline. Integrated ChromaDB vector store for semantic document chunking and vector search.",
+    title: "Autonomous Org Memory",
+    description: "Engineered a scalable Retrieval-Augmented Generation (RAG) backend utilizing FastAPI and ChromaDB. Solved unstructured data retrieval bottlenecks by implementing semantic document chunking and vector search for context-aware LLM query responses.",
     tags: ["Python", "ChromaDB", "RAG", "LangChain", "FastAPI"],
     link: "https://github.com/brrrezy/Third-Eye",
     image: "/rag_memory_ui.png"
   },
   {
+    title: "DietGPT Assistant",
+    description: "Designed a backend AI fitness ecosystem integrating Flask and LangChain with LLM APIs (Groq). Built robust data pipelines for natural language meal parsing, dynamic calorie estimation, and conversational state persistence via Firebase.",
+    tags: ["Python", "Flask", "LangChain", "Firebase", "Groq API"],
+    link: "https://fixyourdiet.vercel.app",
+    image: "/dietgpt_ui.png"
+  },
+  {
+    title: "NSE Momentum Scanner",
+    description: "Automated daily market scanning by building a resilient GitHub Actions pipeline that scrapes and processes Nifty 500 trends. Engineered real-time breakout alerting algorithms with instant push notifications via Telegram API.",
+    tags: ["Python", "BeautifulSoup", "GitHub Actions", "Telegram API"],
+    link: "https://github.com/brrrezy/NSE-Breakout-Monitor",
+    image: "/nse_burst_ui.png"
+  },
+  {
     title: "Clima-Cast",
-    description: "Trained an MLPRegressor neural network to predict ambient temperature and humidity using historical weather datasets. Built a data pipeline for clean preprocessing and visualization.",
+    description: "Engineered robust data pipelines for clean preprocessing and visualization of historical weather datasets. Trained and deployed an MLPRegressor neural network to accurately forecast ambient temperature and humidity metrics.",
     tags: ["Python", "scikit-learn", "Pandas", "Data Science"],
     link: "https://github.com/brrrezy/Clima-Cast",
     image: "/climacast_ui.png"
@@ -75,25 +75,25 @@ export const projects = [
 
 export const experience = [
   {
-    title: "Machine Learning Intern",
-    company: "Brain O Vision",
-    date: "Jan 2024 - Mar 2024",
-    location: "Hyderabad, India",
-    description: [
-      "Fine-tuned XGBoost and Random Forest models on consumer datasets to assist in improving predictive accuracy.",
-      "Developed feature engineering pipelines and behavioral clustering models to preprocess customer data.",
-      "Collaborated on a customer segmentation project using K-Means to identify distinct user cohorts for marketing analysis."
-    ]
-  },
-  {
     title: "Python Programming Intern",
     company: "Code Alpha",
     date: "Nov 2025",
     location: "Lucknow, India",
     description: [
-      "Wrote asynchronous Python scripts to automate routine tasks and optimize data processing workflows.",
-      "Implemented unit tests to increase codebase reliability and identify bugs during active development cycles.",
-      "Refactored older scripts into modular, object-oriented structures to improve code readability and maintenance."
+      "Engineered asynchronous Python workflows to automate data ingestion and processing, reducing routine task execution time by over 40%.",
+      "Strengthened system reliability by implementing comprehensive Pytest suites, increasing test coverage and accelerating deployment cycles.",
+      "Refactored legacy monolith scripts into modular, object-oriented micro-components, significantly improving maintainability and extensibility."
+    ]
+  },
+  {
+    title: "Machine Learning Intern",
+    company: "Brain O Vision",
+    date: "Jan 2024 - Mar 2024",
+    location: "Hyderabad, India",
+    description: [
+      "Developed scalable feature engineering pipelines and behavioral clustering models (K-Means) to preprocess and segment large consumer datasets.",
+      "Fine-tuned XGBoost and Random Forest algorithms, achieving measurable improvements in predictive accuracy for customer cohort analysis.",
+      "Collaborated with cross-functional teams to integrate predictive models into analytical dashboards for marketing optimization."
     ]
   },
   {
@@ -103,9 +103,8 @@ export const experience = [
     location: "Nashik, Maharashtra",
     description: [
       "Graduated with an 8.49 GPA.",
-      "Focusing on Machine Learning, Data Science, and Full-Stack Development.",
-      "Relevant Coursework: Data Structures, Algorithms, Database Management Systems, Neural Networks.",
-      "Exploring RAG pipelines and Vector Databases through personal projects and academic studies."
+      "Focusing on Distributed Systems, Machine Learning, Data Structures, and API Architecture.",
+      "Actively exploring RAG pipelines and Vector Databases to build production-ready LLM backends."
     ]
   }
 ];
@@ -136,7 +135,7 @@ export const skills = {
     { name: "PostgreSQL & SQLite", level: 88, slug: "postgresql" },
     { name: "MongoDB", level: 85, slug: "mongodb" },
     { name: "Linux/Ubuntu", level: 80, slug: "linux" },
-    { name: "Pytest & Unit Testing", level: 85, slug: "pytest" }
+    { name: "Pytest", level: 85, slug: "pytest" }
   ]
 };
 
@@ -144,49 +143,49 @@ export const achievements = [
   {
     title: "AWS Certified Developer",
     organization: "Amazon Web Services (AWS)",
-    description: "Professional certification for developing and maintaining AWS-based applications."
+    description: "Professional certification for developing, deploying, and debugging cloud-based applications."
   },
   {
     title: "Certified Scrum Master",
     organization: "Scrum Alliance",
-    description: "Formal training and certification in Agile methodologies and Scrum framework."
+    description: "Formal training and certification in Agile methodologies and software delivery cycles."
   },
   {
     title: "Sunhacks 2026 (Top 10) - April 2026",
     organization: "Sandip University & ESDS",
-    description: "Developed a real-time compliance dashboard tracking regulatory updates from NSE, BSE, MCX, and RBI."
+    description: "Engineered a real-time compliance dashboard tracking regulatory updates via webhooks from NSE, BSE, MCX, and RBI."
   },
   {
     title: "Sunhacks 2024 (Top 10) - April 2024",
     organization: "Sandip University & ESDS",
-    description: "Designed a predictive model for HVAC energy optimization and smart climate control."
+    description: "Designed a predictive machine learning pipeline for HVAC energy optimization and smart climate control."
   },
   {
-    title: "Sales Prediction & Product Performance Predictor Model",
-    organization: "AICTE Data Science Hackathon (Winner) | Pune",
-    description: "Secured 1st place in the national-level hackathon. Developed high-accuracy predictive regression models."
+    title: "AICTE Data Science Hackathon (Winner)",
+    organization: "National Level Hackathon | Pune",
+    description: "Secured 1st place by engineering high-accuracy predictive regression models for sales intelligence and product forecasting."
   }
 ];
 
 export const services = [
   {
     id: "01",
-    title: "Data Science",
-    description: "Applying predictive modeling and data analysis to uncover insights from structured datasets."
+    title: "Backend API Engineering",
+    description: "Architecting high-performance, scalable REST/WebSocket APIs using FastAPI and Python."
   },
   {
     id: "02",
-    title: "AI Agents",
-    description: "Building customized RAG pipelines and assistant interfaces using LangChain and LLMs."
+    title: "AI & RAG Systems",
+    description: "Building autonomous agents and context-aware LLM pipelines with LangChain and Vector Databases."
   },
   {
     id: "03",
-    title: "Full-Stack Dev",
-    description: "Developing responsive web applications using Next.js, TailwindCSS, and FastAPI."
+    title: "Data Pipelines & Automation",
+    description: "Designing robust web scrapers, ETL pipelines, and async task processors to automate workflows."
   },
   {
     id: "04",
-    title: "Machine Learning",
-    description: "Training and deploying machine learning models for classification, regression, and forecasting."
+    title: "Database Architecture",
+    description: "Optimizing relational (PostgreSQL) and NoSQL (MongoDB) models for efficient data retrieval."
   }
 ];
