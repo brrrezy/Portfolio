@@ -1,11 +1,11 @@
 export const personalInfo = {
   name: "Shivanshu Srivastava",
   role: "Python Developer & Backend Engineer",
-  education: "Computer Science Student @ Sandip University",
-  location: "Varanasi, India - 221010",
+  education: "B.Tech CSE @ Sandip University (GPA: 8.49)",
+  location: "Varanasi, India -- 221010",
   email: "shivanshu.srivastava.work@gmail.com",
   phone: "+91 9198865041",
-  tagline: "Focusing on REST APIs, Automated Scripting, and Intelligent RAG Pipelines.",
+  tagline: "Focusing on REST APIs, Database Queries, and Automation Scripting.",
   bio: "Thank you for visiting my portfolio! I'm truly grateful for your time and interest in my work. Let's connect and build something meaningful together. ❤️",
   socials: {
     github: "https://github.com/brrrezy",
@@ -16,57 +16,57 @@ export const personalInfo = {
 
 export const projects = [
   {
-    title: "TradeFlow Terminal",
-    description: "Engineered a high-performance trading API with FastAPI, implementing WebSockets for sub-100ms real-time market data streaming and strict MongoDB user isolation. Integrated a LangChain AI coaching module for automated position sizing and risk analysis.",
-    tags: ["Python", "FastAPI", "MongoDB", "LangChain", "WebSockets"],
+    title: "TradeFlow",
+    description: "Built a REST API with FastAPI and MongoDB for logging, filtering, and analyzing stock trades with per-user data isolation. Implemented JWT authentication with bcrypt password hashing; used MongoDB aggregation pipelines to compute portfolio metrics like win rate and net P&L.",
+    tags: ["Python", "FastAPI", "MongoDB", "JWT Auth", "REST API"],
     link: "https://thetradeflow.vercel.app",
     image: "/tradeflow_ui.png"
   },
   {
     title: "NSE Swing Screener",
-    description: "Architected a custom parallel processing engine scanning 500+ NSE stocks for quantitative signals. Reduced analysis latency via asynchronous task scheduling (APScheduler) and optimized SQLite caching layers, serving data through a lightweight API.",
-    tags: ["Python", "FastAPI", "SQLite", "BeautifulSoup", "AsyncIO"],
+    description: "Developed a stock screening service that scrapes daily NSE data and flags potential swing setups based on technical indicators. Used SQLite to cache historical data locally and scheduled background scraping jobs with APScheduler to keep results current.",
+    tags: ["Python", "FastAPI", "SQLite", "BeautifulSoup", "APScheduler"],
     link: "https://findswingstocks.up.railway.app/",
     image: "/nse_screener_ui.png"
   },
   {
-    title: "Autonomous Org Memory",
-    description: "Engineered a scalable Retrieval-Augmented Generation (RAG) backend utilizing FastAPI and ChromaDB. Solved unstructured data retrieval bottlenecks by implementing semantic document chunking and vector search for context-aware LLM query responses.",
-    tags: ["Python", "ChromaDB", "RAG", "LangChain", "FastAPI"],
+    title: "ThirdEye -- Org Memory System",
+    description: "Built a document Q&A backend that chunks uploaded files, stores vector embeddings in ChromaDB, and retrieves relevant context for LLM-powered answers. Exposed REST endpoints via FastAPI for document upload, semantic search, and conversational queries over a knowledge base.",
+    tags: ["Python", "FastAPI", "ChromaDB", "LangChain", "Vector Search"],
     link: "https://github.com/brrrezy/Third-Eye",
     image: "/rag_memory_ui.png"
   },
   {
-    title: "DietGPT Assistant",
-    description: "Designed a backend AI fitness ecosystem integrating Flask and LangChain with LLM APIs (Groq). Built robust data pipelines for natural language meal parsing, dynamic calorie estimation, and conversational state persistence via Firebase.",
-    tags: ["Python", "Flask", "LangChain", "Firebase", "Groq API"],
-    link: "https://fixyourdiet.vercel.app",
-    image: "/dietgpt_ui.png"
-  },
-  {
-    title: "NSE Momentum Scanner",
-    description: "Automated daily market scanning by building a resilient GitHub Actions pipeline that scrapes and processes Nifty 500 trends. Engineered real-time breakout alerting algorithms with instant push notifications via Telegram API.",
+    title: "NSE Breakout Monitor",
+    description: "Wrote a Python script that scrapes Nifty 500 data and identifies momentum breakouts based on price and volume thresholds. Automated daily runs via GitHub Actions cron and integrated Telegram Bot API for instant breakout notifications.",
     tags: ["Python", "BeautifulSoup", "GitHub Actions", "Telegram API"],
     link: "https://github.com/brrrezy/NSE-Breakout-Monitor",
     image: "/nse_burst_ui.png"
   },
   {
+    title: "DietGPT Assistant",
+    description: "Designed a backend AI fitness prototype integrating Flask and LangChain with remote LLM APIs. Handled meal data parsing, calorie calculation, and user chat history with Firebase.",
+    tags: ["Python", "Flask", "LangChain", "Firebase"],
+    link: "https://fixyourdiet.vercel.app",
+    image: "/dietgpt_ui.png"
+  },
+  {
     title: "Clima-Cast",
-    description: "Engineered robust data pipelines for clean preprocessing and visualization of historical weather datasets. Trained and deployed an MLPRegressor neural network to accurately forecast ambient temperature and humidity metrics.",
-    tags: ["Python", "scikit-learn", "Pandas", "Data Science"],
+    description: "Cleaned and preprocessed historical weather datasets using Pandas and NumPy. Trained regression models (MLPRegressor) with Scikit-Learn to forecast ambient temperature and humidity metrics.",
+    tags: ["Python", "Scikit-Learn", "Pandas", "NumPy"],
     link: "https://github.com/brrrezy/Clima-Cast",
     image: "/climacast_ui.png"
   },
   {
     title: "Aeronexis AI",
-    description: "Designed a responsive landing page and pre-registration waitlist system, storing user sign-up details in MongoDB.",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "MongoDB"],
+    description: "Designed a responsive landing page and pre-registration waitlist system, storing user sign-up details securely in MongoDB.",
+    tags: ["Next.js", "Tailwind CSS", "MongoDB"],
     link: "https://aeronexis.vercel.app",
     image: "/aeronexis_ui.png"
   },
   {
     title: "Shooters of India",
-    description: "Designed and deployed a search-optimized e-commerce website for sports shooting accessories, integrated with Google Analytics.",
+    description: "Designed and deployed a search-optimized web storefront for sports shooting accessories, integrated with Google Analytics.",
     tags: ["HTML/CSS", "JavaScript", "Analytics"],
     link: "https://shootersofindia.vercel.app/",
     image: "/shooters_ecommerce_ui.png"
@@ -80,9 +80,8 @@ export const experience = [
     date: "Nov 2025",
     location: "Lucknow, India",
     description: [
-      "Engineered asynchronous Python workflows to automate data ingestion and processing, reducing routine task execution time by over 40%.",
-      "Strengthened system reliability by implementing comprehensive Pytest suites, increasing test coverage and accelerating deployment cycles.",
-      "Refactored legacy monolith scripts into modular, object-oriented micro-components, significantly improving maintainability and extensibility."
+      "Built modular Python scripts for data processing and file management using standard libraries (os, json, csv, datetime).",
+      "Developed CLI utilities with structured error handling and integrated REST API data fetching using the Requests library."
     ]
   },
   {
@@ -91,79 +90,67 @@ export const experience = [
     date: "Jan 2024 - Mar 2024",
     location: "Hyderabad, India",
     description: [
-      "Developed scalable feature engineering pipelines and behavioral clustering models (K-Means) to preprocess and segment large consumer datasets.",
-      "Fine-tuned XGBoost and Random Forest algorithms, achieving measurable improvements in predictive accuracy for customer cohort analysis.",
-      "Collaborated with cross-functional teams to integrate predictive models into analytical dashboards for marketing optimization."
+      "Preprocessed structured datasets using Pandas and NumPy -- handled missing values, encoded categorical features, and applied feature scaling.",
+      "Trained and evaluated classification models (Decision Tree, Random Forest) with Scikit-Learn; measured performance using accuracy, precision, and confusion matrices."
     ]
   },
   {
     title: "B.Tech in Computer Science & Engineering",
-    company: "Sandip University, Nashik",
+    company: "Sandip University",
     date: "2022 - 2026",
     location: "Nashik, Maharashtra",
     description: [
-      "Graduated with an 8.49 GPA.",
-      "Focusing on Distributed Systems, Machine Learning, Data Structures, and API Architecture.",
-      "Actively exploring RAG pipelines and Vector Databases to build production-ready LLM backends."
+      "Graduating with an 8.49 GPA in Computer Science & Engineering.",
+      "Hands-on focus: REST API Design, Database Queries, Automation Scripts, and Backend Systems.",
+      "Active participant in collegiate and national level hackathons."
     ]
   }
 ];
 
 export const skills = {
-  programming: [
-    { name: "Python", level: 95, slug: "python" },
-    { name: "SQL", level: 88, slug: "postgresql" },
-    { name: "HTML/CSS", level: 80, slug: "html5" },
-    { name: "Bash", level: 75, slug: "gnubash" }
+  languages: [
+    { name: "Python", level: 92, slug: "python" },
+    { name: "SQL", level: 85, slug: "mysql" },
+    { name: "HTML/CSS", level: 80, slug: "html5" }
   ],
-  frameworks: [
-    { name: "FastAPI", level: 92, slug: "fastapi" },
-    { name: "Flask", level: 85, slug: "flask" },
-    { name: "Django", level: 75, slug: "django" },
-    { name: "LangChain", level: 82, slug: "langchain" }
+  backend: [
+    { name: "FastAPI", level: 90, slug: "fastapi" },
+    { name: "Flask", level: 82, slug: "flask" },
+    { name: "REST APIs", level: 88, slug: "postman" },
+    { name: "BeautifulSoup", level: 85, slug: "python" },
+    { name: "Requests", level: 88, slug: "python" }
   ],
-  libraries: [
-    { name: "Pandas & NumPy", level: 88, slug: "pandas" },
-    { name: "BeautifulSoup", level: 90, slug: "python" },
-    { name: "SQLAlchemy ORM", level: 85, slug: "sqlalchemy" },
-    { name: "Requests", level: 92, slug: "postman" },
-    { name: "Scikit-learn", level: 75, slug: "scikitlearn" }
+  databases: [
+    { name: "MongoDB", level: 85, slug: "mongodb" },
+    { name: "SQLite", level: 85, slug: "sqlite" },
+    { name: "MySQL", level: 80, slug: "mysql" },
+    { name: "SQLAlchemy ORM", level: 82, slug: "sqlalchemy" }
   ],
   tools: [
-    { name: "Docker", level: 80, slug: "docker" },
-    { name: "Git & GitHub", level: 90, slug: "git" },
-    { name: "PostgreSQL & SQLite", level: 88, slug: "postgresql" },
-    { name: "MongoDB", level: 85, slug: "mongodb" },
-    { name: "Linux/Ubuntu", level: 80, slug: "linux" },
-    { name: "Pytest", level: 85, slug: "pytest" }
+    { name: "Git & GitHub", level: 88, slug: "git" },
+    { name: "GitHub Actions", level: 82, slug: "githubactions" },
+    { name: "Postman", level: 85, slug: "postman" },
+    { name: "Linux", level: 80, slug: "linux" },
+    { name: "JWT Auth", level: 84, slug: "jsonwebtokens" },
+    { name: "AsyncIO", level: 82, slug: "python" }
   ]
 };
 
 export const achievements = [
   {
-    title: "AWS Certified Developer",
-    organization: "Amazon Web Services (AWS)",
-    description: "Professional certification for developing, deploying, and debugging cloud-based applications."
-  },
-  {
-    title: "Certified Scrum Master",
-    organization: "Scrum Alliance",
-    description: "Formal training and certification in Agile methodologies and software delivery cycles."
-  },
-  {
     title: "Sunhacks 2026 (Top 10) - April 2026",
     organization: "Sandip University & ESDS",
-    description: "Engineered a real-time compliance dashboard tracking regulatory updates via webhooks from NSE, BSE, MCX, and RBI."
+    description: "Built the AI chatbot and knowledge-graph visualization features for an organizational memory tool (ThirdEye); placed in the Top 10."
   },
   {
     title: "Sunhacks 2024 (Top 10) - April 2024",
     organization: "Sandip University & ESDS",
-    description: "Designed a predictive machine learning pipeline for HVAC energy optimization and smart climate control."
+    description: "Contributed to a predictive ML pipeline for energy-efficient HVAC climate control; team placed in the Top 10."
   },
   {
     title: "AICTE Data Science Hackathon (Winner)",
     organization: "National Level Hackathon | Pune",
-    description: "Secured 1st place by engineering high-accuracy predictive regression models for sales intelligence and product forecasting."
+    description: "Won 1st place by building regression models for sales forecasting and product performance prediction using Scikit-Learn and Pandas."
   }
 ];
 
@@ -171,21 +158,21 @@ export const services = [
   {
     id: "01",
     title: "Backend API Engineering",
-    description: "Architecting high-performance, scalable REST/WebSocket APIs using FastAPI and Python."
+    description: "Architecting clean, structured REST APIs using FastAPI, Flask, and Python with secure JWT authentication."
   },
   {
     id: "02",
-    title: "AI & RAG Systems",
-    description: "Building autonomous agents and context-aware LLM pipelines with LangChain and Vector Databases."
+    title: "Database Architecture",
+    description: "Designing efficient schemas, indexing, and aggregation pipelines using MongoDB, SQLite, and MySQL."
   },
   {
     id: "03",
-    title: "Data Pipelines & Automation",
-    description: "Designing robust web scrapers, ETL pipelines, and async task processors to automate workflows."
+    title: "Data Pipelines & Web Scraping",
+    description: "Writing robust scrapers, CLI utilities, and scheduled automation tasks using BeautifulSoup and GitHub Actions."
   },
   {
     id: "04",
-    title: "Database Architecture",
-    description: "Optimizing relational (PostgreSQL) and NoSQL (MongoDB) models for efficient data retrieval."
+    title: "Document Q&A & Semantic Search",
+    description: "Building vector search retrieval pipelines and Q&A backends using ChromaDB and FastAPI."
   }
 ];

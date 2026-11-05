@@ -15,7 +15,7 @@ export function About() {
             <h3 className="sub-header !mt-0"><div><span className="text-accent">HEY,</span> THERE 👋</div></h3>
 
             <p className="text-muted leading-relaxed text-[15px] font-medium" style={{ textAlign: 'justify' }}>
-              I'm Shivanshu, a full-stack developer focused on AI-powered financial systems, quantitative trading infrastructure, and intelligent productivity platforms. I emphasize automation, low-latency architectures, and high-fidelity product design using modern AI tooling.
+              I'm Shivanshu, a B.Tech CSE student (Sandip University, 2026, GPA: 8.49) with hands-on experience building backend services in Python using FastAPI, MongoDB, and SQLite. I focus on clean REST API design, database queries, authentication, and writing reliable automation scripts.
             </p>
           </div>
         </ScrollReveal>
@@ -102,10 +102,10 @@ export function About() {
         </ScrollReveal>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-4">
           {[
-            { num: "12+", label: "Projects Completed" },
-            { num: "3+", label: "Years Experience" },
-            { num: "50k", label: "Lines of Code" },
-            { num: "10+", label: "Happy Clients" },
+            { num: "8.49", label: "Academic GPA" },
+            { num: "8+", label: "Projects Built" },
+            { num: "1st", label: "AICTE Winner" },
+            { num: "Top 10", label: "SunHacks Finalist" },
           ].map((fact, idx) => (
             <ScrollReveal key={fact.label} direction="up" delay={0.1 + idx * 0.12} distance={35} scale={0.9}>
               <div className="svc-card flex flex-col items-center justify-center text-center">

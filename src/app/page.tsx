@@ -258,7 +258,7 @@ export default function Home() {
                           <span className="hud-status-tag">DEV_RUNNING</span>
                         </div>
                         <p className="hud-activity-desc">
-                          Webhook-based compliance monitor tracking live regulatory changes from <strong>NSE, BSE, MCX, & RBI</strong>. (SunHacks '26)
+                          Document Q&amp;A backend with ChromaDB vector search and semantic chunking. (<strong>ThirdEye</strong> - SunHacks '26 Top 10)
                         </p>
                       </div>
                       <div className="hud-activity-item">
@@ -267,7 +267,7 @@ export default function Home() {
                           <span className="hud-status-tag">STABLE</span>
                         </div>
                         <p className="hud-activity-desc">
-                          TradeFlow terminal integrations: automated position sizing, algorithmic risk controls, and GPT-4 trading execution grader.
+                          TradeFlow backend services: REST API with FastAPI, MongoDB aggregation pipelines, and JWT authentication.
                         </p>
                       </div>
                     </div>
@@ -280,14 +280,15 @@ export default function Home() {
                     </div>
                     <div className="hud-tech-tags">
                       <span className="hud-tag">Python</span>
-                      <span className="hud-tag">Next.js</span>
                       <span className="hud-tag">FastAPI</span>
-                      <span className="hud-tag">ChromaDB</span>
-                      <span className="hud-tag">LangChain</span>
-                      <span className="hud-tag">Docker</span>
-                      <span className="hud-tag">AWS</span>
-                      <span className="hud-tag">PostgreSQL</span>
+                      <span className="hud-tag">Flask</span>
                       <span className="hud-tag">MongoDB</span>
+                      <span className="hud-tag">SQLite</span>
+                      <span className="hud-tag">MySQL</span>
+                      <span className="hud-tag">SQLAlchemy</span>
+                      <span className="hud-tag">ChromaDB</span>
+                      <span className="hud-tag">Git</span>
+                      <span className="hud-tag">Linux</span>
                     </div>
                   </div>
                 </div>
@@ -306,15 +307,15 @@ export default function Home() {
                       </div>
                       <div className="hud-log-line">
                         <span className="hud-log-label">STATUS:</span>
-                        <span className="hud-log-value text-accent">FREELANCE / CONTRACT</span>
+                        <span className="hud-log-value text-accent">OPEN FOR ROLES</span>
                       </div>
                       <div className="hud-log-line">
-                        <span className="hud-log-label">AWS AUTH:</span>
-                        <span className="hud-log-value">CERTIFIED DEVELOPER</span>
+                        <span className="hud-log-label">COLLEGE:</span>
+                        <span className="hud-log-value">SANDIP UNIVERSITY</span>
                       </div>
                       <div className="hud-log-line">
-                        <span className="hud-log-label">AGILE:</span>
-                        <span className="hud-log-value">SCRUM MASTER (CSM)</span>
+                        <span className="hud-log-label">B.TECH:</span>
+                        <span className="hud-log-value">CSE (GPA: 8.49)</span>
                       </div>
                     </div>
                   </div>
