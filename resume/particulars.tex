@@ -17,16 +17,16 @@
 % ---------- SUMMARY ----------
 \def\summary{
   \section{Summary}
-  B.Tech CSE graduate (2026, GPA: 8.49) with hands-on experience building backend services in Python using FastAPI, MongoDB, and SQLite. Comfortable with REST API design, database queries, authentication, and writing automation scripts. Looking for Python Developer or Backend Trainee roles.
+  Backend \& Systems Engineer and B.Tech CSE student (2026, GPA: 8.49) with hands-on experience building high-performance asynchronous microservices (FastAPI, Motor/MongoDB), applied RAG architectures (ChromaDB, LangChain), and distributed automation systems. Proven track record in national hackathons (SunHacks 2026 Top 10, AICTE Winner) with strong foundations in API architecture, database query optimization, and background event pipelines.
 }
 
 % ---------- SKILLS ----------
 \def\skills{
   \bullets
-    \bullet{\textbf{Languages:} Python, SQL, HTML/CSS}
-    \bullet{\textbf{Backend \& Web:} FastAPI, Flask, REST APIs, BeautifulSoup, Requests}
-    \bullet{\textbf{Databases:} MongoDB, SQLite, MySQL, SQLAlchemy ORM}
-    \bullet{\textbf{Tools \& Practices:} Git, GitHub, GitHub Actions, Postman, Linux, JWT Auth, AsyncIO}
+    \bullet{\textbf{Languages:} Python (AsyncIO), SQL, TypeScript, HTML/CSS}
+    \bullet{\textbf{Backend \& AI:} FastAPI, Motor, REST API Architecture, ChromaDB, LangChain, RAG Pipelines}
+    \bullet{\textbf{Databases:} MongoDB (Aggregation Pipelines), SQLite, MySQL, SQLAlchemy ORM}
+    \bullet{\textbf{Systems \& Tools:} Wireless ADB, Docker, Tailscale / WireGuard, Linux, Git, GitHub Actions, Postman, JWT}
   \bulletsEnd
 }
 
@@ -72,12 +72,34 @@
 
 \ProjectEntry{TradeFlow}
   {}
-  {TradeFlow -- Trading Journal \& Analytics API}
-  {\href{https://thetradeflow.vercel.app}{Live} $|$ Python, FastAPI, MongoDB, JWT}
+  {TradeFlow -- Trading Journal \& Analytics Terminal}
+  {\href{https://thetradeflow.vercel.app}{Live} $|$ Python, FastAPI, Motor, MongoDB, Next.js 15, JWT}
   {
     \bullets
-      \bullet{Built a REST API with FastAPI and MongoDB for logging, filtering, and analyzing stock trades with per-user data isolation.}
-      \bullet{Implemented JWT authentication with bcrypt password hashing; used MongoDB aggregation pipelines to compute portfolio metrics like win rate and net P\&L.}
+      \bullet{Built an asynchronous REST API with FastAPI and Motor (MongoDB) for logging, filtering, and analyzing trades with per-user data isolation.}
+      \bullet{Engineered MongoDB aggregation pipelines to calculate portfolio metrics (win rate, net P\&L, drawdown limits) and implemented JWT authentication with bcrypt.}
+    \bulletsEnd
+  }
+
+\ProjectEntry{ThirdEye}
+  {}
+  {ThirdEye -- Organizational Memory \& RAG System}
+  {\href{https://github.com/brrrezy/Third-Eye}{Source} $|$ Python, FastAPI, ChromaDB, LangChain, Node Graphs}
+  {
+    \bullets
+      \bullet{Architected an organizational memory tool with ChromaDB vector search and RAG for conversational document Q\&A.}
+      \bullet{Built interactive knowledge-graph node visualizations, structured directory management, and user access control; placed in the Top 10 at SunHacks 2026.}
+    \bulletsEnd
+  }
+
+\ProjectEntry{ShadowGram}
+  {}
+  {ShadowGram -- Distributed Publishing Node}
+  {\href{https://github.com/brrrezy/ig-automation}{Source} $|$ Python, Wireless ADB, Tailscale, Docker, Telegram API}
+  {
+    \bullets
+      \bullet{Architected a headless publishing system over a secure Tailscale WireGuard tunnel, automating physical Android device execution via wireless ADB.}
+      \bullet{Designed a zero-device-storage staging queue hosted on Telegram Cloud with Docker runner deployment, bypassing Meta Graph API restrictions with automated UI navigation.}
     \bulletsEnd
   }
 
@@ -89,17 +111,6 @@
     \bullets
       \bullet{Developed a stock screening service that scrapes daily NSE data and flags potential swing setups based on technical indicators.}
       \bullet{Used SQLite to cache historical data locally and scheduled background scraping jobs with APScheduler to keep results current.}
-    \bulletsEnd
-  }
-
-\ProjectEntry{ThirdEye}
-  {}
-  {ThirdEye -- Organizational Memory System}
-  {\href{https://github.com/brrrezy/Third-Eye}{Source} $|$ Python, FastAPI, ChromaDB, LangChain}
-  {
-    \bullets
-      \bullet{Built a document Q\&A backend that chunks uploaded files, stores vector embeddings in ChromaDB, and retrieves relevant context for LLM-powered answers.}
-      \bullet{Exposed REST endpoints via FastAPI for document upload, semantic search, and conversational queries over a knowledge base.}
     \bulletsEnd
   }
 

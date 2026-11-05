@@ -15,7 +15,7 @@ export function About() {
             <h3 className="sub-header !mt-0"><div><span className="text-accent">HEY,</span> THERE 👋</div></h3>
 
             <p className="text-muted leading-relaxed text-[15px] font-medium" style={{ textAlign: 'justify' }}>
-              I'm Shivanshu, a B.Tech CSE student (Sandip University, 2026, GPA: 8.49) with hands-on experience building backend services in Python using FastAPI, MongoDB, and SQLite. I focus on clean REST API design, database queries, authentication, and writing reliable automation scripts.
+              I'm Shivanshu, a Backend & Systems Engineer (B.Tech CSE @ Sandip University, 2026, GPA: 8.49) specializing in asynchronous backend microservices, applied RAG architectures, and distributed hardware automation. I build high-throughput REST APIs, database aggregation pipelines, and event-driven automation systems.
             </p>
           </div>
         </ScrollReveal>

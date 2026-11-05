@@ -258,7 +258,7 @@ export default function Home() {
                           <span className="hud-status-tag">DEV_RUNNING</span>
                         </div>
                         <p className="hud-activity-desc">
-                          Document Q&amp;A backend with ChromaDB vector search and semantic chunking. (<strong>ThirdEye</strong> - SunHacks '26 Top 10)
+                          Organizational memory tool with RAG, interactive knowledge graphs, and AI chatbot. (<strong>ThirdEye</strong> - SunHacks '26 Top 10)
                         </p>
                       </div>
                       <div className="hud-activity-item">
@@ -281,13 +281,14 @@ export default function Home() {
                     <div className="hud-tech-tags">
                       <span className="hud-tag">Python</span>
                       <span className="hud-tag">FastAPI</span>
-                      <span className="hud-tag">Flask</span>
-                      <span className="hud-tag">MongoDB</span>
-                      <span className="hud-tag">SQLite</span>
-                      <span className="hud-tag">MySQL</span>
-                      <span className="hud-tag">SQLAlchemy</span>
-                      <span className="hud-tag">ChromaDB</span>
                       <span className="hud-tag">Git</span>
+                      <span className="hud-tag">ChromaDB</span>
+                      <span className="hud-tag">MongoDB</span>
+                      <span className="hud-tag">Docker</span>
+                      <span className="hud-tag">Tailscale</span>
+                      <span className="hud-tag">Wireless ADB</span>
+                      <span className="hud-tag">Pandas</span>
+                      <span className="hud-tag">SQLite</span>
                       <span className="hud-tag">Linux</span>
                     </div>
                   </div>

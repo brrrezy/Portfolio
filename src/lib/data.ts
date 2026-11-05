@@ -1,12 +1,12 @@
 export const personalInfo = {
   name: "Shivanshu Srivastava",
-  role: "Python Developer & Backend Engineer",
+  role: "Backend & Systems Engineer",
   education: "B.Tech CSE @ Sandip University (GPA: 8.49)",
   location: "Varanasi, India -- 221010",
   email: "shivanshu.srivastava.work@gmail.com",
   phone: "+91 9198865041",
-  tagline: "Focusing on REST APIs, Database Queries, and Automation Scripting.",
-  bio: "Thank you for visiting my portfolio! I'm truly grateful for your time and interest in my work. Let's connect and build something meaningful together. ❤️",
+  tagline: "Engineering high-throughput backend APIs, distributed automation pipelines, and RAG architectures.",
+  bio: "Backend & systems engineer with hands-on experience building asynchronous microservices, distributed hardware automation, and FinTech data engines. Passionate about low-level system efficiency, clean API contracts, and vector-driven AI systems.",
   socials: {
     github: "https://github.com/brrrezy",
     linkedin: "https://www.linkedin.com/in/srivastavashivanshu/",
@@ -17,9 +17,30 @@ export const personalInfo = {
 export const projects = [
   {
     title: "TradeFlow",
-    description: "Built a REST API with FastAPI and MongoDB for logging, filtering, and analyzing stock trades with per-user data isolation. Implemented JWT authentication with bcrypt password hashing; used MongoDB aggregation pipelines to compute portfolio metrics like win rate and net P&L.",
-    tags: ["Python", "FastAPI", "MongoDB", "JWT Auth", "REST API"],
+    description: "Built an institutional-grade trading terminal REST API with FastAPI and async MongoDB for logging, filtering, and analyzing stock trades with per-user data isolation. Implemented JWT authentication with bcrypt password hashing; engineered MongoDB aggregation pipelines to compute portfolio metrics like win rate and net P&L.",
+    tags: ["Python", "FastAPI", "MongoDB", "JWT Auth", "REST API", "Motor"],
     link: "https://thetradeflow.vercel.app",
+    image: "/tradeflow_ui.png"
+  },
+  {
+    title: "ThirdEye -- Org Memory System",
+    description: "Architected an organizational memory tool powered by RAG and vector search (ChromaDB) for document Q&A. Developed conversational chatbot interactions, interactive knowledge-graph node visualizations, structured directory management, and user management with FastAPI REST endpoints (SunHacks '26 Top 10).",
+    tags: ["Python", "FastAPI", "RAG", "ChromaDB", "Knowledge Graphs", "LangChain"],
+    link: "https://github.com/brrrezy/Third-Eye",
+    image: "/rag_memory_ui.png"
+  },
+  {
+    title: "ShadowGram -- Distributed Publishing Node",
+    description: "Architected a headless social publishing system using wireless ADB over a secure Tailscale WireGuard tunnel. Built a zero-device-storage staging queue hosted on Telegram Cloud with Docker runner deployment, bypassing Meta Graph API restrictions with automated cold-boot UI navigation and media scrubbing.",
+    tags: ["Python", "Wireless ADB", "Tailscale", "Docker", "Telegram API", "Automation"],
+    link: "https://github.com/brrrezy/ig-automation",
+    image: "/tradeflow_ui.png"
+  },
+  {
+    title: "Trade Vector -- Quant Scalp Engine",
+    description: "Built a quantitative analysis pipeline for historical NIFTY 50 and SENSEX options trading signals. Modeled momentum velocity (Peak - Entry) / TimeDelta, opening range breakouts, and a 3-tier profit-taking algorithm with automated event-by-event time-series log exports.",
+    tags: ["Python", "Pandas", "Quant Analysis", "Time-Series", "Algorithmic Trading"],
+    link: "https://github.com/brrrezy/Trade-Vector",
     image: "/tradeflow_ui.png"
   },
   {
@@ -28,13 +49,6 @@ export const projects = [
     tags: ["Python", "FastAPI", "SQLite", "BeautifulSoup", "APScheduler"],
     link: "https://findswingstocks.up.railway.app/",
     image: "/nse_screener_ui.png"
-  },
-  {
-    title: "ThirdEye -- Org Memory System",
-    description: "Built a document Q&A backend that chunks uploaded files, stores vector embeddings in ChromaDB, and retrieves relevant context for LLM-powered answers. Exposed REST endpoints via FastAPI for document upload, semantic search, and conversational queries over a knowledge base.",
-    tags: ["Python", "FastAPI", "ChromaDB", "LangChain", "Vector Search"],
-    link: "https://github.com/brrrezy/Third-Eye",
-    image: "/rag_memory_ui.png"
   },
   {
     title: "NSE Breakout Monitor",
@@ -49,27 +63,6 @@ export const projects = [
     tags: ["Python", "Flask", "LangChain", "Firebase"],
     link: "https://fixyourdiet.vercel.app",
     image: "/dietgpt_ui.png"
-  },
-  {
-    title: "Clima-Cast",
-    description: "Cleaned and preprocessed historical weather datasets using Pandas and NumPy. Trained regression models (MLPRegressor) with Scikit-Learn to forecast ambient temperature and humidity metrics.",
-    tags: ["Python", "Scikit-Learn", "Pandas", "NumPy"],
-    link: "https://github.com/brrrezy/Clima-Cast",
-    image: "/climacast_ui.png"
-  },
-  {
-    title: "Aeronexis AI",
-    description: "Designed a responsive landing page and pre-registration waitlist system, storing user sign-up details securely in MongoDB.",
-    tags: ["Next.js", "Tailwind CSS", "MongoDB"],
-    link: "https://aeronexis.vercel.app",
-    image: "/aeronexis_ui.png"
-  },
-  {
-    title: "Shooters of India",
-    description: "Designed and deployed a search-optimized web storefront for sports shooting accessories, integrated with Google Analytics.",
-    tags: ["HTML/CSS", "JavaScript", "Analytics"],
-    link: "https://shootersofindia.vercel.app/",
-    image: "/shooters_ecommerce_ui.png"
   }
 ];
 
@@ -110,29 +103,32 @@ export const experience = [
 export const skills = {
   languages: [
     { name: "Python", level: 92, slug: "python" },
+    { name: "TypeScript", level: 82, slug: "typescript" },
     { name: "SQL", level: 85, slug: "mysql" },
     { name: "HTML/CSS", level: 80, slug: "html5" }
   ],
   backend: [
-    { name: "FastAPI", level: 90, slug: "fastapi" },
-    { name: "Flask", level: 82, slug: "flask" },
-    { name: "REST APIs", level: 88, slug: "postman" },
-    { name: "BeautifulSoup", level: 85, slug: "python" },
-    { name: "Requests", level: 88, slug: "python" }
+    { name: "FastAPI", level: 92, slug: "fastapi" },
+    { name: "AsyncIO & Motor", level: 88, slug: "python" },
+    { name: "REST API Design", level: 90, slug: "postman" },
+    { name: "ChromaDB & RAG", level: 86, slug: "python" },
+    { name: "LangChain", level: 84, slug: "langchain" },
+    { name: "BeautifulSoup", level: 85, slug: "python" }
   ],
   databases: [
-    { name: "MongoDB", level: 85, slug: "mongodb" },
+    { name: "MongoDB", level: 88, slug: "mongodb" },
     { name: "SQLite", level: 85, slug: "sqlite" },
     { name: "MySQL", level: 80, slug: "mysql" },
     { name: "SQLAlchemy ORM", level: 82, slug: "sqlalchemy" }
   ],
   tools: [
+    { name: "Docker", level: 85, slug: "docker" },
+    { name: "Tailscale / VPN", level: 84, slug: "tailscale" },
+    { name: "Wireless ADB", level: 88, slug: "android" },
     { name: "Git & GitHub", level: 88, slug: "git" },
-    { name: "GitHub Actions", level: 82, slug: "githubactions" },
-    { name: "Postman", level: 85, slug: "postman" },
-    { name: "Linux", level: 80, slug: "linux" },
-    { name: "JWT Auth", level: 84, slug: "jsonwebtokens" },
-    { name: "AsyncIO", level: 82, slug: "python" }
+    { name: "GitHub Actions", level: 85, slug: "githubactions" },
+    { name: "Linux", level: 82, slug: "linux" },
+    { name: "JWT Auth", level: 86, slug: "jsonwebtokens" }
   ]
 };
 
@@ -140,7 +136,7 @@ export const achievements = [
   {
     title: "Sunhacks 2026 (Top 10) - April 2026",
     organization: "Sandip University & ESDS",
-    description: "Built the AI chatbot and knowledge-graph visualization features for an organizational memory tool (ThirdEye); placed in the Top 10."
+    description: "Built the AI chatbot and interactive knowledge-graph node visualizations for ThirdEye, an organizational memory tool powered by RAG models. Implemented conversational chatbot interactions, directory management, and user management; placed in the Top 10."
   },
   {
     title: "Sunhacks 2024 (Top 10) - April 2024",
@@ -157,22 +153,22 @@ export const achievements = [
 export const services = [
   {
     id: "01",
-    title: "Backend API Engineering",
-    description: "Architecting clean, structured REST APIs using FastAPI, Flask, and Python with secure JWT authentication."
+    title: "High-Throughput Backend APIs",
+    description: "Architecting high-performance asynchronous REST APIs using FastAPI, Python, and async Motor/MongoDB with JWT authentication and structured data isolation."
   },
   {
     id: "02",
-    title: "Database Architecture",
-    description: "Designing efficient schemas, indexing, and aggregation pipelines using MongoDB, SQLite, and MySQL."
+    title: "Applied AI & RAG Architectures",
+    description: "Building organizational memory tools, ChromaDB vector search retrieval pipelines, LangChain integrations, and interactive knowledge-graph node visualizations."
   },
   {
     id: "03",
-    title: "Data Pipelines & Web Scraping",
-    description: "Writing robust scrapers, CLI utilities, and scheduled automation tasks using BeautifulSoup and GitHub Actions."
+    title: "Distributed Hardware & Cloud Automation",
+    description: "Deploying autonomous publishing nodes using Wireless ADB over secure Tailscale WireGuard tunnels, Telegram Cloud staging, and Docker runners."
   },
   {
     id: "04",
-    title: "Document Q&A & Semantic Search",
-    description: "Building vector search retrieval pipelines and Q&A backends using ChromaDB and FastAPI."
+    title: "Financial Data & Automation Pipelines",
+    description: "Engineering resilient market scrapers, SQLite caching layers, quantitative time-series models, and automated 24/7 background cron notification bots."
   }
 ];
